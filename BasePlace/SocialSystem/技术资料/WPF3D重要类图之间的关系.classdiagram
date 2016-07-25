@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="b4ee761c-e2ac-47f3-a921-05a055938994" name="WPF3D重要类图之间的关系" linkedPackageId="5f0cfa22-6089-4b82-bb0e-33ef7466857a" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="0fd95f98-86ef-44f0-a702-e92922db6719" name="Visual3DCollecttion" isAbstract="false" isLeaf="false" cachedFullName="Visual3DCollecttion">
+        <elementDefinition Id="c97e6214-0d01-4458-833a-6c8e81815f6d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6c22fbdd-02b3-432f-ba62-ac14be996c7a" name="Camera" isAbstract="false" isLeaf="false" cachedFullName="Camera">
+        <elementDefinition Id="97614855-c6d6-4689-94e4-ebffab117685" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2226e0cd-cecd-4342-b662-42e3df8d35e1" name="Model3D" isAbstract="false" isLeaf="false" cachedFullName="Model3D">
+        <elementDefinition Id="7a524a08-e9cd-4090-8652-c6125a092e79" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ca9824c5-164f-4f02-bcc1-08770bc816b1" name="Geometry3D" isAbstract="false" isLeaf="false" cachedFullName="Geometry3D">
+        <elementDefinition Id="31502309-1405-479f-b004-99e87f61a51b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2b5ed4d3-4c1e-4f1f-9e14-6ac48c38b24e" name="Material" isAbstract="false" isLeaf="false" cachedFullName="Material">
+        <elementDefinition Id="bda8f0fd-5895-49b9-9fe1-02976e219ac5" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d43cfc72-84ec-44a3-8c5c-6f04bda2bef1" name="FrameworkElement" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="89111b68-791f-413a-a8a4-5ae854ea6ce4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2490fa6a-c79c-4778-af41-1437fcb140df" name="viewport3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2b711f4f-c8a7-4bd1-912f-8a5a76bcf3ab" />
+        <generalsInternal>
+          <generalization Id="410acf42-0ee5-4f32-be3b-c61eba6234f4" isSubstitutable="false">
+            <classMoniker Id="d43cfc72-84ec-44a3-8c5c-6f04bda2bef1" LastKnownName="FrameworkElement" />
+            <elementDefinition Id="16af9b00-03f0-472d-9c23-7f92088092a7" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="c14e1c31-b05a-46cd-a4c8-7219e1b91e52" isDerived="false" sourceEndRoleName="viewport3D" targetEndRoleName="visual3Dcollection" isLeaf="false" isAbstract="false">
+            <classMoniker Id="affdf492-6461-4224-b149-a9595e91b96c" LastKnownName="visual3Dcollection" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5c0b1f56-5ac8-448e-b1d7-cc2fce3083d6" name="viewport3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0eaf7db8-6b10-46ac-9688-50773a596251" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="054f54a0-01f9-46e2-9dff-f7ecb6e74306" name="visual3Dcollection" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f3524c86-78b6-4d46-8f45-775a7c2c10f0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b62a16bb-066d-41ab-a4e7-ca6294d3626e" />
+          </association>
+          <association Id="66858031-146d-4468-8460-1316701d7366" isDerived="false" sourceEndRoleName="viewport3D" targetEndRoleName="Camera" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a89bd13d-d805-4e5b-b103-d726bd8355b2" LastKnownName="Camera" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="56ac3f9f-dcc6-4e4f-8392-7e74587a216b" name="viewport3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="48c35e04-f31f-46da-bb08-17cb19efd561" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f1b01033-044b-4df1-a1d4-607a534de389" name="Camera" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a3df7ff6-e4c5-4fef-aff4-99c9a9ce387e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8bebd9f2-8241-419c-8fd6-81eb8b59414e" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="51d9f5ab-64e7-4cff-9086-579b4582eafc" name="childrens" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f427edb8-19a7-4c66-ae2d-3b336d41d25f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0fd95f98-86ef-44f0-a702-e92922db6719" LastKnownName="Visual3DCollecttion" />
+            </type_NamedElement>
+          </property>
+          <property Id="2c880a47-b668-47c5-b45d-6cbe851ba735" name="Camera" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f0c66c52-b426-406f-bae7-8e34e8959004" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6c22fbdd-02b3-432f-ba62-ac14be996c7a" LastKnownName="Camera" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="affdf492-6461-4224-b149-a9595e91b96c" name="visual3Dcollection" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e6bf133a-fd19-42a5-9ad4-a459d3eeace0" />
+        <targetEnds>
+          <association Id="c366a085-15e2-4506-a3d1-ee01e8c2a7f5" isDerived="false" sourceEndRoleName="visual3Dcollection" targetEndRoleName="Visual3D" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e9da2868-6b7e-4782-86af-d8d6925a9da3" LastKnownName="Visual3D" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ff918ed-5151-43d0-bc74-78406c90a52a" name="visual3Dcollection" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="34db1d0e-f2be-40c5-bc73-d0833cb8f703" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9b6ab3b9-2dbf-4296-a128-fd25dc379128" name="Visual3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="effbf931-1aa9-4699-9bf0-f7d0b84590db" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="642a0631-67b7-44fc-a7d3-7f8e9fe4764e" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a89bd13d-d805-4e5b-b103-d726bd8355b2" name="Camera" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fa66b940-662b-4e4e-9b64-4411f2ed27d8" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="07110402-d0ca-4ec7-b5fd-01b3f5c88e7e" name="ProjectionCamera" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7673a2cb-73b9-4dfd-9141-a11aba6ad71a" />
+        <generalsInternal>
+          <generalization Id="505325f0-18ac-4f7c-8138-de2d539dd09a" isSubstitutable="false">
+            <classMoniker Id="a89bd13d-d805-4e5b-b103-d726bd8355b2" LastKnownName="Camera" />
+            <elementDefinition Id="3b98b8ce-f066-4b10-b4c9-9c92f9985c4e" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c824d848-363c-4086-92e6-c483e2c0df28" name="MatrixCamera" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5f93cea7-017f-49ad-8502-cc97be735b60" />
+        <generalsInternal>
+          <generalization Id="4e8f638c-3d04-4b15-901a-1b6ea3f2cc6d" isSubstitutable="false">
+            <classMoniker Id="a89bd13d-d805-4e5b-b103-d726bd8355b2" LastKnownName="Camera" />
+            <elementDefinition Id="ac336748-70e6-42b7-831e-4237bdb132c1" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bd06c11f-0ca9-428d-b710-e4e2bd193e97" name="OrthographicCamera" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="09f1f30c-694c-43fb-94ac-d9247a781e1c" />
+        <generalsInternal>
+          <generalization Id="e03f64c9-d5d9-4770-93b5-e1c1b2273217" isSubstitutable="false">
+            <classMoniker Id="07110402-d0ca-4ec7-b5fd-01b3f5c88e7e" LastKnownName="ProjectionCamera" />
+            <elementDefinition Id="8258318d-f533-48dc-b793-7a2ca0ae8aff" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fb09924e-d062-4eb5-ba34-58c45ed00cbe" name="PersPectiveCamera" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1d1cabbe-272b-4f80-a2c4-7da5a8b7568c" />
+        <generalsInternal>
+          <generalization Id="ef4e13fd-ff7d-4949-81be-00fb4637d3e3" isSubstitutable="false">
+            <classMoniker Id="07110402-d0ca-4ec7-b5fd-01b3f5c88e7e" LastKnownName="ProjectionCamera" />
+            <elementDefinition Id="18437b54-d0e6-4b53-9e04-0e046387494d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e9da2868-6b7e-4782-86af-d8d6925a9da3" name="Visual3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a743b97f-4e9d-43c5-a60e-5ccdd2f6b15d" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d5775211-fa26-41a7-9bc6-33f4d31a0711" name="UIElement3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9b4ae7ad-b7c3-4bdc-b982-9c26433e5c58" />
+        <generalsInternal>
+          <generalization Id="e7d3ebfb-d299-4cb7-9701-2ce42ff65c00" isSubstitutable="false">
+            <classMoniker Id="e9da2868-6b7e-4782-86af-d8d6925a9da3" LastKnownName="Visual3D" />
+            <elementDefinition Id="d39cb25b-f33c-4bce-a93b-f5e32e3044d5" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8b8bdf49-c827-44ac-8a57-4e87590f77b4" name="ModelUIElement3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="916616f0-fc89-4bec-a995-d1cb9671a4f3" />
+        <generalsInternal>
+          <generalization Id="8ea043cb-7085-4993-87ad-1006fa43842c" isSubstitutable="false">
+            <classMoniker Id="d5775211-fa26-41a7-9bc6-33f4d31a0711" LastKnownName="UIElement3D" />
+            <elementDefinition Id="2a07371e-27a3-404c-8b38-34c314ec0896" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="d553160b-c9f7-43d4-adb7-0da768a6c01a" isDerived="false" sourceEndRoleName="ModelUIElement3D" targetEndRoleName="Model3D" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8ca89e6c-c792-44b5-b95c-57e234223b75" LastKnownName="Model3D" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9e97b439-37d9-4a64-ab05-4ca8584859ef" name="ModelUIElement3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="271c0d1e-e8c8-4431-9b94-f02fcb4e7029" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7928e694-0598-4fea-be8b-32f333e027cb" name="Model3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4517854b-2e46-47d2-b630-e9db021fe38c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="009b5458-be94-456a-93e2-f00088092253" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="ca60bd78-52c7-4bd4-be1f-c64557ba2eef" name="Model" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0e8cc04d-74db-4d57-b16f-116651155799" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="61c4d7aa-816a-4aaf-aea7-667aaf32a4fa" name="ModelVisual3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="afa01eab-2f37-4f6e-95cf-db9d9e03dc87" />
+        <suppliersInternal>
+          <dependency Id="4a9a10ea-723b-4d7b-8462-331c3dd28582">
+            <classMoniker Id="8ca89e6c-c792-44b5-b95c-57e234223b75" LastKnownName="Model3D" />
+            <elementDefinition Id="7c002a8e-52ac-458c-94e2-2a4abd60adec" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="2595d53a-4182-487f-84d8-71b00fecd5a5" isSubstitutable="false">
+            <classMoniker Id="e9da2868-6b7e-4782-86af-d8d6925a9da3" LastKnownName="Visual3D" />
+            <elementDefinition Id="82de9011-827b-4836-b306-d293d5efdab8" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="c2c03d70-c3bb-4829-9004-231a4280be4a" name="Content" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="31df65b9-acb7-450e-9c4d-5768174bb302" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2226e0cd-cecd-4342-b662-42e3df8d35e1" LastKnownName="Model3D" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8ca89e6c-c792-44b5-b95c-57e234223b75" name="Model3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="723d3dab-8d9a-4184-b951-7d9321724eea" />
+        <ownedAttributesInternal>
+          <property Id="d338e1a2-975b-445f-88d1-527ed20a7972" name="Transform" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1d5df40c-f0b4-4c52-8984-748131399574" />
+          </property>
+          <property Id="9419bff7-c80e-49ca-b1ff-bad5696789c5" name="Bounds" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="111e6e92-29bc-484d-8fb1-ed9ecce250b3" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e43f8c01-0f3d-4d3c-a3d4-d5d2eff0af8e" name="GeometryModel3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a35d10b6-3fa5-4d26-863f-1db7bc19a901" />
+        <generalsInternal>
+          <generalization Id="506e1285-7c48-45fd-937c-2f302c854cb5" isSubstitutable="false">
+            <classMoniker Id="8ca89e6c-c792-44b5-b95c-57e234223b75" LastKnownName="Model3D" />
+            <elementDefinition Id="033842e6-0b07-478b-9137-8653ee99cc56" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="c1084d37-d123-4764-ada4-6640bb4a4116" isDerived="false" sourceEndRoleName="GeometryModel3D" targetEndRoleName="Geometry3D" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c5c07f0b-dea1-451d-b1ee-127541cc5b75" LastKnownName="Geometry3D" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e4c1192-8e84-4ac4-9cb0-6c58d5f8132b" name="GeometryModel3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4c930d0c-4b99-41b9-b911-536eb18701e4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f96e27d0-26c5-46d1-85d0-9d3bbe4e465c" name="Geometry3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ee00f35d-4caf-48fc-a745-e5680b249d8c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c0680316-8f35-4a29-9a3e-74e9d3a621a7" />
+          </association>
+          <association Id="f8496f97-7183-406d-97e4-2ccf7afea9e2" isDerived="false" sourceEndRoleName="GeometryModel3D" targetEndRoleName="Material" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5db3235a-e91a-41ae-863d-82f7c3c7aabe" LastKnownName="Material" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e1ecbff0-6f76-485f-b98e-72fe4d9ce1f8" name="GeometryModel3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="94185da2-1890-4884-b500-db4fed984bf9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="93207030-7530-4c0c-9090-a4f60f540252" name="Material" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9d17cefc-99b5-4a6f-8f25-d74cff51de3e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="462c4177-f86f-455b-a9ac-20c630c44d60" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="48782d4e-2928-47d6-aef8-87cf4cf565a6" name="Geometry" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bf5d73f2-666a-41ee-aa73-1369f360ff1d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ca9824c5-164f-4f02-bcc1-08770bc816b1" LastKnownName="Geometry3D" />
+            </type_NamedElement>
+          </property>
+          <property Id="e3cf8a96-ee56-43e2-b9b6-bfee520b37cd" name="Material" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="518720da-941d-4eea-8931-3cb71b400235" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2b5ed4d3-4c1e-4f1f-9e14-6ac48c38b24e" LastKnownName="Material" />
+            </type_NamedElement>
+          </property>
+          <property Id="9673ae8d-b3f0-4117-8a23-715fdd5104d6" name="BackMaterial" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="02a88868-32e6-4f7a-a8fb-26d28caddd13" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2b5ed4d3-4c1e-4f1f-9e14-6ac48c38b24e" LastKnownName="Material" />
+            </type_NamedElement>
+          </property>
+          <property Id="28e422a1-7afc-409c-aded-2727fccdfdf3" name="Transform" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="086f71bd-9df8-47e0-9ac6-12d54f8ddedc" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="84c470ee-4800-4a00-b5ee-8d57b6d2d027" name="Model3DGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="235fd209-0e7a-445d-8cee-ab8b4c0e6af1" />
+        <generalsInternal>
+          <generalization Id="c3b55856-80a6-460b-9a47-9f35b3f37ce6" isSubstitutable="false">
+            <classMoniker Id="8ca89e6c-c792-44b5-b95c-57e234223b75" LastKnownName="Model3D" />
+            <elementDefinition Id="3a8101b2-48c5-481b-a113-c20ebcf10fb6" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="c643536e-4b33-4edf-b7d5-b7e99265b7b1" isDerived="false" sourceEndRoleName="Model3DGroup" targetEndRoleName="Model3D" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8ca89e6c-c792-44b5-b95c-57e234223b75" LastKnownName="Model3D" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d9f0277e-3200-4e6a-9c34-2c13e83add15" name="Model3DGroup" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c94c57d2-2f6b-44d2-8e7f-ff509e0bd9b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7ca27e69-4e39-4380-abae-dc7aa7d6d5a3" name="Model3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="cdf37e75-f3a6-4a89-b09d-e6270f09eca9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0c24db15-88aa-4ee4-add2-48a16cad22c3" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="6bb7acb3-b147-456a-88db-6d5efb94e574" name="Childrens" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c75572c3-d10f-434e-9873-a77793f81b65" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="95417327-a98d-4442-81b5-6420dd884828" name="Light" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3d2404af-4ae4-42fd-a994-14ad29983076" />
+        <generalsInternal>
+          <generalization Id="27d4949d-1058-40ff-9f5b-8cf82eeb6e31" isSubstitutable="false">
+            <classMoniker Id="8ca89e6c-c792-44b5-b95c-57e234223b75" LastKnownName="Model3D" />
+            <elementDefinition Id="bbc5459e-68cd-4c56-847d-bf8ab1be5354" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="72acad7c-a055-40cf-bc0d-ff0e7e13c0c8" name="AmbientLight" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f6ddcb1a-a33b-4686-9ecb-256eb835ef80" />
+        <generalsInternal>
+          <generalization Id="154917a1-8311-43e3-bc62-d2ea2f5f1342" isSubstitutable="false">
+            <classMoniker Id="95417327-a98d-4442-81b5-6420dd884828" LastKnownName="Light" />
+            <elementDefinition Id="39e268e2-9ee3-44bb-a57b-ca91054f8ced" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="73042bcb-0480-467e-ae9a-bd0fd0e7b524" name="DirectionalLight" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c5bb97bf-c6e0-4f7b-962e-7d5df0760ecb" />
+        <generalsInternal>
+          <generalization Id="89fb826a-0444-41d8-96f1-9758af4fb65c" isSubstitutable="false">
+            <classMoniker Id="95417327-a98d-4442-81b5-6420dd884828" LastKnownName="Light" />
+            <elementDefinition Id="55b22436-f2d7-44c0-ac71-ca465eaf55c1" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4b57499e-4a5c-41c6-93f2-b42df34d13da" name="PointLightBase" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2ac4ae64-d288-4f94-9bb3-b6e5a47e49e2" />
+        <generalsInternal>
+          <generalization Id="187e2e30-0edb-45e8-8d03-91dcdfa9dbdc" isSubstitutable="false">
+            <classMoniker Id="95417327-a98d-4442-81b5-6420dd884828" LastKnownName="Light" />
+            <elementDefinition Id="b0f831f4-38e0-45ff-99ea-54a50b9c74f3" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="01050d06-5b1e-4c19-ba16-dd4a6c61cc4d" name="PointLight" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c5371606-2227-4caa-8b00-8699f61736ad" />
+        <generalsInternal>
+          <generalization Id="4e8d91d9-8628-46b1-8a86-f8bac07ce22a" isSubstitutable="false">
+            <classMoniker Id="4b57499e-4a5c-41c6-93f2-b42df34d13da" LastKnownName="PointLightBase" />
+            <elementDefinition Id="d3666a3d-e428-45d7-8c21-9c75483738d3" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eee93d58-fcc8-4d41-991a-0e06ffe29f14" name="SpotLight" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b4c5dedd-73ae-485e-9aad-ba1a1b8bfe80" />
+        <generalsInternal>
+          <generalization Id="b3508363-4c77-4c6c-858c-5cd10a296626" isSubstitutable="false">
+            <classMoniker Id="4b57499e-4a5c-41c6-93f2-b42df34d13da" LastKnownName="PointLightBase" />
+            <elementDefinition Id="e464fb18-9ca6-4172-94d1-8a82fd0f4f79" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5db3235a-e91a-41ae-863d-82f7c3c7aabe" name="Material" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1fe53ec6-9cc2-4664-822b-173aadb465db" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c5c07f0b-dea1-451d-b1ee-127541cc5b75" name="Geometry3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="747f23e2-c4a2-49d6-8332-5752a0fed2da" />
+        <ownedAttributesInternal>
+          <property Id="1337f1e8-af4e-4888-89f6-81474ec99277" name="Bounds" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b53ce348-e55a-4ccc-a4b2-66aed8863f92" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0a46928e-fcac-49aa-ab28-c11c0ed2a434" name="MeshGeometry3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ff2ce8ca-229a-489a-b657-187def5af051" />
+        <generalsInternal>
+          <generalization Id="1c7ea763-9153-4ee9-b42e-d648d6ff55a8" isSubstitutable="false">
+            <classMoniker Id="c5c07f0b-dea1-451d-b1ee-127541cc5b75" LastKnownName="Geometry3D" />
+            <elementDefinition Id="e564cec6-d536-4b5d-b0d2-ab3bc0773333" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dd034a13-b2a4-4979-93af-e46c15029158" name="SpecularMaterial" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ad39bca5-c4fd-411d-b06e-fe6325d019cb" />
+        <generalsInternal>
+          <generalization Id="1f80aed7-0770-4ab8-a0e1-2edb3fac8fbe" isSubstitutable="false">
+            <classMoniker Id="5db3235a-e91a-41ae-863d-82f7c3c7aabe" LastKnownName="Material" />
+            <elementDefinition Id="b835df27-6ba8-4c42-b7bf-8d3a3f3d3473" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ab2b8758-52d5-448e-ae53-751c4d03f906" name="MaterialGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="119f107f-39bf-4565-a902-9a5413c510dd" />
+        <generalsInternal>
+          <generalization Id="5459bfc1-c4bb-48c0-b9b8-b60dcb5c0a6e" isSubstitutable="false">
+            <classMoniker Id="5db3235a-e91a-41ae-863d-82f7c3c7aabe" LastKnownName="Material" />
+            <elementDefinition Id="5004ac36-e6e2-4ab6-997e-95519c5c3753" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1a1cf1f7-0915-4f7d-8f9f-e11924273d7c" name="EmissiveMaterial" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="876c2a70-bf4c-4331-9ac9-01533b92da19" />
+        <generalsInternal>
+          <generalization Id="5a6fe55c-f051-4cf1-b21d-5225dc8d2b48" isSubstitutable="false">
+            <classMoniker Id="5db3235a-e91a-41ae-863d-82f7c3c7aabe" LastKnownName="Material" />
+            <elementDefinition Id="38da83d1-a5ae-4ed9-8061-6a4b857dd4b6" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="94bd4d4b-0572-4da0-af2f-9eb4aef2db88" name="DiffuseMaterial" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7eb797b5-e5fc-4e89-9746-781410dea76a" />
+        <generalsInternal>
+          <generalization Id="70ce9e62-d245-4cef-8a72-6abcf0f7c2e0" isSubstitutable="false">
+            <classMoniker Id="5db3235a-e91a-41ae-863d-82f7c3c7aabe" LastKnownName="Material" />
+            <elementDefinition Id="0c38114b-6f47-45cc-9d3e-329fc05b82e0" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="899b70ab-05cb-488a-841e-bba18bb371a5" name="ContainerUIElement3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6ee04317-270e-4ab8-abd7-b5ce698f0e4e" />
+        <generalsInternal>
+          <generalization Id="daa828c4-57d9-462f-bb5d-ffcfce5553b8" isSubstitutable="false">
+            <classMoniker Id="d5775211-fa26-41a7-9bc6-33f4d31a0711" LastKnownName="UIElement3D" />
+            <elementDefinition Id="10103ef0-b64f-4bf1-a709-c6b0480397bd" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="bd47f6a2-8cd4-49a3-8a2a-c787d0dd0e96" isDerived="false" sourceEndRoleName="children" targetEndRoleName="Visual3D" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e9da2868-6b7e-4782-86af-d8d6925a9da3" LastKnownName="Visual3D" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="653f27a9-95ea-4972-9651-b58643de783e" name="children" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6158a66c-ee80-45ed-98d6-aacf19027622" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="69685716-23b0-4c37-8594-698d5524c921" name="Visual3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9317f891-f74c-41db-b88f-566eb44f975c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="975497a0-b386-440f-a613-46b26004b7ab" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="baba4ebb-c91e-4bf5-82f1-e47f91a46ee7" name="Children" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="76f46f6f-a1de-4c72-9f88-8a33f70981c8" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="5f0cfa22-6089-4b82-bb0e-33ef7466857a" name="3DModel">
+    <elementDefinition Id="bd985d25-d7f8-4202-9148-cd5e080c577e" />
+  </package>
+  <package Id="726a64bb-ab12-41be-b01d-d208a5c0ca20" name="SocialSystem">
+    <elementDefinition Id="d913d8dc-9f90-4e0f-a17d-95bc38ccdb4c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="96d9ae95-1dc3-4fe5-b5eb-dd2692985035">
+        <profileInstance Id="58ac901f-56b1-4a42-90d0-6e42975975cb" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="11fde5f8-812c-444a-9627-fa2a076f6143">
+        <profileInstance Id="124f1004-531b-4dd0-a070-872b61f9a7d6" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

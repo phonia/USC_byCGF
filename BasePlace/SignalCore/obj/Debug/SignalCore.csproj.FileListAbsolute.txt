@@ -1,0 +1,5 @@
+E:\WorkSpacePlace\BasePlace\SignalCore\bin\Debug\SignalCore.dll
+E:\WorkSpacePlace\BasePlace\SignalCore\bin\Debug\SignalCore.pdb
+E:\WorkSpacePlace\BasePlace\SignalCore\obj\Debug\SignalCore.csprojResolveAssemblyReference.cache
+E:\WorkSpacePlace\BasePlace\SignalCore\obj\Debug\SignalCore.dll
+E:\WorkSpacePlace\BasePlace\SignalCore\obj\Debug\SignalCore.pdb

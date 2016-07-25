@@ -1,0 +1,138 @@
+﻿<Window
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:BaseDataLayout="clr-namespace:BaseDataLayout;assembly=BaseDataLayout" x:Class="WpfClient.Teams.CreatOrganizaiton" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" Loaded="UserControl_Loaded" Width="528">
+    <Window.Resources>
+        <CollectionViewSource x:Key="organizationViewSource" d:DesignSource="{d:DesignInstance {x:Type BaseDataLayout:Organization}, CreateList=True}"/>
+        <CollectionViewSource x:Key="postViewSource" d:DesignSource="{d:DesignInstance {x:Type BaseDataLayout:Post}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="127*" />
+            <RowDefinition Height="373*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" DataContext="{StaticResource organizationViewSource}" HorizontalAlignment="Stretch">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+
+            </Grid.RowDefinitions>
+            <Label Content="组织名称:" Grid.Column="0" HorizontalAlignment="Right"  Grid.Row="0" VerticalAlignment="Center" Height="26"  />
+            <TextBox x:Name="orgaNameTextBox" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="0" Text="{Binding OrgaName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" Height="26" />
+            <Label Content="组织类型:" Grid.Column="2" HorizontalAlignment="Right"  Grid.Row="0" VerticalAlignment="Center" Height="26"  />
+            <TextBox x:Name="typeTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="26" Grid.Row="0" Text="{Binding Type, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="267" Margin="0,2,-144,3"/>
+
+            <Label Content="组织代码:" Grid.Column="0" HorizontalAlignment="Right"  Grid.Row="1" VerticalAlignment="Center" Height="26" />
+            <TextBox x:Name="organizationCodeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Grid.Row="1" Text="{Binding OrganizationCode, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+
+            <Label Content="工商登记号:" Grid.Column="2" HorizontalAlignment="Right"  Grid.Row="1" VerticalAlignment="Center" Height="26" />
+            <TextBox x:Name="certificatesTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="24"  Grid.Row="1" Text="{Binding Certificates, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="267" Margin="0,3,-145,4"/>
+
+            <Label Content="创立日期:" Grid.Column="0" HorizontalAlignment="Right"  Grid.Row="2" VerticalAlignment="Center" Height="26" />
+            <DatePicker x:Name="establishmentDateDatePicker" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" SelectedDate="{Binding EstablishmentDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Height="24" Width="82"/>
+            <Label Content="上级组织:" Grid.Column="2" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="26" />
+            <TextBox x:Name="parentTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="26" Grid.Row="2" Text="{Binding Parent, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="267" Margin="0,2,-146,3"/>
+
+
+            <Label Content="商标标识:" Grid.Column="0" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Center" Height="24" />
+            <TextBox x:Name="markerStringTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24"  Grid.Row="3" Text="{Binding MarkerString, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+
+            <Label Content="是否有效:" Grid.Column="2" HorizontalAlignment="Right"  Grid.Row="3" VerticalAlignment="Center" Height="26" />
+            <CheckBox x:Name="isValidCheckBox" Content="" Grid.Column="3" HorizontalAlignment="Left" IsChecked="{Binding IsValid, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"  Grid.Row="3" VerticalAlignment="Center" Height="20" Width="20"/>
+        </Grid>
+        <TabControl Grid.Row="1">
+            <TabItem Header="部门和岗位">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ToolBarPanel  Grid.Row="0" >
+                    <ToolBar >
+                            <Button  Content="建部门"/>
+                            <Button  Content="改部门" />
+                            <Separator />
+                            <Button Content="建岗位"/>
+                            <Button Content="改岗位"/>
+                        </ToolBar>
+
+                    </ToolBarPanel>
+                   
+                    <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="84"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ListBox Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,433,0">
+                            <ListBoxItem Content="技术部"/>
+
+                        </ListBox>
+                        <ListView x:Name="postListView" Grid.Column="1" ItemsSource="{Binding Source={StaticResource postViewSource}}" SelectionMode="Single">
+                            <ListView.ItemContainerStyle>
+                                <Style>
+                                    <Setter Property="Control.HorizontalContentAlignment" Value="Stretch"/>
+                                    <Setter Property="Control.VerticalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.View>
+                                <GridView>
+
+                                    <GridViewColumn x:Name="postNameColumn" Header="岗位名称" Width="80">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Margin="-6,-1" Text="{Binding PostName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn x:Name="descriptColumn" Header="岗位描述" Width="180">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Margin="-6,-1" Text="{Binding Descript, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+              
+                                    <GridViewColumn x:Name="jobnameColumn" Header="上级岗位" Width="80">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Margin="-6,-1" Text="{Binding Jobname, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+
+                                    <GridViewColumn x:Name="isValidColumn" Header="有效性" Width="80">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <CheckBox IsChecked="{Binding IsValid, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="-6,-1"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="基本资料"/>
+            <TabItem Header="其他资料"/>
+            <TabItem Header="员工管理">
+                
+            </TabItem>
+                     
+        </TabControl>
+    </Grid>
+
+</Window>

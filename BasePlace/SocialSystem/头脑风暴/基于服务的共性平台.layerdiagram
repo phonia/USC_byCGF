@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3b305228-8f7c-4782-80a7-a6e9f66295e0" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="d025539f-2d28-43f4-aa55-e402c939df52" name="Comment1">
+      <body>网络空间</body>
+    </comment>
+    <comment Id="b8ee64d7-3ec3-424d-ab56-bdbd96f5a6cb" name="Comment2">
+      <body>1、市场。软件即服务（saas），平台即服务（paas)；云服务
+2、便于开发的软件架构。基于总线的软件体系；
+3、面向管理对象的业务模型；
+4、可视化的显示模型和便捷的操作模型；
+5、便于安装和配置管理的模式；</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="59896e1e-c654-400c-adce-51c8c15760fa" name="组织">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d2f6b889-13ac-40d0-91ef-1aef3182285f" direction="Forward">
+          <layerMoniker Id="c8953a6b-a736-466f-952b-1687dab99fdb" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="f431bc79-6cf3-4980-ae0a-f19229bf74fb" direction="Forward">
+          <layerMoniker Id="59896e1e-c654-400c-adce-51c8c15760fa" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c8953a6b-a736-466f-952b-1687dab99fdb" name="岗位和角色">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="671562b7-7f06-4839-8438-16912980adec" direction="Forward">
+          <layerMoniker Id="658ff11b-ae4e-46fe-90f7-b776cdb52ef3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="37aa54a5-3bef-4af0-929b-428d5e80bc57" name="WorkSpace&#xD;&#xA;-------&#xD;&#xA;Services">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="06e2af33-13b8-43a3-837b-219d1eed6e02" direction="Bidirectional">
+          <layerMoniker Id="c8953a6b-a736-466f-952b-1687dab99fdb" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="e1dba605-f441-4bd0-8466-ad8a15f6e168" direction="Forward">
+          <layerMoniker Id="59896e1e-c654-400c-adce-51c8c15760fa" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7b2297f7-7e24-4c3b-8f05-cbc9b2fd8eb4" name="共性技术平台">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6501dfff-8b68-4205-82fd-8b4a1741dd3c" direction="Bidirectional">
+          <layerMoniker Id="59896e1e-c654-400c-adce-51c8c15760fa" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="be317573-ceda-4423-bd2a-a878e796958b" direction="Bidirectional">
+          <layerMoniker Id="f02bac36-cfb5-4533-b126-2a00ffc5bb5c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="dad987bb-8618-4df1-af08-e253c229245c" name="组织管理中心" />
+        <layer Id="e3d9f54d-2dd3-462b-9cbd-46509c9f5545" name="用户管理中心" />
+        <layer Id="a3578fdc-3d61-43a0-a2af-424cf90bb9da" name="注册管理中心" />
+        <layer Id="70eddd1b-2fa3-4c4a-8806-546cc2ab313d" name="基础数据中心" />
+      </childLayers>
+    </layer>
+    <layer Id="a3340912-10a8-4baa-a01c-0179418b1259" name="资源服务&#xD;&#xA;----------------&#xD;&#xA;资源注册&#xD;&#xA;" />
+    <layer Id="8e38dda3-bda7-4cdd-a47a-c5c80b3a5334" name="C/S结构&#xD;&#xA;-------------------&#xD;&#xA;模块注册" />
+    <layer Id="658ff11b-ae4e-46fe-90f7-b776cdb52ef3" name="组织成员">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="16e51526-b9fc-43b4-aea6-0c5aab5425ab" direction="Forward">
+          <layerMoniker Id="f02bac36-cfb5-4533-b126-2a00ffc5bb5c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="f02bac36-cfb5-4533-b126-2a00ffc5bb5c" name="用户" />
+    <layer Id="9b5a1ba0-efe6-4ce5-b684-21adb62a1214" name="WEB服务&#xD;&#xA;----------------&#xD;&#xA;RESTFuL api" />
+  </layers>
+</layerModel>
