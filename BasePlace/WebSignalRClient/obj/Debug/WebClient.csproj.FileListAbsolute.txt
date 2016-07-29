@@ -1,6 +1,0 @@
-E:\WorkSpacePlace\BasePlace\WebSignalRClient\bin\WebClient.dll.config
-E:\WorkSpacePlace\BasePlace\WebSignalRClient\bin\WebClient.dll
-E:\WorkSpacePlace\BasePlace\WebSignalRClient\bin\WebClient.pdb
-E:\WorkSpacePlace\BasePlace\WebSignalRClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
-E:\WorkSpacePlace\BasePlace\WebSignalRClient\obj\Debug\WebClient.dll
-E:\WorkSpacePlace\BasePlace\WebSignalRClient\obj\Debug\WebClient.pdb
