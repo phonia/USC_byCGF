@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfClient.Teams.jioinTeam"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="450" Height="220">
+    <Canvas >
+
+
+        <ListBox Name="listbox_org" Canvas.Left="10" Canvas.Top="39" Width="250" Height="134" >
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Border>
+                                    <RadioButton GroupName="CompanyName">
+                                        <ContentPresenter Content="{TemplateBinding ListBoxItem.Content}"/>
+                                    </RadioButton>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <!--<ListBoxItem Content="XXX公司" />
+            <ListBoxItem Content="XXX高速公司" />-->
+    
+        </ListBox>
+        <DockPanel Canvas.Top="3" Canvas.Left="3" Margin="3" HorizontalAlignment="Stretch">
+            <Label Content="组织名称:" DockPanel.Dock="Left" Grid.Row="0"/>
+            <TextBox HorizontalAlignment="Stretch" x:Name="organizitionName" Width="315"/>
+            <Button Name="btn_Search" Height="28" Width="40" DockPanel.Dock="Right" Margin="10,0,0,0" Content="查询" Click="btn_Search_Click"/>
+        </DockPanel>
+
+        <StackPanel Canvas.Left="260" Canvas.Top="39" Width="174" Height="134"  >
+            <DockPanel Margin="2" />
+            <DockPanel  Margin="2"/>
+
+        </StackPanel>
+        <Button Content="确定" Width="50" Canvas.Left="300" Canvas.Top="151"/>
+        <Button Content="取消" Width="50" Canvas.Left="380" Canvas.Top="151"/>
+
+
+
+    </Canvas>
+</Window>
