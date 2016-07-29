@@ -1,0 +1,1522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AthenaGISDatabaseStoreContainer" CdmEntityContainer="DatabaseContext">
+    <EntitySetMapping Name="Organizations">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Organization)">
+        <MappingFragment StoreEntitySet="Organizations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrganizationCode" ColumnName="OrganizationCode" />
+          <ScalarProperty Name="OrgaName" ColumnName="OrgaName" />
+          <ScalarProperty Name="Certificates" ColumnName="Certificates" />
+          <ScalarProperty Name="EstablishmentDate" ColumnName="EstablishmentDate" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="MarkerString" ColumnName="MarkerString" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organization_ContactTables">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Organization_ContacTable)">
+        <MappingFragment StoreEntitySet="Organization_ContactTables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrganizBasicID" ColumnName="OrganizBasicID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tools" ColumnName="Tools" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Position)">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="PositionType" ColumnName="PositionType" />
+          <ScalarProperty Name="PositionTile" ColumnName="PositionTile" />
+          <ScalarProperty Name="TaskNature" ColumnName="TaskNature" />
+          <ScalarProperty Name="WorkLocation" ColumnName="WorkLocation" />
+          <ScalarProperty Name="SolaryStandard" ColumnName="SolaryStandard" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="IsAdministrator" ColumnName="IsAdministrator" />
+          <ScalarProperty Name="PostRequireID" ColumnName="PostRequireID" />
+          <ScalarProperty Name="PositionLevel" ColumnName="PositionLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ActualName" ColumnName="ActualName" />
+          <ScalarProperty Name="PersonalID" ColumnName="PersonalID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_ContactTable">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.User_ContacTable)">
+        <MappingFragment StoreEntitySet="User_ContactTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tools" ColumnName="Tools" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Task)">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Creater" ColumnName="Creater" />
+          <ScalarProperty Name="PreviousTask" ColumnName="PreviousTask" />
+          <ScalarProperty Name="Task_TypeID" ColumnName="Task_TypeID" />
+          <ScalarProperty Name="TaskStateID" ColumnName="TaskStateID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ParentTask" ColumnName="ParentTask" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Project)">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectContent" ColumnName="ProjectContent" />
+          <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Creater" ColumnName="Creater" />
+          <ScalarProperty Name="CreatTime" ColumnName="CreatTime" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="WorkSpaceId" ColumnName="WorkSpaceId" />
+          <ScalarProperty Name="WorkSpaceManageId" ColumnName="WorkSpaceManageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginLogs">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.LoginLog)">
+        <MappingFragment StoreEntitySet="LoginLogs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CurrentSate" ColumnName="CurrentSate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_Graphs">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_Graph)">
+        <MappingFragment StoreEntitySet="Land_Graphs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Geometry" ColumnName="Geometry" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="geography" ColumnName="geography" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="X3DPoints" ColumnName="X3DPoints" />
+          <ScalarProperty Name="CoordinarySystem" ColumnName="CoordinarySystem" />
+          <ScalarProperty Name="SourcesTable" ColumnName="SourcesTable" />
+          <ScalarProperty Name="SourcesID" ColumnName="SourcesID" />
+          <ScalarProperty Name="GeometryType" ColumnName="GeometryType" />
+          <ScalarProperty Name="GraphName" ColumnName="GraphName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_Types">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_Type)">
+        <MappingFragment StoreEntitySet="Land_Types">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Keys" ColumnName="Keys" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="Type_Code" ColumnName="Type_Code" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_Image">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_Image)">
+        <MappingFragment StoreEntitySet="Land_Image">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="PhotoDate" ColumnName="PhotoDate" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Land_managerID" ColumnName="Land_managerID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_Video">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_Video)">
+        <MappingFragment StoreEntitySet="Land_Video">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="VideoDate" ColumnName="VideoDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="VideoStream" ColumnName="VideoStream" />
+          <ScalarProperty Name="Land_GraphID" ColumnName="Land_GraphID" />
+          <ScalarProperty Name="Land_managerID" ColumnName="Land_managerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncurredExpenses">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.IncurredExpense)">
+        <MappingFragment StoreEntitySet="IncurredExpenses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContentDescription" ColumnName="ContentDescription" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="ExpenseType" ColumnName="ExpenseType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Expense">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Project_Expense)">
+        <MappingFragment StoreEntitySet="Project_Expense">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+          <ScalarProperty Name="EstimateExpense" ColumnName="EstimateExpense" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_DemolitionContracts">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_DemolitionContract)">
+        <MappingFragment StoreEntitySet="Land_DemolitionContracts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Land_GraphID" ColumnName="Land_GraphID" />
+          <ScalarProperty Name="ContractPath" ColumnName="ContractPath" />
+          <ScalarProperty Name="Land_managerID" ColumnName="Land_managerID" />
+          <ScalarProperty Name="binary" ColumnName="binary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationTransitions">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.OrganizationTransition)">
+        <MappingFragment StoreEntitySet="OrganizationTransitions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cause" ColumnName="Cause" />
+          <ScalarProperty Name="FundAlteration" ColumnName="FundAlteration" />
+          <ScalarProperty Name="PropertyAlteration" ColumnName="PropertyAlteration" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Others" ColumnName="Others" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="OldOrgan" ColumnName="OldOrgan" />
+          <ScalarProperty Name="NewOrgan" ColumnName="NewOrgan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_Graph_Handles">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_Graph_Handle)">
+        <MappingFragment StoreEntitySet="Land_Graph_Handles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TaskContent" ColumnName="TaskContent" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="CurrentState" ColumnName="CurrentState" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Land_TaskTypeID" ColumnName="Land_TaskTypeID" />
+          <ScalarProperty Name="Implementer" ColumnName="Implementer" />
+          <ScalarProperty Name="Land_managerID" ColumnName="Land_managerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_Ownerships">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_Ownership)">
+        <MappingFragment StoreEntitySet="Land_Ownerships">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Situation" ColumnName="Situation" />
+          <ScalarProperty Name="Attitude" ColumnName="Attitude" />
+          <ScalarProperty Name="Land_managerID" ColumnName="Land_managerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskEquipments">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.TaskEquipment)">
+        <MappingFragment StoreEntitySet="TaskEquipments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="TaskSheetID" ColumnName="TaskSheetID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organization_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Organization_Type)">
+        <MappingFragment StoreEntitySet="Organization_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ocode" ColumnName="Ocode" />
+          <ScalarProperty Name="OName" ColumnName="OName" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentManages">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocumentManage)">
+        <MappingFragment StoreEntitySet="DocumentManages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Catalog" ColumnName="Catalog" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Handler" ColumnName="Handler" />
+          <ScalarProperty Name="DocManageStateID" ColumnName="DocManageStateID" />
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="HandeTime" ColumnName="HandeTime" />
+          <ScalarProperty Name="EventTimeEventTimeID" ColumnName="EventTimeEventTimeID" />
+          <ScalarProperty Name="DocCheckStateID" ColumnName="DocCheckStateID" />
+          <ScalarProperty Name="SecurityinfoID" ColumnName="SecurityinfoID" />
+          <ScalarProperty Name="ParentVer" ColumnName="ParentVer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMessages">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.UserMessage)">
+        <MappingFragment StoreEntitySet="UserMessages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ReplyID" ColumnName="ReplyID" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="LoginLogID" ColumnName="LoginLogID" />
+          <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserGroups">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.UserGroup)">
+        <MappingFragment StoreEntitySet="UserGroups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Creator" ColumnName="Creator" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="GroupNameID" ColumnName="GroupNameID" />
+          <ScalarProperty Name="Rule" ColumnName="Rule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationOtherNames">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.OrganizationOtherName)">
+        <MappingFragment StoreEntitySet="OrganizationOtherNames">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OtherName" ColumnName="OtherName" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_TaskType">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_TaskType)">
+        <MappingFragment StoreEntitySet="Land_TaskType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskStates">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.TaskState)">
+        <MappingFragment StoreEntitySet="TaskStates">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TaskStateName" ColumnName="TaskStateName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Land_manager">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Land_manager)">
+        <MappingFragment StoreEntitySet="Land_manager">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Geo_GraphID" ColumnName="Geo_GraphID" />
+          <ScalarProperty Name="Land_TypeID" ColumnName="Land_TypeID" />
+          <ScalarProperty Name="Land_Item" ColumnName="Land_Item" />
+          <ScalarProperty Name="HanderState" ColumnName="HanderState" />
+          <ScalarProperty Name="StandardadministrativecodeSacID" ColumnName="StandardadministrativecodeSacID" />
+          <ScalarProperty Name="BussnessVerID" ColumnName="BussnessVerID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Administrativecodes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Administrativecode)">
+        <MappingFragment StoreEntitySet="Administrativecodes">
+          <ScalarProperty Name="SacID" ColumnName="SacID" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="Geometry" ColumnName="Geometry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocumentType)">
+        <MappingFragment StoreEntitySet="DocumentTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocManageStates">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocManageState)">
+        <MappingFragment StoreEntitySet="DocManageStates">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DState" ColumnName="DState" />
+          <ScalarProperty Name="DStateName" ColumnName="DStateName" />
+          <ScalarProperty Name="DocManageStateID" ColumnName="DocManageStateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BussnessVers">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.BussnessVer)">
+        <MappingFragment StoreEntitySet="BussnessVers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="other" ColumnName="other" />
+          <ScalarProperty Name="TimeLineTimeLineID" ColumnName="TimeLineTimeLineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskItems">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.TaskItem)">
+        <MappingFragment StoreEntitySet="TaskItems">
+          <ScalarProperty Name="TaskItemID" ColumnName="TaskItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemContent" ColumnName="ItemContent" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductStandards">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ProductStandard)">
+        <MappingFragment StoreEntitySet="ProductStandards">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="measureUnit" ColumnName="measureUnit" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IndustryCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.IndustryCode)">
+        <MappingFragment StoreEntitySet="IndustryCodes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZipCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ZipCode)">
+        <MappingFragment StoreEntitySet="ZipCodes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AdministrativecodeSacID" ColumnName="AdministrativecodeSacID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IPCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.IPCode)">
+        <MappingFragment StoreEntitySet="IPCodes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdministrativecodeSacID" ColumnName="AdministrativecodeSacID" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizBasics">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.OrganizBasic)">
+        <MappingFragment StoreEntitySet="OrganizBasics">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+          <ScalarProperty Name="Domicile" ColumnName="Domicile" />
+          <ScalarProperty Name="LegaPersonID" ColumnName="LegaPersonID" />
+          <ScalarProperty Name="BussinessAddress" ColumnName="BussinessAddress" />
+          <ScalarProperty Name="BussinessAddressDetail" ColumnName="BussinessAddressDetail" />
+          <ScalarProperty Name="RegisteredCapital" ColumnName="RegisteredCapital" />
+          <ScalarProperty Name="BusinessScope" ColumnName="BusinessScope" />
+          <ScalarProperty Name="BussinessModel" ColumnName="BussinessModel" />
+          <ScalarProperty Name="SubordinateID" ColumnName="SubordinateID" />
+          <ScalarProperty Name="Organization_TypeID" ColumnName="Organization_TypeID" />
+          <ScalarProperty Name="SupervisorSection" ColumnName="SupervisorSection" />
+          <ScalarProperty Name="OperatingPeriod" ColumnName="OperatingPeriod" />
+          <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+          <ScalarProperty Name="OtherInfo" ColumnName="OtherInfo" />
+          <ScalarProperty Name="OverrideParent" ColumnName="OverrideParent" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="IndustryCodeID" ColumnName="IndustryCodeID" />
+          <ScalarProperty Name="AdministrativecodeSacID" ColumnName="AdministrativecodeSacID" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostRequires">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.PostRequire)">
+        <MappingFragment StoreEntitySet="PostRequires">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SpecializedID" ColumnName="SpecializedID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Ranks" ColumnName="Ranks" />
+          <ScalarProperty Name="EducationRequirement" ColumnName="EducationRequirement" />
+          <ScalarProperty Name="SkillRequirement" ColumnName="SkillRequirement" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Post)">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PostName" ColumnName="PostName" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="MarkerString" ColumnName="MarkerString" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Jobname" ColumnName="Jobname" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkSpaces">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.WorkSpace)">
+        <MappingFragment StoreEntitySet="WorkSpaces">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="MarkerString" ColumnName="MarkerString" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="IndustrySolutionId" ColumnName="IndustrySolutionId" />
+          <ScalarProperty Name="WorkSpaceID" ColumnName="WorkSpaceID" />
+          <ScalarProperty Name="WorkModulId" ColumnName="WorkModulId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subordinates">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Subordinate)">
+        <MappingFragment StoreEntitySet="Subordinates">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specializeds">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Specialized)">
+        <MappingFragment StoreEntitySet="Specializeds">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SpecialName" ColumnName="SpecialName" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRelateTables">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.UserRelateTable)">
+        <MappingFragment StoreEntitySet="UserRelateTables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserID1" ColumnName="UserID1" />
+          <ScalarProperty Name="UserRelateTypeID" ColumnName="UserRelateTypeID" />
+          <ScalarProperty Name="RelateObject" ColumnName="RelateObject" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRelateTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.UserRelateType)">
+        <MappingFragment StoreEntitySet="UserRelateTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GBT_13923_2006s">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.GBT_13923_2006)">
+        <MappingFragment StoreEntitySet="GBT_13923_2006s">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FeatureName" ColumnName="FeatureName" />
+          <ScalarProperty Name="t5_2K" ColumnName="t5_2K" />
+          <ScalarProperty Name="K5_100K" ColumnName="K5_100K" />
+          <ScalarProperty Name="K25_M" ColumnName="K25_M" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="BussnessVerID" ColumnName="BussnessVerID" />
+          <ScalarProperty Name="Extend" ColumnName="Extend" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectLocations">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ProjectLocation)">
+        <MappingFragment StoreEntitySet="ProjectLocations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Geometry" ColumnName="Geometry" />
+          <ScalarProperty Name="CoordinarySystem" ColumnName="CoordinarySystem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentContents">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocumentContent)">
+        <MappingFragment StoreEntitySet="DocumentContents">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tile" ColumnName="Tile" />
+          <ScalarProperty Name="Document" ColumnName="Document" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="DocumentManageID" ColumnName="DocumentManageID" />
+          <ScalarProperty Name="DocumentContentID" ColumnName="DocumentContentID" />
+          <ScalarProperty Name="workTaskId" ColumnName="workTaskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocCheckStates">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocCheckState)">
+        <MappingFragment StoreEntitySet="DocCheckStates">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="CheckState" ColumnName="CheckState" />
+          <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Securityinfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Securityinfo)">
+        <MappingFragment StoreEntitySet="Securityinfoes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SecurityName" ColumnName="SecurityName" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="SecurityinfoID" ColumnName="SecurityinfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganicInvestors">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.OrganicInvestor)">
+        <MappingFragment StoreEntitySet="OrganicInvestors">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Investor" ColumnName="Investor" />
+          <ScalarProperty Name="InvestorName" ColumnName="InvestorName" />
+          <ScalarProperty Name="InvestorNumber" ColumnName="InvestorNumber" />
+          <ScalarProperty Name="CentisifierType" ColumnName="CentisifierType" />
+          <ScalarProperty Name="OrganizBasicID" ColumnName="OrganizBasicID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrgaRegisterDocments">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.OrgaRegisterDocment)">
+        <MappingFragment StoreEntitySet="OrgaRegisterDocments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrganizBasicID" ColumnName="OrganizBasicID" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="RegisterDocumentTypeID" ColumnName="RegisterDocumentTypeID" />
+          <ScalarProperty Name="DocmentContent" ColumnName="DocmentContent" />
+          <ScalarProperty Name="DocumentFormat" ColumnName="DocumentFormat" />
+          <ScalarProperty Name="RecordeTime" ColumnName="RecordeTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegisterDocumentTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.RegisterDocumentType)">
+        <MappingFragment StoreEntitySet="RegisterDocumentTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationEvents">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.OrganizationEvent)">
+        <MappingFragment StoreEntitySet="OrganizationEvents">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="EventContent" ColumnName="EventContent" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="HanderSection" ColumnName="HanderSection" />
+          <ScalarProperty Name="Hander" ColumnName="Hander" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="EventState" ColumnName="EventState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageGroupMessagers">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.MessageGroupMessager)">
+        <MappingFragment StoreEntitySet="MessageGroupMessagers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="MessageGroupID" ColumnName="MessageGroupID" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupNames">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.GroupName)">
+        <MappingFragment StoreEntitySet="GroupNames">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatTime" ColumnName="CreatTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerGoups">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.CustomerGoup)">
+        <MappingFragment StoreEntitySet="CustomerGoups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="CreatID" ColumnName="CreatID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DllFileStreams">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DllFileStream)">
+        <MappingFragment StoreEntitySet="DllFileStreams">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IndustrySolutionId" ColumnName="IndustrySolutionId" />
+          <ScalarProperty Name="DllFileStreamID" ColumnName="DllFileStreamID" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="DllfileStream" ColumnName="DllfileStream" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="MainWindowName" ColumnName="MainWindowName" />
+          <ScalarProperty Name="Txt2" ColumnName="Txt2" />
+          <ScalarProperty Name="URI" ColumnName="URI" />
+          <ScalarProperty Name="Paragram" ColumnName="Paragram" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Currency">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.F_Currency)">
+        <MappingFragment StoreEntitySet="F_Currency">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_unitgroup">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.F_unitgroup)">
+        <MappingFragment StoreEntitySet="F_unitgroup">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_measureunit">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.F_measureunit)">
+        <MappingFragment StoreEntitySet="F_measureunit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="F_unitgroupID" ColumnName="F_unitgroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_account">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.F_account)">
+        <MappingFragment StoreEntitySet="F_account">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_itemclass">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.F_itemclass)">
+        <MappingFragment StoreEntitySet="F_itemclass">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_item">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.F_item)">
+        <MappingFragment StoreEntitySet="F_item">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="F_itemclassID" ColumnName="F_itemclassID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinaceAccoutTabs">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.FinaceAccoutTab)">
+        <MappingFragment StoreEntitySet="FinaceAccoutTabs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Scope" ColumnName="Scope" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationCustomTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.OrganizationCustomType)">
+        <MappingFragment StoreEntitySet="OrganizationCustomTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="CustomCategoryID" ColumnName="CustomCategoryID" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.CustomCategory)">
+        <MappingFragment StoreEntitySet="CustomCategories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="CustomCategoryID" ColumnName="CustomCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesktopGeoManages">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DesktopGeoManage)">
+        <MappingFragment StoreEntitySet="DesktopGeoManages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tile" ColumnName="Tile" />
+          <ScalarProperty Name="EventTimeEventTimeID" ColumnName="EventTimeEventTimeID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="Geo_GraphID" ColumnName="Geo_GraphID" />
+          <ScalarProperty Name="CustomGeographicTypeID" ColumnName="CustomGeographicTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomGeographicTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.CustomGeographicType)">
+        <MappingFragment StoreEntitySet="CustomGeographicTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="CustomGeographicTypeID" ColumnName="CustomGeographicTypeID" />
+          <ScalarProperty Name="EventTimeEventTimeID" ColumnName="EventTimeEventTimeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskLinks">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.TaskLink)">
+        <MappingFragment StoreEntitySet="TaskLinks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LinkName" ColumnName="LinkName" />
+          <ScalarProperty Name="LinkType" ColumnName="LinkType" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductStandardID" ColumnName="ProductStandardID" />
+          <ScalarProperty Name="Pname" ColumnName="Pname" />
+          <ScalarProperty Name="PModel" ColumnName="PModel" />
+          <ScalarProperty Name="Units" ColumnName="Units" />
+          <ScalarProperty Name="SCode" ColumnName="SCode" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="PCode" ColumnName="PCode" />
+          <ScalarProperty Name="OrganizBasicID" ColumnName="OrganizBasicID" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductEvents">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ProductEvent)">
+        <MappingFragment StoreEntitySet="ProductEvents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Creater" ColumnName="Creater" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCompositions">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ProductComposition)">
+        <MappingFragment StoreEntitySet="ProductCompositions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChildProductId" ColumnName="ChildProductId" />
+          <ScalarProperty Name="Function" ColumnName="Function" />
+          <ScalarProperty Name="descript" ColumnName="descript" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ProductCompositionId" ColumnName="ProductCompositionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCustomTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ProductCustomType)">
+        <MappingFragment StoreEntitySet="ProductCustomTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductCustomCategoryId" ColumnName="ProductCustomCategoryId" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCustomCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ProductCustomCategory)">
+        <MappingFragment StoreEntitySet="ProductCustomCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ProductCustomCategoryId" ColumnName="ProductCustomCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="physicalAssets">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.physicalAsset)">
+        <MappingFragment StoreEntitySet="physicalAssets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="PlaceOfBuy" ColumnName="PlaceOfBuy" />
+          <ScalarProperty Name="BuyTime" ColumnName="BuyTime" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="Validity" ColumnName="Validity" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="MaintenancePeriod" ColumnName="MaintenancePeriod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetUses">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.AssetUse)">
+        <MappingFragment StoreEntitySet="AssetUses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="physicalAssetId" ColumnName="physicalAssetId" />
+          <ScalarProperty Name="UseType" ColumnName="UseType" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="UseTime" ColumnName="UseTime" />
+          <ScalarProperty Name="PlaceOfUse" ColumnName="PlaceOfUse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetMaintenances">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.AssetMaintenance)">
+        <MappingFragment StoreEntitySet="AssetMaintenances">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="physicalAssetId" ColumnName="physicalAssetId" />
+          <ScalarProperty Name="Maintenancer" ColumnName="Maintenancer" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetBaseTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.AssetBaseType)">
+        <MappingFragment StoreEntitySet="AssetBaseTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="AssetTypeId" ColumnName="AssetTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectChangeEvents">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ProjectChangeEvent)">
+        <MappingFragment StoreEntitySet="ProjectChangeEvents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Cause" ColumnName="Cause" />
+          <ScalarProperty Name="FielName" ColumnName="FielName" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Changer" ColumnName="Changer" />
+          <ScalarProperty Name="ChangeTime" ColumnName="ChangeTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_spqx">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_spqx)">
+        <MappingFragment StoreEntitySet="Tudi_spqx">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_ywlc">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_ywlc)">
+        <MappingFragment StoreEntitySet="Tudi_ywlc">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_ydjh">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_ydjh)">
+        <MappingFragment StoreEntitySet="Tudi_ydjh">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="exchangecontent" ColumnName="exchangecontent" />
+          <ScalarProperty Name="exchangeFormat" ColumnName="exchangeFormat" />
+          <ScalarProperty Name="Tudi_spqxId" ColumnName="Tudi_spqxId" />
+          <ScalarProperty Name="Tudi_ywlcId" ColumnName="Tudi_ywlcId" />
+          <ScalarProperty Name="Tudi_sjydbbjhflId" ColumnName="Tudi_sjydbbjhflId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_sjydbbjhfl">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_sjydbbjhfl)">
+        <MappingFragment StoreEntitySet="Tudi_sjydbbjhfl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tudi_gtgl_TaskCodeId" ColumnName="Tudi_gtgl_TaskCodeId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_TaskTypeCode">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_TaskTypeCode)">
+        <MappingFragment StoreEntitySet="Tudi_TaskTypeCode">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_gtgl_TaskCode">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_gtgl_TaskCode)">
+        <MappingFragment StoreEntitySet="Tudi_gtgl_TaskCode">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdministrativecodeSacID" ColumnName="AdministrativecodeSacID" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+          <ScalarProperty Name="xzjb" ColumnName="xzjb" />
+          <ScalarProperty Name="SubordinateID" ColumnName="SubordinateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_projInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_projInfo)">
+        <MappingFragment StoreEntitySet="Tudi_projInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="proj_no" ColumnName="proj_no" />
+          <ScalarProperty Name="proj_name" ColumnName="proj_name" />
+          <ScalarProperty Name="canton_code" ColumnName="canton_code" />
+          <ScalarProperty Name="Tudi_projTypeId" ColumnName="Tudi_projTypeId" />
+          <ScalarProperty Name="accept_date" ColumnName="accept_date" />
+          <ScalarProperty Name="Tudi_projKindId" ColumnName="Tudi_projKindId" />
+          <ScalarProperty Name="Farm_Tot" ColumnName="Farm_Tot" />
+          <ScalarProperty Name="Farm_State" ColumnName="Farm_State" />
+          <ScalarProperty Name="Farm_Group" ColumnName="Farm_Group" />
+          <ScalarProperty Name="Tilth_State" ColumnName="Tilth_State" />
+          <ScalarProperty Name="Tilth_Group" ColumnName="Tilth_Group" />
+          <ScalarProperty Name="BF_Group" ColumnName="BF_Group" />
+          <ScalarProperty Name="Build_Tot" ColumnName="Build_Tot" />
+          <ScalarProperty Name="Build_Group" ColumnName="Build_Group" />
+          <ScalarProperty Name="Build_State" ColumnName="Build_State" />
+          <ScalarProperty Name="UnUsed_Tot" ColumnName="UnUsed_Tot" />
+          <ScalarProperty Name="UnUsed_Group" ColumnName="UnUsed_Group" />
+          <ScalarProperty Name="UnUsed_State" ColumnName="UnUsed_State" />
+          <ScalarProperty Name="Pay_std" ColumnName="Pay_std" />
+          <ScalarProperty Name="Reset_Farmer" ColumnName="Reset_Farmer" />
+          <ScalarProperty Name="Labour_Force" ColumnName="Labour_Force" />
+          <ScalarProperty Name="put_way" ColumnName="put_way" />
+          <ScalarProperty Name="approve_state" ColumnName="approve_state" />
+          <ScalarProperty Name="Tudi_shenpiStateId" ColumnName="Tudi_shenpiStateId" />
+          <ScalarProperty Name="Tudi_Approve_type" ColumnName="Tudi_Approve_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_plotInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_plotInfo)">
+        <MappingFragment StoreEntitySet="Tudi_plotInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="proj_no" ColumnName="proj_no" />
+          <ScalarProperty Name="Plotid" ColumnName="Plotid" />
+          <ScalarProperty Name="plotname" ColumnName="plotname" />
+          <ScalarProperty Name="total_area" ColumnName="total_area" />
+          <ScalarProperty Name="Geo_GraphID" ColumnName="Geo_GraphID" />
+          <ScalarProperty Name="Tudi_dikuaiyongtuId" ColumnName="Tudi_dikuaiyongtuId" />
+          <ScalarProperty Name="Tudi_projInfoId" ColumnName="Tudi_projInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_projType">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_projType)">
+        <MappingFragment StoreEntitySet="Tudi_projType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StringCode" ColumnName="StringCode" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_shenpiState">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_shenpiState)">
+        <MappingFragment StoreEntitySet="Tudi_shenpiState">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_shenpiqx">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_shenpiqx)">
+        <MappingFragment StoreEntitySet="Tudi_shenpiqx">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SubordinateID" ColumnName="SubordinateID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_dikuaiyongtu">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_dikuaiyongtu)">
+        <MappingFragment StoreEntitySet="Tudi_dikuaiyongtu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_projKind">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_projKind)">
+        <MappingFragment StoreEntitySet="Tudi_projKind">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_handleState">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_handleState)">
+        <MappingFragment StoreEntitySet="Tudi_handleState">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_ApproveInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_ApproveInfo)">
+        <MappingFragment StoreEntitySet="Tudi_ApproveInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tudi_projInfoId" ColumnName="Tudi_projInfoId" />
+          <ScalarProperty Name="Proj_no" ColumnName="Proj_no" />
+          <ScalarProperty Name="Proj_name" ColumnName="Proj_name" />
+          <ScalarProperty Name="Receivtime" ColumnName="Receivtime" />
+          <ScalarProperty Name="Xmstate" ColumnName="Xmstate" />
+          <ScalarProperty Name="Tudi_handleStateId" ColumnName="Tudi_handleStateId" />
+          <ScalarProperty Name="Chargerarea" ColumnName="Chargerarea" />
+          <ScalarProperty Name="Notetime" ColumnName="Notetime" />
+          <ScalarProperty Name="Chargevalue" ColumnName="Chargevalue" />
+          <ScalarProperty Name="Responsetime" ColumnName="Responsetime" />
+          <ScalarProperty Name="ResponseNo" ColumnName="ResponseNo" />
+          <ScalarProperty Name="Responsarea" ColumnName="Responsarea" />
+          <ScalarProperty Name="Fram_tot" ColumnName="Fram_tot" />
+          <ScalarProperty Name="Fram_state" ColumnName="Fram_state" />
+          <ScalarProperty Name="Fram_group" ColumnName="Fram_group" />
+          <ScalarProperty Name="Tilth_state" ColumnName="Tilth_state" />
+          <ScalarProperty Name="Tilth_group" ColumnName="Tilth_group" />
+          <ScalarProperty Name="BF_group" ColumnName="BF_group" />
+          <ScalarProperty Name="Build_tot" ColumnName="Build_tot" />
+          <ScalarProperty Name="Build_group" ColumnName="Build_group" />
+          <ScalarProperty Name="Build_state" ColumnName="Build_state" />
+          <ScalarProperty Name="Unused_tot" ColumnName="Unused_tot" />
+          <ScalarProperty Name="Unused_Group" ColumnName="Unused_Group" />
+          <ScalarProperty Name="Unused_state" ColumnName="Unused_state" />
+          <ScalarProperty Name="Pay_std" ColumnName="Pay_std" />
+          <ScalarProperty Name="Reset_farmer" ColumnName="Reset_farmer" />
+          <ScalarProperty Name="Labour_force" ColumnName="Labour_force" />
+          <ScalarProperty Name="Pay_way" ColumnName="Pay_way" />
+          <ScalarProperty Name="check_Area" ColumnName="check_Area" />
+          <ScalarProperty Name="Chk_Tilth_Area" ColumnName="Chk_Tilth_Area" />
+          <ScalarProperty Name="Responsefile" ColumnName="Responsefile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_st_approveInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_st_approveInfo)">
+        <MappingFragment StoreEntitySet="Tudi_st_approveInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Proj_no" ColumnName="Proj_no" />
+          <ScalarProperty Name="Approve_notion" ColumnName="Approve_notion" />
+          <ScalarProperty Name="Fram_tot" ColumnName="Fram_tot" />
+          <ScalarProperty Name="Fram_state" ColumnName="Fram_state" />
+          <ScalarProperty Name="Fram_group" ColumnName="Fram_group" />
+          <ScalarProperty Name="Tilth_State" ColumnName="Tilth_State" />
+          <ScalarProperty Name="Tilth_group" ColumnName="Tilth_group" />
+          <ScalarProperty Name="BF_group" ColumnName="BF_group" />
+          <ScalarProperty Name="Build_tot" ColumnName="Build_tot" />
+          <ScalarProperty Name="Build_state" ColumnName="Build_state" />
+          <ScalarProperty Name="Build_group" ColumnName="Build_group" />
+          <ScalarProperty Name="Unused_tot" ColumnName="Unused_tot" />
+          <ScalarProperty Name="Unused_state" ColumnName="Unused_state" />
+          <ScalarProperty Name="Unuserd_group" ColumnName="Unuserd_group" />
+          <ScalarProperty Name="Pay_std" ColumnName="Pay_std" />
+          <ScalarProperty Name="Reset_farmer" ColumnName="Reset_farmer" />
+          <ScalarProperty Name="Labour_force" ColumnName="Labour_force" />
+          <ScalarProperty Name="Pay_way" ColumnName="Pay_way" />
+          <ScalarProperty Name="Check_Area" ColumnName="Check_Area" />
+          <ScalarProperty Name="Chk_Tilth_Area" ColumnName="Chk_Tilth_Area" />
+          <ScalarProperty Name="Approve_state" ColumnName="Approve_state" />
+          <ScalarProperty Name="Approve_type" ColumnName="Approve_type" />
+          <ScalarProperty Name="Tudi_shenpiqxId" ColumnName="Tudi_shenpiqxId" />
+          <ScalarProperty Name="Tudi_shenpiStateId" ColumnName="Tudi_shenpiStateId" />
+          <ScalarProperty Name="Tudi_projInfoId" ColumnName="Tudi_projInfoId" />
+          <ScalarProperty Name="Tudi_st_approveInfoId" ColumnName="Tudi_st_approveInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_stph_ApproveInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_stph_ApproveInfo)">
+        <MappingFragment StoreEntitySet="Tudi_stph_ApproveInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Proj_no" ColumnName="Proj_no" />
+          <ScalarProperty Name="Approve_notion" ColumnName="Approve_notion" />
+          <ScalarProperty Name="Appr_no" ColumnName="Appr_no" />
+          <ScalarProperty Name="App_date" ColumnName="App_date" />
+          <ScalarProperty Name="Appr_date" ColumnName="Appr_date" />
+          <ScalarProperty Name="Appr_area" ColumnName="Appr_area" />
+          <ScalarProperty Name="Farm_tot" ColumnName="Farm_tot" />
+          <ScalarProperty Name="Grp_farm_area" ColumnName="Grp_farm_area" />
+          <ScalarProperty Name="State_farm_area" ColumnName="State_farm_area" />
+          <ScalarProperty Name="Grp_tilth_area" ColumnName="Grp_tilth_area" />
+          <ScalarProperty Name="State_tilth_area" ColumnName="State_tilth_area" />
+          <ScalarProperty Name="Bf_group" ColumnName="Bf_group" />
+          <ScalarProperty Name="Build_tot" ColumnName="Build_tot" />
+          <ScalarProperty Name="Grp_bld_area" ColumnName="Grp_bld_area" />
+          <ScalarProperty Name="State_bld_area" ColumnName="State_bld_area" />
+          <ScalarProperty Name="Unused_tot" ColumnName="Unused_tot" />
+          <ScalarProperty Name="Grp_unused_area" ColumnName="Grp_unused_area" />
+          <ScalarProperty Name="State_unused_area" ColumnName="State_unused_area" />
+          <ScalarProperty Name="Check_area" ColumnName="Check_area" />
+          <ScalarProperty Name="Chk_tilth_area" ColumnName="Chk_tilth_area" />
+          <ScalarProperty Name="Supply_tilth_area" ColumnName="Supply_tilth_area" />
+          <ScalarProperty Name="Plan_tilth_area" ColumnName="Plan_tilth_area" />
+          <ScalarProperty Name="Plan_tlth_Area" ColumnName="Plan_tlth_Area" />
+          <ScalarProperty Name="Posit_tilth_pop" ColumnName="Posit_tilth_pop" />
+          <ScalarProperty Name="Posit_labour" ColumnName="Posit_labour" />
+          <ScalarProperty Name="Put_way" ColumnName="Put_way" />
+          <ScalarProperty Name="Transfer_area" ColumnName="Transfer_area" />
+          <ScalarProperty Name="Remise_area" ColumnName="Remise_area" />
+          <ScalarProperty Name="Remise_money" ColumnName="Remise_money" />
+          <ScalarProperty Name="Lease_area" ColumnName="Lease_area" />
+          <ScalarProperty Name="Year_money" ColumnName="Year_money" />
+          <ScalarProperty Name="Stock_area" ColumnName="Stock_area" />
+          <ScalarProperty Name="Stock_money" ColumnName="Stock_money" />
+          <ScalarProperty Name="Approve_state" ColumnName="Approve_state" />
+          <ScalarProperty Name="Approve_type" ColumnName="Approve_type" />
+          <ScalarProperty Name="Tudi_projInfoId" ColumnName="Tudi_projInfoId" />
+          <ScalarProperty Name="Tudi_stph_ApproveInfoId" ColumnName="Tudi_stph_ApproveInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_HandleStep_State">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_HandleStep_State)">
+        <MappingFragment StoreEntitySet="Tudi_HandleStep_State">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Step" ColumnName="Step" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tudi_Approve_PlotInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Tudi_Approve_PlotInfo)">
+        <MappingFragment StoreEntitySet="Tudi_Approve_PlotInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tudi_st_approveInfoId" ColumnName="Tudi_st_approveInfoId" />
+          <ScalarProperty Name="Tudi_ApproveInfoId" ColumnName="Tudi_ApproveInfoId" />
+          <ScalarProperty Name="Tudi_stph_ApproveInfoId" ColumnName="Tudi_stph_ApproveInfoId" />
+          <ScalarProperty Name="Tudi_plotInfoId" ColumnName="Tudi_plotInfoId" />
+          <ScalarProperty Name="Tudi_dikuaiyongtuId" ColumnName="Tudi_dikuaiyongtuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationAssetTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.OrganizationAssetType)">
+        <MappingFragment StoreEntitySet="OrganizationAssetTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="physicalAssetId" ColumnName="physicalAssetId" />
+          <ScalarProperty Name="AssetBaseTypeId" ColumnName="AssetBaseTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeoGraphs">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.GeoGraph)">
+        <MappingFragment StoreEntitySet="GeoGraphs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="GeometryType" ColumnName="GeometryType" />
+          <ScalarProperty Name="Geometry" ColumnName="Geometry" />
+          <ScalarProperty Name="Geogrphy" ColumnName="Geogrphy" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Point3D" ColumnName="Point3D" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees1">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Employee)">
+        <MappingFragment StoreEntitySet="Employees1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Isvalid" ColumnName="Isvalid" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IndustrySolutions">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.IndustrySolution)">
+        <MappingFragment StoreEntitySet="IndustrySolutions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IndustryCodeID" ColumnName="IndustryCodeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkModuls">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.WorkModul)">
+        <MappingFragment StoreEntitySet="WorkModuls">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FunctionGroupID" ColumnName="FunctionGroupID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ActivityType" ColumnName="ActivityType" />
+          <ScalarProperty Name="WorkModulId" ColumnName="WorkModulId" />
+          <ScalarProperty Name="IndustrySolutionId" ColumnName="IndustrySolutionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkSpaceRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.WorkSpaceRole)">
+        <MappingFragment StoreEntitySet="WorkSpaceRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="WorkSpaceID" ColumnName="WorkSpaceID" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="WorkModulId" ColumnName="WorkModulId" />
+          <ScalarProperty Name="Creater" ColumnName="Creater" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Authorizations">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Authorization)">
+        <MappingFragment StoreEntitySet="Authorizations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
+          <ScalarProperty Name="PostRelation" ColumnName="PostRelation" />
+          <ScalarProperty Name="PostID1" ColumnName="PostID1" />
+          <ScalarProperty Name="ModulPropertyId" ColumnName="ModulPropertyId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserID1" ColumnName="UserID1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModulProperties">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.ModulProperty)">
+        <MappingFragment StoreEntitySet="ModulProperties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WorkModulId" ColumnName="WorkModulId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkMessages">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.WorkMessage)">
+        <MappingFragment StoreEntitySet="WorkMessages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AuthorizationId" ColumnName="AuthorizationId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Environment" ColumnName="Environment" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Request" ColumnName="Request" />
+          <ScalarProperty Name="Repose" ColumnName="Repose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocType)">
+        <MappingFragment StoreEntitySet="DocTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="DocumentManageID" ColumnName="DocumentManageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocReaders">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocReader)">
+        <MappingFragment StoreEntitySet="DocReaders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WorkSpaceID" ColumnName="WorkSpaceID" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocSenders">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocSender)">
+        <MappingFragment StoreEntitySet="DocSenders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocComents">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocComent)">
+        <MappingFragment StoreEntitySet="DocComents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocLocationID" ColumnName="DocLocationID" />
+          <ScalarProperty Name="DocSenderId" ColumnName="DocSenderId" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="RemarkTime" ColumnName="RemarkTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobChanges">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.JobChange)">
+        <MappingFragment StoreEntitySet="JobChanges">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Creater" ColumnName="Creater" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkSpaceTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.WorkSpaceType)">
+        <MappingFragment StoreEntitySet="WorkSpaceTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ByProperty" ColumnName="ByProperty" />
+          <ScalarProperty Name="WorkSpaceID" ColumnName="WorkSpaceID" />
+          <ScalarProperty Name="WorkInstanceTypeId" ColumnName="WorkInstanceTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkInstanceTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.WorkInstanceType)">
+        <MappingFragment StoreEntitySet="WorkInstanceTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="WorkInstanceTypeId" ColumnName="WorkInstanceTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workTasks">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.workTask)">
+        <MappingFragment StoreEntitySet="workTasks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="BegeinTime" ColumnName="BegeinTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DocumentManageID" ColumnName="DocumentManageID" />
+          <ScalarProperty Name="workTaskId" ColumnName="workTaskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomTables">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.CustomTable)">
+        <MappingFragment StoreEntitySet="CustomTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomTabDatas">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.CustomTabData)">
+        <MappingFragment StoreEntitySet="CustomTabDatas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="CustomTableId" ColumnName="CustomTableId" />
+          <ScalarProperty Name="DocumentManageID" ColumnName="DocumentManageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocLocations">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocLocation)">
+        <MappingFragment StoreEntitySet="DocLocations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VisualScope" ColumnName="VisualScope" />
+          <ScalarProperty Name="DocReaderId" ColumnName="DocReaderId" />
+          <ScalarProperty Name="DocSenderId" ColumnName="DocSenderId" />
+          <ScalarProperty Name="IsRuleTransaction" ColumnName="IsRuleTransaction" />
+          <ScalarProperty Name="DocLocationID" ColumnName="DocLocationID" />
+          <ScalarProperty Name="DocumentManageID" ColumnName="DocumentManageID" />
+          <ScalarProperty Name="WorkInstanceTypeId" ColumnName="WorkInstanceTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

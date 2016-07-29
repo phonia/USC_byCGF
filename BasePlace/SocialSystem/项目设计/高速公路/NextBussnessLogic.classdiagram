@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="8779a6f5-dba9-4027-bb16-73182164a034" name="NextBussnessLogic" linkedPackageId="ef119b3b-d228-46d6-a199-e1e242bc531f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="96efe4c4-4735-487e-b37c-1913ac40707a">
+      <elementDefinition Id="2197d508-462d-4918-a421-8ef2f518fa3c" />
+      <body>表示wbs生产过程所需要从事的产品或半产品过程虚拟化</body>
+      <annotatedElements>
+        <classMoniker Id="f21b5682-47f8-4cf2-92e5-c3e4637e5989" LastKnownName="显示3D模型" />
+      </annotatedElements>
+    </comment>
+    <comment Id="b911c12e-f248-4039-a4a9-0c878b2009a4">
+      <elementDefinition Id="d846cd8f-dd88-4bdb-b2a8-3dbdce1721c8" />
+      <body>对于不同的地貌等，这些基础的数据如何匹配？有悖于通用结构的理论。也可以采用</body>
+      <annotatedElements>
+        <classMoniker Id="c9247c5a-e1b4-4e70-9d84-679358fa76a6" LastKnownName="Mesh基础模型" />
+      </annotatedElements>
+    </comment>
+    <comment Id="90d9c269-920b-428a-acfa-207b25c829e5">
+      <elementDefinition Id="d96d97fb-e1b3-4ed8-a931-b68d0ae8e6c4" />
+      <body>产品的生命周期，包括设计、建设、运营养护</body>
+      <annotatedElements>
+        <classMoniker Id="4bd2be72-38b2-48c9-b153-d73393da8a3c" LastKnownName="工程分项工程量" />
+      </annotatedElements>
+    </comment>
+    <comment Id="20a0da79-f020-4bbe-9ca0-2f12134bb1bd">
+      <elementDefinition Id="c5e3f3e3-57e4-481e-b7df-7acfbf93fa37" />
+      <body>应该是工程项目清单+工程量清单+图纸清单</body>
+      <annotatedElements>
+        <classMoniker Id="4bd2be72-38b2-48c9-b153-d73393da8a3c" LastKnownName="工程分项工程量" />
+      </annotatedElements>
+    </comment>
+    <comment Id="43caf11d-2671-43a5-8d80-ad068ee65a2a">
+      <elementDefinition Id="551e8f64-4766-434b-a52f-620b186a499b" />
+      <body>由于涉及不同的工艺，施工内容如，钢筋、立模等。施工方法如：仰拱填充.
+应该说，这个台账将决定模型的填充方式；</body>
+      <annotatedElements>
+        <classMoniker Id="b5f7b0fd-de16-42f1-9f3c-986b9659115e" LastKnownName="施工台账" />
+      </annotatedElements>
+    </comment>
+    <comment Id="da3cb544-fb3a-4aaa-8347-f468f88f13d0">
+      <elementDefinition Id="9be32fff-1858-4fb0-a8fe-4229d8e277f5" />
+      <body>版本号为非数字的终结符，在分部分项的最新版本中不显示。阶段代码表示规划、设计、施工、维护等过程的成果或变更。</body>
+      <annotatedElements>
+        <classMoniker Id="1aad4756-ae77-4854-af2a-c890cc615fce" LastKnownName="wbs分部分项" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="ae0d2961-7e0f-4e47-902b-237e882b9f71">
+      <profileInstance Id="0f2bd2b8-508a-404c-9cfd-40af1401f1c2" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="13ff17bf-b517-46ab-a0a6-a78ff454cfac">
+      <profileInstance Id="3da4d8f6-a12a-478b-b130-90c6f3c21c35" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a4159c2c-03ee-4e6a-892e-3974ff08dab5" name="基本结构" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="56e38408-6082-45fe-8f3f-7fa1191d402f" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c9247c5a-e1b4-4e70-9d84-679358fa76a6" name="Mesh基础模型" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2d528b5f-071c-4c62-ba1b-137a752870b8" />
+        <targetEnds>
+          <association Id="c133dbf9-0e7c-422e-afba-9aea1593f073" isDerived="false" sourceEndRoleName="Mesh基础模型" targetEndRoleName="基本结构" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a4159c2c-03ee-4e6a-892e-3974ff08dab5" LastKnownName="基本结构" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6d44a2ff-26b6-4926-b540-463ab12e3799" name="Mesh基础模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="efa99013-64ad-45bd-b634-8d0b3a64555a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5b854907-8302-4eae-a654-74ab82af3f57" name="基本结构" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="148bc382-244b-4013-b659-c17e9f7110cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="53ae7ad2-066a-45c6-8caa-21da754cb337" />
+          </association>
+          <association Id="30c8fee1-1309-49b5-a3d3-ea9fb5594d07" isDerived="false" sourceEndRoleName="Mesh基础模型" targetEndRoleName="Mesh基础模型" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c9247c5a-e1b4-4e70-9d84-679358fa76a6" LastKnownName="Mesh基础模型" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1116e8e1-10cf-4594-b601-f6f3dea14f29" name="Mesh基础模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="589bfafc-a54e-4baf-a8ea-fa9f73f8b214" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d523b534-d196-4851-8553-ff5dc7df0804" name="Mesh基础模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6cd11e5d-50e9-4af6-9508-66a1dc5bd618" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="00a815bd-a9d0-4e80-ad18-cb03252c4888" />
+          </association>
+          <association Id="1ffb1c74-82b3-4b0c-87bb-8cbfbfd6516a" isDerived="false" sourceEndRoleName="Mesh基础模型" targetEndRoleName="ModelData" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b9595f2b-983e-422f-8697-adfd9e52898b" LastKnownName="Model3DData" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="615b6a3d-8e41-4ae5-b2eb-d5d53733e62c" name="Mesh基础模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="22245103-b412-4c68-a21d-361ddd1730f0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="49ef2bb3-bd4a-4c7a-a8f4-a4f0460c3d45" name="ModelData" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="61e4c748-e72f-4170-98ac-ffba790a222e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="13cae970-ff81-4926-bf81-192973b59ef5" />
+          </association>
+          <association Id="8c1b8252-f882-4392-8cc3-d51f0cafd405" isDerived="false" sourceEndRoleName="Mesh基础模型" targetEndRoleName="工程分项工程量" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4bd2be72-38b2-48c9-b153-d73393da8a3c" LastKnownName="工程分项工程量" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6ab15a4c-8edf-4f18-9d42-f1e2ffc6e97e" name="Mesh基础模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="583f7999-9ee0-4cd6-a295-8ab5a802b913" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1299ec28-ab76-40da-9f08-247be17f7b23" name="工程分项工程量" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3d47ad8e-4676-40bf-860c-f11cb235cad9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7d191511-2d95-4972-8407-45e0c051d31e" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="c0589134-480a-4beb-a299-2b1340b3351a" name="清单的具体内容" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b967704f-e68d-4d02-ade9-ffb8d0d0dfab" />
+          </property>
+          <property Id="fef3612a-6ac6-4712-9d06-4ca6794965c4" name="具体场景" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a08fe150-ebcb-4849-9160-7cd9b6130e27" />
+          </property>
+          <property Id="ab99bb6d-48ea-4f4c-b950-27dd433cd1bc" name="规格" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="16c554e8-07d0-47de-b2f8-6b78ec2742e5" />
+          </property>
+          <property Id="3786dad4-f4ac-4cf1-840d-959ff9f7daab" name="型号" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9f17ac77-5454-4a8a-bc6a-68eeba252905" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c84a208d-5d45-4b3a-a720-8c86ca13ab16" name="分部分项标准" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0c74ff92-d1f2-42f0-8614-155884830f63" />
+        <targetEnds>
+          <association Id="68de2b4d-e7cd-4181-aaaa-1cfd08dd0007" isDerived="false" sourceEndRoleName="分部分项标准" targetEndRoleName="公路工程标准" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5d2b476e-47f3-4b31-b51d-d935a50b2848" LastKnownName="公路工程宏观分类" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="08dfad72-9d80-46b6-880c-ffc0a7248683" name="分部分项标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e0df5053-ad94-4e0d-904f-e8ed56fda802" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2dc3ce8e-dcf9-42eb-8642-fe4090009006" name="公路工程标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="96274299-0da6-4843-b60f-4e443b76d21e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="30505e14-2bc7-4271-b6f2-ffa683721e9d" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f21b5682-47f8-4cf2-92e5-c3e4637e5989" name="显示3D模型" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d84f953a-0b77-4a0e-9c31-a7699f619374" />
+        <targetEnds>
+          <association Id="3420275d-b5b9-458e-82e7-6384cc644ab0" isDerived="false" sourceEndRoleName="Model3D模型" targetEndRoleName="Mesh基础模型" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c9247c5a-e1b4-4e70-9d84-679358fa76a6" LastKnownName="Mesh基础模型" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="32e37c56-b08c-4335-89c8-739f3c6fe7ec" name="Model3D模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1835c7db-40f1-4c97-8640-b9ae084a7c8c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f1b2bf69-8d5f-4d5e-9a91-bb38665fca70" name="Mesh基础模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="86842b0b-217b-4002-b240-c264c9e4cf32" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="aa79a747-6f0d-4ad8-9c3d-22a49cbfaee0" />
+          </association>
+          <association Id="e87bf3c5-0ec0-4735-a30c-0db10fdff86f" isDerived="false" sourceEndRoleName="Model3D模型" targetEndRoleName="Model3D模型" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f21b5682-47f8-4cf2-92e5-c3e4637e5989" LastKnownName="显示3D模型" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cd14cb01-0fef-46d6-a319-3dd149841edc" name="Model3D模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="99146fc7-ad08-46a0-92c9-377a83ffcfa8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="03e68fb7-e02f-44df-ab58-6a7d6ce15f86" name="Model3D模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6fd56c16-f43d-4675-8316-96989fcc3b3b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b2a0f260-6e19-4ec3-9b35-fef6af680799" />
+          </association>
+          <association Id="af6c2f1a-7d76-47c8-b6ed-dfcb3390e90a" isDerived="false" sourceEndRoleName="显示3D模型" targetEndRoleName="施工台账" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b5f7b0fd-de16-42f1-9f3c-986b9659115e" LastKnownName="施工台账" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e2ac4cc2-36dc-4b59-a444-6ca196434970" name="显示3D模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f4cba860-ce7f-4bb1-950e-2a52e6144aa2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e4571e3d-6978-45ab-a5b6-6ac068f0d25f" name="施工台账" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="335d3eb5-2f11-4b6d-85ec-fa15147c074c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bddad218-f1ec-4541-baed-223914b8efd3" />
+          </association>
+          <association Id="9b14e196-fed0-4c5f-81ec-86db0457ac28" isDerived="false" sourceEndRoleName="显示3D模型" targetEndRoleName="wbs分部分项" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1aad4756-ae77-4854-af2a-c890cc615fce" LastKnownName="wbs分部分项" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2378e99a-8885-4732-b6a9-43123ca2d147" name="显示3D模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9a29027d-c27c-40d2-b3fc-3af42802113b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fce65755-fd9c-4622-b344-3badbfde4c05" name="wbs分部分项" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="38176cf7-2d6b-4ea2-a7f8-4c77ccaeadc9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="794a8368-cbf5-43ba-b7b6-d33fc55071c4" />
+          </association>
+          <association Id="718f53e5-7e23-4a8f-8b2b-671e9e4f02e7" isDerived="false" sourceEndRoleName="显示3D模型" targetEndRoleName="ModelVisual3D" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d226ff58-8e5c-4665-a605-7737479364b1" LastKnownName="ModelVisual3D" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dbc2496a-ee57-4e4e-8e4c-cd8d80f8e0ec" name="显示3D模型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="05ba680a-f988-4363-9741-128ece9a2a89" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="af5deadd-36e7-4d16-9d56-fde155ebcd01" name="ModelVisual3D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5317b20e-5a77-4f7c-a40d-9730972b4338" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="897f697c-a625-4459-bc3b-17c475f325bd" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="886ddf60-a7b9-4b05-ad1b-5374b1144f06" name="装饰方法" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="32d7cbf6-20c3-4ec3-9137-6dad394ae22c" />
+          </property>
+          <property Id="011ef21d-b527-4eec-9fa9-494fe9eb2c9c" name="组合方法" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b0d231ff-ca37-4bda-9d12-af9b18079607" />
+          </property>
+          <property Id="482ace07-088e-43df-97e8-132a6a10df20" name="渲染方法" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4e650a5f-728b-41e1-a04d-163206bf50c3" />
+          </property>
+          <property Id="5a1e197e-fd50-4d3c-b4fc-ec6a76facdfa" name="切割方法" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ad972b7a-c63f-4084-9340-97d2d97a2c3a" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1aad4756-ae77-4854-af2a-c890cc615fce" name="wbs分部分项" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8d3e7e33-5c33-44e4-80a5-a02057044863" />
+        <targetEnds>
+          <association Id="69737ceb-5f03-4ca7-9fd2-c2ef66c68268" isDerived="false" sourceEndRoleName="wbs" targetEndRoleName="工程分类标准" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c84a208d-5d45-4b3a-a720-8c86ca13ab16" LastKnownName="分部分项标准" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3b8b35e7-45ce-4459-98ff-4deafb43df7b" name="wbs" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a1a13554-ba84-42d8-9a4e-d72eee46d760" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a8f39ca6-420b-472b-b4af-bba31f189ecb" name="工程分类标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f62ef18b-574c-481a-92c2-ea2c386651ea" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6e517cf9-1326-47e7-9677-992e8d23518b" />
+          </association>
+          <association Id="96299362-5124-4a46-b218-689d1ca997ad" isDerived="false" sourceEndRoleName="变更" targetEndRoleName="变更" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1aad4756-ae77-4854-af2a-c890cc615fce" LastKnownName="wbs分部分项" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d5cb053a-af5f-44b5-8d34-2eb45df5d7c7" name="变更" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2c387620-08da-4453-81b6-559f07074ed6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fa9837a2-ccce-4e23-a44c-74393f637e40" name="变更" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="870bcdfc-ccd5-49f8-bf80-ae830db3905b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="016297e4-0055-4baf-a59f-0c279bf6c769" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="c7c6d2c2-06f0-427a-a45c-6bf22473dcb0" name="版本号（记录变更的号码）" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="73f604e9-83cd-48a0-88df-6410c4a86db0" />
+          </property>
+          <property Id="6553ec62-7e1f-40bd-b111-b944f29a782e" name="阶段代码" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="52c6a79e-73ac-4709-9693-56998623be62" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b9595f2b-983e-422f-8697-adfd9e52898b" name="Model3DData" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9103b385-569f-45bd-b529-b2917deac4ad" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bfaa9cb7-6de4-47b0-8aeb-587cc817c8c7" name="按照工程清单标准" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9a39cc18-84aa-4020-983d-ac637a668650" />
+        <targetEnds>
+          <association Id="9925da90-8457-4fb2-b96b-ccf239af91ba" isDerived="false" sourceEndRoleName="清单标准" targetEndRoleName="公路工程标准（共900章）" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5d2b476e-47f3-4b31-b51d-d935a50b2848" LastKnownName="公路工程宏观分类" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e97d94b5-f207-48fb-8087-cb0f08810cea" name="清单标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4b34e2d7-f5b4-483e-ad8b-c1cc6d6c7af5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ead8b432-a139-4a02-8f82-b0952add2ae5" name="公路工程标准（共900章）" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1daed5a1-a8f0-4d83-ab49-118c55606fa0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="64aa7934-6f30-4356-bd10-87f36206bbbd" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="b94efc19-b193-472d-90b3-6305aca7be00" name="施工方法" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cc32e2af-bf16-4340-8bb5-22e9a42fbb41" />
+          </property>
+          <property Id="9abf8d13-a659-4a97-ace2-d8671dece4ee" name="检验方法" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e560479d-5137-49d1-a0fa-7384316cf7c4" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5d2b476e-47f3-4b31-b51d-d935a50b2848" name="公路工程宏观分类" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6480fb6a-d8d0-495a-b9b1-b6304be652f8" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c812ed3c-f245-4bad-aedb-41ea96c83921" name="过程标准" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c9bdda02-1600-4c9e-8a19-0fd43226e799" />
+        <targetEnds>
+          <association Id="c44cc7f0-0527-4e7a-baf6-6964f329defc" isDerived="false" sourceEndRoleName="验收标准" targetEndRoleName="按照工艺分类的清单标准" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bfaa9cb7-6de4-47b0-8aeb-587cc817c8c7" LastKnownName="按照工程清单标准" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="902af1c6-29dc-4bc9-bf6b-8241eee416d7" name="验收标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e32baea2-0b63-497d-a6aa-e9b0a727bbd8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="295e9d4e-63ea-4f1f-b622-4425cb9febd8" name="按照工艺分类的清单标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b8d62983-9d2c-41e5-aa7d-6e3e0a5ecf68" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6357babe-740e-4afd-bf7e-471d6b024d99" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2d045407-f1af-46a3-ba2a-81ccb1fe54d1" name="验收标准" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e473a05a-17ea-4be3-9d6f-bd381fa0576a" />
+        <targetEnds>
+          <association Id="cb8d83c3-68ed-483b-8fd0-24674bb51548" isDerived="false" sourceEndRoleName="验收标准" targetEndRoleName="分部分项标准" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c84a208d-5d45-4b3a-a720-8c86ca13ab16" LastKnownName="分部分项标准" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b5b89f3-a9fa-4988-8a9c-81d0c5287cc3" name="验收标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0a650997-5f11-424c-883a-813235871cdc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="92d7a019-48fc-477b-ad8c-2d29c2cd7acd" name="分部分项标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2b72f4c9-fb99-427e-a1a6-d6e0d6a43d9a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="59f92d26-3d62-4a13-a43f-7066744283a6" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4bd2be72-38b2-48c9-b153-d73393da8a3c" name="工程分项工程量" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5dfaa251-52b3-4e33-b512-73d89124650a" />
+        <targetEnds>
+          <association Id="606863e5-fd61-4f69-93a9-49a3ffdbffc7" isDerived="false" sourceEndRoleName="建设过程" targetEndRoleName="变更" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4bd2be72-38b2-48c9-b153-d73393da8a3c" LastKnownName="工程分项工程量" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="877937b1-1cce-4b30-871c-76de44899835" name="建设过程" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6069dbd2-9ded-4cbe-a062-1c98b533f24c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e28f61d4-18a6-406e-bb1c-21e95653cc4a" name="变更" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c89ed1f6-47b5-4f30-8616-19532cd3afe9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5e9aa312-8d63-444f-b91c-a9e920da9bb0" />
+          </association>
+          <association Id="40034722-bac6-4783-bc3b-40f823ad228f" isDerived="false" sourceEndRoleName="过程管理" targetEndRoleName="工程项目清单" isLeaf="false" isAbstract="false">
+            <classMoniker Id="69d9e1bf-6234-472e-815c-5c8f756e8b13" LastKnownName="概预算工程项目" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e26e0976-e3b3-4849-9e96-e3e4d0bae4f2" name="过程管理" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b1dbb049-9d23-4b55-8a5a-c9d5500b966a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="59ea2389-0aae-4b86-acab-0adbe742af16" name="工程项目清单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2327c487-18e5-4371-a635-074376eafd8d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7ecf3028-6269-4141-9597-78f630771623" />
+          </association>
+          <association Id="8ce14c0c-5e20-431d-b28f-f53f9f64e430" isDerived="false" sourceEndRoleName="工程分项工程量" targetEndRoleName="按照工程清单标准" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bfaa9cb7-6de4-47b0-8aeb-587cc817c8c7" LastKnownName="按照工程清单标准" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="34807a9f-7498-4b98-aac6-f5277f3d2795" name="工程分项工程量" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4c49ee0c-bb2d-46eb-9222-3f8c94efe54e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b891c041-1e89-4597-b27e-88888c15763b" name="按照工程清单标准" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8d12c7e3-fa24-476c-8959-c2af4176e29f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bd7a7d78-5532-4de4-8e39-9a56b53965ec" />
+          </association>
+          <association Id="1f87d24d-0784-42f6-8d73-d4aaf411a655" isDerived="false" sourceEndRoleName="工程分项工程量" targetEndRoleName="wbs分部分项" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1aad4756-ae77-4854-af2a-c890cc615fce" LastKnownName="wbs分部分项" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="476deccb-16b4-4887-89d0-b6e639e8b1f7" name="工程分项工程量" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="75abb212-a849-4430-9c5e-a3bd0442002e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="54e0915f-e1cc-4416-bf2e-6609e6a04581" name="wbs分部分项" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9e445294-88ec-4489-bca1-1ba9208d67da" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="38f3e5aa-e311-465b-b271-2f067d155c53" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="6de68a32-ca44-4f66-9fea-f4583d9fa786" name="技术方法" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="93223899-8b18-4ca6-82a8-a67178bd28e3" />
+          </property>
+          <property Id="a6a3b618-39b9-4230-bc3f-592b51a14d83" name="工艺流程" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9a518d6f-2bde-4d03-8849-2b57f2d1415e" />
+          </property>
+          <property Id="59da8361-7fad-4599-81cf-7845e8274923" name="当前状态" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a0ecc029-608c-4b8a-a4a5-8c9fa2c82a77" />
+          </property>
+          <property Id="0c2bece3-1e16-4ed6-9894-7aea409133bc" name="项目名称" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4a5a21ae-0c48-404b-bd7d-165c17e18a93" />
+          </property>
+          <property Id="5f483492-d8b3-415d-8593-5418fc72fa4b" name="工程量1" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dd6a8dd5-e025-42a4-902b-6e519f2045de" />
+          </property>
+          <property Id="5c2099d0-5b0e-42ca-87f3-f492e077ac06" name="工程量2" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e24803b9-0c25-421d-bc19-aa39c32bff86" />
+          </property>
+          <property Id="9844c72f-651c-4691-b5f7-a7d65c01c8ed" name="计量单位" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="177d49a4-9f5e-4bdd-ba61-4f290ea469a1" />
+          </property>
+          <property Id="34c795c3-4d28-4715-808b-3e117358fe31" name="变更版本" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a032c968-d887-4ecb-8dae-9e6c1302752e" />
+          </property>
+          <property Id="f02b06ae-dda1-490e-9ed5-171faec54ddf" name="变更人" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bc6c21ec-0865-4426-bdb1-5039877193e5" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="69d9e1bf-6234-472e-815c-5c8f756e8b13" name="概预算工程项目" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="02fbe6d6-9761-4f01-a550-edbb884dbc97" />
+        <ownedAttributesInternal>
+          <property Id="20ab7fd8-3446-4855-a5ed-4a06f7f903ec" name="编码" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ce8b4947-5ef1-42ba-883e-fb4a51cfa7aa" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fc488bce-e288-4e66-9d4d-7fa8b7a03727" name="图纸工程清单" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5bc0436d-114c-4473-8567-114b782a663b" />
+        <targetEnds>
+          <association Id="9f315683-fe6c-486e-846b-8e391b17932f" isDerived="false" sourceEndRoleName="图纸清单" targetEndRoleName="施工图" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5b952a15-baf3-4ea1-8720-120184cb75b7" LastKnownName="施工图" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ae191ce-d825-48b8-bcb2-2dee622a0ffa" name="图纸清单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="077394a9-1627-4a05-94c7-edd9d4df87cb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f878e10b-43db-4c8a-a245-2218b160950e" name="施工图" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5dfa025a-4b53-4339-808a-0f20a7033ee7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ee0c9cbf-deec-4140-800b-b36bedad51b0" />
+          </association>
+          <association Id="08755a12-4d30-41f7-bda0-311acfdc9271" isDerived="false" sourceEndRoleName="图纸工程清单" targetEndRoleName="工程分项工程量" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4bd2be72-38b2-48c9-b153-d73393da8a3c" LastKnownName="工程分项工程量" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9cc7708e-776c-43a5-bc47-2a2c8d73968e" name="图纸工程清单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3eac5aef-e450-4fbe-9546-6ed902f9e01f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6ce18a07-3109-4756-8f65-7cf76eb38354" name="工程分项工程量" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c0a1aca1-8451-4dcf-ab62-49f8c3978c3c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cfc2f6e3-53a9-4d0c-b658-b102733450b5" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5b952a15-baf3-4ea1-8720-120184cb75b7" name="施工图" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eccf640f-ce32-4341-988a-a339adc36cb4" />
+        <ownedAttributesInternal>
+          <property Id="63154898-3ab4-4cc9-b970-068b37f682c0" name="图号" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6959165a-a195-435c-94e7-0e835f869b37" />
+          </property>
+          <property Id="f9f52b5e-75eb-42d8-b159-c8b63dd5e3ca" name="内容" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="58b343bf-6760-4f0b-b52c-038798ef2fdf" />
+          </property>
+          <property Id="9ca9b38f-039a-467c-a3b9-514d66ccb0dc" name="编制单位" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1bd59bde-8757-4c85-9f2a-90337cb8f753" />
+          </property>
+          <property Id="0fd608cf-a6e8-499a-9ada-ffcad02d0f40" name="Binary" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="110ed6ed-c00b-46d0-913b-97a609ca9b8c" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b5f7b0fd-de16-42f1-9f3c-986b9659115e" name="施工台账" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="beb12b6a-0100-4174-8e50-d8d2d3e5754c" />
+        <targetEnds>
+          <association Id="242bd61b-13f9-428d-abdb-ccb6fbe8e1ec" isDerived="false" sourceEndRoleName="施工台账" targetEndRoleName="过程管理" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4bd2be72-38b2-48c9-b153-d73393da8a3c" LastKnownName="工程分项工程量" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="04678094-9721-42a3-bbf7-14ca3db39aa9" name="施工台账" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d8f72889-e27c-4ccc-81d6-5998f71da1b9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a21b1b53-5091-4616-a9c0-ba3786eb6c38" name="过程管理" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="94337966-0b10-48c5-920a-d04dca6d25ab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="303969cf-d34d-4f09-99a4-15616a07d859" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="dd25f76f-a327-4b07-9d3e-b16dd7670fa7" name="开始桩号" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a9bf0bf2-fc53-4c07-9988-987e07470820" />
+          </property>
+          <property Id="063b6d29-aa16-429b-89d1-b9b765df14bb" name="结束桩号" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d02dc843-6e44-4e89-91a9-c11aa81c89d7" />
+          </property>
+          <property Id="5deefd38-794a-4323-a54d-9dce8a510cbe" name="施工内容" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="91229a46-766a-400c-8757-99e7be0eacb6" />
+          </property>
+          <property Id="b11e8acb-379b-490a-8cce-5693ee4dd54c" name="开盘时间" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="86f80b72-53c5-4f05-8cad-60caa71b91a9" />
+          </property>
+          <property Id="103f8863-26df-4d6e-b3f2-391a02875fc9" name="结束时间" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="55eb69cf-7f61-4025-8dc8-dd4ec9f16c56" />
+          </property>
+          <property Id="ac099ffc-67de-40b5-8161-62703d64f444" name="设计方量" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c9824cce-5d1f-4909-90b5-cc90b547d3e5" />
+          </property>
+          <property Id="595b425b-eaeb-418e-8e02-04355f2256b1" name="实际方量" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bbf6a327-171c-40da-94d4-446839afc08b" />
+          </property>
+          <property Id="86d6a70d-b0e2-401b-a407-b3f726422c22" name="位置" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7072c03e-71bc-4f1c-af05-90612ceb4c25" />
+          </property>
+          <property Id="097c9802-1c2e-4fb1-9e21-130f822d31b9" name="备注" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="33084a33-3ecc-4f56-9cf5-a1830bed8b9e" />
+          </property>
+          <property Id="fab1715f-7448-412d-8981-88431276a519" name="施工方法" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="44e7282e-70c5-4cf2-92a7-a40e49d27183" />
+          </property>
+          <property Id="94013ceb-a83a-440c-a57b-9dbd31065945" name="记录员" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="00517f44-ddc1-4c4e-8bda-f78dbe161005" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b4c9ed8a-1182-4844-81b6-2a73fe4c11b6" name="基本结构模型属性表" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0939e4e3-ec70-412d-ac4e-d461e55f21ed" />
+        <targetEnds>
+          <association Id="a2c365f1-c505-4f20-9c8e-e635ac93fa4f" isDerived="false" sourceEndRoleName="基本结构模型属性表" targetEndRoleName="基本结构" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a4159c2c-03ee-4e6a-892e-3974ff08dab5" LastKnownName="基本结构" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4478d3d7-8ec5-45db-ade2-b1ed40119b3e" name="基本结构模型属性表" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d09322ee-794a-4705-9f35-fa0ad6e887fe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ac580b4f-5a83-4177-9ec4-4d391b6ba360" name="基本结构" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ca539b94-09fa-456f-9508-476ddeedbe43" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a2409140-659b-493b-82c5-4fb346e7600f" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="0c2235fe-236b-4abc-97b9-69476932f12a" name="属性名称" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cf0dc941-06c8-4616-a91e-d2111e16d738" />
+          </property>
+          <property Id="acafd663-e8aa-4f5c-8426-2d2520e69594" name="属性类型" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a88a435b-13f1-4483-97dd-1830cac09caf" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="94c9b485-6103-4b69-8c9b-abb2e782cefd" name="质检过程" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bf134caa-b3bd-4a70-ae20-b058845a96ab" />
+        <targetEnds>
+          <association Id="917959e4-c1bf-4da9-b8ca-aee185d93ba1" isDerived="false" sourceEndRoleName="质检过程" targetEndRoleName="工程分项工程量" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4bd2be72-38b2-48c9-b153-d73393da8a3c" LastKnownName="工程分项工程量" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0330fb8-decd-4c26-bdff-8c113b399d10" name="质检过程" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="350e4b2a-cd48-4551-951c-8d4f063586cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7423b257-0378-4adc-861c-0e70d6ecb1c5" name="工程分项工程量" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dcfa1204-b2a4-43f2-a33f-69f608f98420" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="33d43d97-e7d4-4561-bfbd-0d54abb27d57" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d226ff58-8e5c-4665-a605-7737479364b1" name="ModelVisual3D" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="01bbb80d-fa00-4dd4-ba46-6f4ee6d5ea4b" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="ef119b3b-d228-46d6-a199-e1e242bc531f" name="SocialSystem">
+    <elementDefinition Id="d913d8dc-9f90-4e0f-a17d-95bc38ccdb4c" />
+  </package>
+</logicalClassDesignerModel>

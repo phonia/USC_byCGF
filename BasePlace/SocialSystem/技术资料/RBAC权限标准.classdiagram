@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="ed9ea39a-87e2-44d4-a1d3-9a95e06cd5eb" name="RBAC权限标准" linkedPackageId="1687c966-ff4b-4626-96fd-4a051d909046" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6d22a468-a801-49b3-a1f9-7be48b86fb72" name="用户1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="db956f5d-c5e9-474f-afdf-f5e377763c95" />
+        <targetEnds>
+          <association Id="6c2fcdd8-1d47-44f7-a488-783d9e50c219" isDerived="false" sourceEndRoleName="用户" targetEndRoleName="角色（Role）" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0b6e124c-696f-4cfa-9db2-a6563b09a13b" LastKnownName="角色（Role）" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="abb22d66-86d5-49cf-a514-9299d8dcd082" name="用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="8300b3f9-94b5-43f7-bfc5-93fb1f3a90dd" name="Lower" value="*">
+                      <elementDefinition Id="0717367f-159f-42e4-af62-5f7dac138a2a" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="907da96a-1766-4d4e-bdcd-33830dec1493" name="Upper" value="*">
+                      <elementDefinition Id="b149fb09-7161-4a05-bc79-52e056a54d49" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="8bbf8404-7092-4b0a-8299-89970cac9f75" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b0b83908-e714-4aee-902e-2006e4420756" name="角色（Role）" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="b7f1de98-506f-46b4-80c8-91c61c557d1e" name="Lower" value="*">
+                      <elementDefinition Id="c0f75144-3291-45cb-8a66-ce2cc306c0cf" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="fbec6a72-68a3-4897-98ac-f2722ddc3abc" name="Upper" value="*">
+                      <elementDefinition Id="6473cce5-53b8-4100-8b6f-6788e76af89c" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="76b6c20e-8286-41e4-a783-0119ad2c69cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="56a02780-3f61-42db-90e0-b02f2afde8eb" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="96a2f303-e86b-4989-aa19-6cce44cb332e" name="Roleiu" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d8cb73f7-3061-464d-95c5-e1b12e5bc4f8" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0b6e124c-696f-4cfa-9db2-a6563b09a13b" name="角色（Role）" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0fc19c8a-d641-4da4-9771-49c5d70b9dbf" />
+        <targetEnds>
+          <association Id="d95cb1f5-68cb-4fa7-9d0e-bc081bbbcb08" isDerived="false" sourceEndRoleName="角色（Role）" targetEndRoleName="Permissions" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5faf5bf3-567c-49f9-ae94-0ebf397a5f55" LastKnownName="Permissions" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e9536463-567c-40cb-82d7-d24ecd0807ba" name="角色（Role）" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="a2cdcca8-2f39-4d7a-9f37-78cba91f2836" name="Lower" value="*">
+                      <elementDefinition Id="71fc2dbf-03bd-422b-bea2-ab22e84bddfc" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7f7faf8e-1c00-4556-bf9f-590edad73595" name="Upper" value="*">
+                      <elementDefinition Id="eb742deb-05b5-4650-bec4-fdb7a91a3068" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="45c98b33-2245-4e61-b6ae-feaf6279dbcb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="15d8023d-b813-4df2-b99d-5da473756fff" name="Permissions" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="66473d6d-3758-484f-92ea-689887eff23b" name="Lower" value="*">
+                      <elementDefinition Id="da4e48b5-c071-4268-a960-2390f701be45" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="c22e0088-614d-479e-9798-5dd6f04ff500" name="Upper" value="*">
+                      <elementDefinition Id="a999e0df-0b21-42b2-9c6d-225bb1173a35" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="c8769fe7-d0a1-4fcf-838f-3a2dad84ef8f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="54de2041-28a9-42e2-b522-3697ed830397" />
+          </association>
+          <association Id="9a41bad9-e7c0-46aa-9ba6-46e3e7d6a052" isDerived="false" sourceEndRoleName="角色（Role）" targetEndRoleName="会话" isLeaf="false" isAbstract="false">
+            <classMoniker Id="47742ef5-ee4e-410a-b8d4-4196cc1e90eb" LastKnownName="会话" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="afaab4eb-9e2a-48ed-9e51-a4c82de1bbaa" name="角色（Role）" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="c9c58700-b1bf-4e55-b9d8-33295ec7eee0" name="Lower" value="*">
+                      <elementDefinition Id="c2d1a0cd-0dcd-4b05-9625-f8287afcf4e4" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="9dca6c6d-8be8-4d0d-b567-601a29a90887" name="Upper" value="*">
+                      <elementDefinition Id="5c20344d-ebad-4c41-83f3-26443551d8c5" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="e7cb30a8-79f1-4010-bf0b-cfb8d0f399b7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="27dcf0af-35c1-4734-9353-7440840da4b6" name="会话" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="ddf9a580-bc42-4508-8049-9d07a8f59fd0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c39fa0b3-46b8-49d8-94ad-d53dbd48e3f2" />
+          </association>
+          <association Id="0005c35b-7fb9-4351-adca-d3abd723da73" isDerived="false" sourceEndRoleName="" targetEndRoleName="角色（Role）" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0b6e124c-696f-4cfa-9db2-a6563b09a13b" LastKnownName="角色（Role）" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5222eeff-2b94-4677-a712-ec4c6a46427b" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b6394270-cbbe-447c-ab49-d680bd12424b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d36513c3-2fae-4b3d-abf7-2627bb01e743" name="角色（Role）" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7ead4a7b-2288-4cc7-a490-8f16bf9359dd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3a108d28-a4c6-448b-a32a-308891d5b574" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5faf5bf3-567c-49f9-ae94-0ebf397a5f55" name="Permissions" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9d46928d-2466-417e-988e-e5ef692d8c9b" />
+        <ownedAttributesInternal>
+          <property Id="e1ce4397-02c1-46e5-a3f2-6631f954d440" name="资源" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="eea220a5-a3eb-4aff-9e27-a3301087a8c9" />
+          </property>
+          <property Id="1f150d53-44c5-4d04-bf17-34be710cb1e9" name="操作" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="177b2479-da33-48f1-8962-76b458a2b487" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="5744c260-e522-4c59-a0cf-fcf3ba4c73b0" name="Operation1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3f5585d6-1e00-46d1-9664-a78df3a7e8a1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="47742ef5-ee4e-410a-b8d4-4196cc1e90eb" name="会话" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f0c71c7b-949e-4974-8265-e02c9041b1f3" />
+        <targetEnds>
+          <association Id="cbc5b0fc-10d1-4ff3-b92c-7c20c8cafa5d" isDerived="false" sourceEndRoleName="会话" targetEndRoleName="用户" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6d22a468-a801-49b3-a1f9-7be48b86fb72" LastKnownName="用户1" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4ebf9254-0b81-46e4-93c8-4a32b3a223ee" name="会话" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="86706bbc-2b0b-436a-bbe7-da3cbe33979a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eef447d1-6f69-4149-bc2d-4000a283898b" name="用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e5af453b-bba9-48d0-a38c-54f26579c9a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="713d1f8e-371b-46e7-be0b-9f493756008d" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2a3e505b-cf09-4db2-a880-bc5633318bc1" name="约束" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a8eb6e4b-7e8d-45f1-b6b9-ad738b83c01d" />
+        <targetEnds>
+          <association Id="6adaa934-6aad-4d31-a78a-600e62a5e06d" isDerived="false" sourceEndRoleName="约束" targetEndRoleName="用户" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6d22a468-a801-49b3-a1f9-7be48b86fb72" LastKnownName="用户1" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ef862e4-e339-4246-b086-04ec6f3761fe" name="约束" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6d73854a-f497-453f-84cf-f8eaeb77862d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c3de8bb-3319-4c3c-b5ec-7744b2cd8416" name="用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e90af27b-f251-4443-8959-78123f1f4f1e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a6165a98-6621-44cc-8814-f67e3c66ac7e" />
+          </association>
+          <association Id="b3fb020f-379b-4438-91f9-de7e844a67ff" isDerived="false" sourceEndRoleName="约束" targetEndRoleName="角色（Role）" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0b6e124c-696f-4cfa-9db2-a6563b09a13b" LastKnownName="角色（Role）" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8691ea31-7c49-464c-abce-ad93df806e4b" name="约束" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b7b9e2b1-8bc3-4663-a903-db961518e00e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c14d9eb-c479-4bb1-9452-fb117860239b" name="角色（Role）" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1d9eba0b-20e5-4d41-90e9-ac745c59c8b9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f5e0f045-8135-4c24-9e8d-a8e53d2cf103" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="1687c966-ff4b-4626-96fd-4a051d909046" name="SocialSystem">
+    <elementDefinition Id="d913d8dc-9f90-4e0f-a17d-95bc38ccdb4c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="84efc24e-c681-46f8-8cbe-87d68145f446">
+        <profileInstance Id="377c53c0-1f45-4e52-94d1-0630def83841" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="24d5a001-2860-476f-96fd-5c3db07277df">
+        <profileInstance Id="1abe6303-db8a-45c4-a5f6-5664bbe99fba" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

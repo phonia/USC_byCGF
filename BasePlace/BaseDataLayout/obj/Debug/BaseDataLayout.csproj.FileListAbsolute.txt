@@ -1,0 +1,12 @@
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\BaseDataLayout.dll.config
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\BaseDataLayout.dll
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\BaseDataLayout.pdb
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\EntityFramework.dll
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\EntityFramework.SqlServer.dll
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\EntityFramework.xml
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\EntityFramework.SqlServer.xml
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\obj\Debug\BaseDataLayout.dll
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\obj\Debug\BaseDataLayout.pdb
+E:\WorkSpacePlace\BasePlace\BaseDataLayout\obj\Debug\BaseDataLayout.csprojResolveAssemblyReference.cache

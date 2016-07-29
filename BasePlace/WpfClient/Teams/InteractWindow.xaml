@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfClient.Teams.InteractWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="群对话窗" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="input" Grid.Row="1" SelectedIndex="0">
+            <TextBox Height="30" Width="{Binding Path=ActualWidth,ElementName=input}" HorizontalAlignment="Stretch"></TextBox>
+            <ComboBoxItem>
+                <ComboBoxItem.Template>
+                    <ControlTemplate>
+                        <WrapPanel Width="{TemplateBinding Width}">
+
+                            <Button Width="50" Content="wen"/>
+                            <Button Content="wenan"/>
+                            <Button Content="weian"/>
+                            <Button Content="weian"/>
+                            <Button Content="wen"/>
+                            <Button Content="wejian"/>
+
+                        </WrapPanel>
+                    </ControlTemplate> 
+                </ComboBoxItem.Template>
+            </ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</Window>

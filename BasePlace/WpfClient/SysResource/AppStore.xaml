@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfClient.SysResource.AppStore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="应用商店" Height="500" Width="620" >
+    <Canvas>
+        <TabControl>
+            <TabItem HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" Header="主页">
+                <ListView HorizontalAlignment="Stretch">
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Header="软件名称"/>
+                            <GridViewColumn Header="软件描述" Width="370"/>
+                            <GridViewColumn Header="软件类型"/>
+                            <GridViewColumn Header="已下载数"/>
+                            <GridViewColumn Header="用户评价"/>
+                          </GridView>
+                        
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" Header="行业软件">
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Grid.Column="0" HorizontalAlignment="Stretch">
+                        <ListBoxItem Content="交通运输"/>
+                        <ListBoxItem Content="金融证券"/>
+                        <ListBoxItem Content="劳动监察"/>
+                    </ListBox>
+                    <ListView Grid.Column="1">
+                        <ListView.View>
+                            <GridView >
+                                <GridViewColumn Header="软件名称"/>
+                                <GridViewColumn Header="软件描述" Width="270"/>
+                                <GridViewColumn Header="软件类型"/>
+                                <GridViewColumn Header="已下载数"/>
+                                <GridViewColumn Header="用户评价"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" Header="通用软件"></TabItem>
+            <TabItem HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" Header="游戏软件"></TabItem>
+        </TabControl>
+        <TextBox Height="23" Foreground="Gray" FontStyle="Italic" Canvas.Left="296" TextWrapping="Wrap" Text="可以在这里查询你想要的" Width="257"/>
+        <Button Content="查" Canvas.Left="553" Width="39" Height="23"/>
+    </Canvas>
+</Window>
