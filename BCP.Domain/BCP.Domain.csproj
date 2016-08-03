@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +50,286 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edmx\Administrativecode.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\AssetBaseType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\AssetMaintenance.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\AssetUse.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Authorization.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\BussnessVer.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\CustomCategory.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\CustomerGoup.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\CustomGeographicType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\CustomTabData.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\CustomTable.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DBPlaceFinal.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBPlaceFinal.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DBPlaceFinal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DBPlaceFinal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DesktopGeoManage.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DllFileStream.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocCheckState.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocComent.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocLocation.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocManageState.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocReader.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocSender.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocumentContent.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocumentManage.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\DocumentType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Employee.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\EventTime.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\GroupName.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\IndustryCode.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\IndustrySolution.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\IPCode.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\JobChange.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\LandState.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\LoginLog.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\MessageGroupMessager.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\ModulProperty.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\OrganicInvestor.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Organization.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\OrganizationAssetType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\OrganizationCustomType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\OrganizationEvent.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\OrganizationOtherName.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\OrganizationTransition.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Organization_ContacTable.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Organization_Type.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\OrganizBasic.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\OrgaRegisterDocment.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\physicalAsset.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Position.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Post.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\PostRequire.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Product.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\ProductComposition.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\ProductCustomCategory.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\ProductCustomType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\ProductEvent.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\ProductStandard.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\RegisterDocumentType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Securityinfo.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Specialized.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\Subordinate.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\User.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\UserGroup.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\UserMessage.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\UserRelateTable.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\UserRelateType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\User_ContacTable.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\WorkMessage.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\WorkModul.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\WorkSpace.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\WorkSpaceBaseType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\WorkSpaceRole.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\WorkSpaceType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\workTask.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\ZipCode.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Repostiory\IRepository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Edmx\DBPlaceFinal.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBPlaceFinal.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Edmx\DBPlaceFinal.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBPlaceFinal.Context.cs</LastGenOutput>
+      <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
+    </None>
+    <None Include="Edmx\DBPlaceFinal.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBPlaceFinal.cs</LastGenOutput>
+      <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
+    </None>
+    <None Include="Interface\Repostiory\IRepository.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IRepository.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Edmx\DBPlaceFinal.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implementation\Repository\" />
+    <Folder Include="Implementation\Service\" />
+    <Folder Include="Interface\Service\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCP.Common\BCP.Common.csproj">
+      <Project>{1bf111f0-1a5f-47fe-bd3c-dc272cd3982b}</Project>
+      <Name>BCP.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

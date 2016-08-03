@@ -5,9 +5,9 @@ using System.Web;
 using Owin;
 using Microsoft.Owin;
 
+[assembly: OwinStartup(typeof(BCP.WebAPI.SignalR.Startup))]
 namespace BCP.WebAPI.SignalR
 {
-    [assembly: OwinStartup(typeof(BCP.WebAPI.SignalR.Startup))]
     public class Startup
     {
         public void Configuration(IAppBuilder app)

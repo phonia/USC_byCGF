@@ -11,7 +11,7 @@ namespace BCP.WebAPI.SignalR
     {
         public override System.Threading.Tasks.Task OnConnected()
         {
-            Clients.Client(Context.ConnectionId).AddFMessage("登录测试！");
+            Clients.Client(Context.ConnectionId).AddMessage("Hub:","登录测试！");
             return base.OnConnected();
         }
 
