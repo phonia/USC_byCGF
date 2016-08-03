@@ -3847,9 +3847,9 @@
         </Association>
         <EntityType Name="Administrativecode">
           <Key>
-            <PropertyRef Name="SacID" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Type="Int32" Name="SacID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="DivisionCode" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="String" Name="RegionName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="String" Name="ParentCode" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
@@ -4241,7 +4241,7 @@
           <End Type="AthenaGIS.Database.Administrativecode" Role="Administrativecode1" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Administrativecode">
-              <PropertyRef Name="SacID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Administrativecode1">
               <PropertyRef Name="Parent" />
@@ -4712,7 +4712,7 @@
           <End Type="AthenaGIS.Database.OrganizBasic" Role="OrganizBasic" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Administrativecode">
-              <PropertyRef Name="SacID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="OrganizBasic">
               <PropertyRef Name="AdministrativecodeSacID" />
@@ -6750,7 +6750,7 @@
     <EntitySetMapping Name="Administrativecodes">
       <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Administrativecode)">
         <MappingFragment StoreEntitySet="Administrativecodes">
-          <ScalarProperty Name="SacID" ColumnName="SacID" />
+          <ScalarProperty Name="ID" ColumnName="SacID" />
           <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
           <ScalarProperty Name="RegionName" ColumnName="RegionName" />
           <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />

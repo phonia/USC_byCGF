@@ -59,8 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabasePlace.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DBPlaceFinal.Designer.cs" />
-    <Compile Include="DBPlaceFinal1.Designer.cs">
+    <Compile Include="DBPlaceFinal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
@@ -82,8 +81,11 @@
     </None>
     <EntityDeploy Include="DBPlaceFinal.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBPlaceFinal1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBPlaceFinal.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DBPlaceFinal.edmx.diagram">
+      <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
