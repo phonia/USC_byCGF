@@ -74,6 +74,7 @@ namespace BaseDataLayout
         public virtual DbSet<DocumentContent> DocumentContents { get; set; }
         public virtual DbSet<DocCheckState> DocCheckStates { get; set; }
         public virtual DbSet<Securityinfo> Securityinfoes { get; set; }
+        public virtual DbSet<DocLocation> DocLocations { get; set; }
         public virtual DbSet<OrganicInvestor> OrganicInvestors { get; set; }
         public virtual DbSet<OrgaRegisterDocment> OrgaRegisterDocments { get; set; }
         public virtual DbSet<RegisterDocumentType> RegisterDocumentTypes { get; set; }
@@ -103,6 +104,10 @@ namespace BaseDataLayout
         public virtual DbSet<AssetUse> AssetUses { get; set; }
         public virtual DbSet<AssetMaintenance> AssetMaintenances { get; set; }
         public virtual DbSet<AssetBaseType> AssetBaseTypes { get; set; }
+        public virtual DbSet<Discuss> Discusses { get; set; }
+        public virtual DbSet<DiscussContent> DiscussContents { get; set; }
+        public virtual DbSet<DiscussReturn> DiscussReturns { get; set; }
+        public virtual DbSet<DiscussAttach> DiscussAttaches { get; set; }
         public virtual DbSet<ProjectChangeEvent> ProjectChangeEvents { get; set; }
         public virtual DbSet<Tudi_spqx> Tudi_spqx { get; set; }
         public virtual DbSet<Tudi_ywlc> Tudi_ywlc { get; set; }
@@ -142,7 +147,5 @@ namespace BaseDataLayout
         public virtual DbSet<workTask> workTasks { get; set; }
         public virtual DbSet<CustomTable> CustomTables { get; set; }
         public virtual DbSet<CustomTabData> CustomTabDatas { get; set; }
-        public virtual DbSet<DocLocation> DocLocations { get; set; }
-        public virtual DbSet<WorkSpaceBaseType> WorkSpaceBaseTypes { get; set; }
     }
 }

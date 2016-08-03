@@ -119,11 +119,11 @@
     <EntitySet Name="DocComents" EntityType="AthenaGIS.Database.Store.DocComents" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="JobChanges" EntityType="AthenaGIS.Database.Store.JobChanges" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="WorkSpaceTypes" EntityType="AthenaGIS.Database.Store.WorkSpaceTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="WorkInstanceTypes" EntityType="AthenaGIS.Database.Store.WorkInstanceTypes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="workTasks" EntityType="AthenaGIS.Database.Store.workTasks" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CustomTables" EntityType="AthenaGIS.Database.Store.CustomTables" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CustomTabDatas" EntityType="AthenaGIS.Database.Store.CustomTabDatas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DocLocations" EntityType="AthenaGIS.Database.Store.DocLocations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkSpaceBaseTypes" EntityType="AthenaGIS.Database.Store.WorkSpaceBaseTypes" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="UserLoginLog" Association="AthenaGIS.Database.Store.UserLoginLog">
       <End Role="User" EntitySet="Users" />
       <End Role="LoginLog" EntitySet="LoginLogs" />
@@ -788,14 +788,6 @@
       <End Role="WorkSpace" EntitySet="WorkSpaces" />
       <End Role="WorkSpaceType" EntitySet="WorkSpaceTypes" />
     </AssociationSet>
-    <AssociationSet Name="WorkInstanceTypeWorkInstanceType" Association="AthenaGIS.Database.Store.WorkInstanceTypeWorkInstanceType">
-      <End Role="WorkInstanceType" EntitySet="WorkInstanceTypes" />
-      <End Role="WorkInstanceType1" EntitySet="WorkInstanceTypes" />
-    </AssociationSet>
-    <AssociationSet Name="WorkInstanceTypeWorkSpaceType" Association="AthenaGIS.Database.Store.WorkInstanceTypeWorkSpaceType">
-      <End Role="WorkInstanceType" EntitySet="WorkInstanceTypes" />
-      <End Role="WorkSpaceType" EntitySet="WorkSpaceTypes" />
-    </AssociationSet>
     <AssociationSet Name="DocumentManageworkTask" Association="AthenaGIS.Database.Store.DocumentManageworkTask">
       <End Role="DocumentManage" EntitySet="DocumentManages" />
       <End Role="workTask" EntitySet="workTasks" />
@@ -844,9 +836,9 @@
       <End Role="DocumentManage" EntitySet="DocumentManages" />
       <End Role="DocLocation" EntitySet="DocLocations" />
     </AssociationSet>
-    <AssociationSet Name="WorkInstanceTypeDocLocation" Association="AthenaGIS.Database.Store.WorkInstanceTypeDocLocation">
-      <End Role="WorkInstanceType" EntitySet="WorkInstanceTypes" />
-      <End Role="DocLocation" EntitySet="DocLocations" />
+    <AssociationSet Name="WorkSpaceBaseTypeWorkSpaceBaseType" Association="AthenaGIS.Database.Store.WorkSpaceBaseTypeWorkSpaceBaseType">
+      <End Role="WorkSpaceBaseType" EntitySet="WorkSpaceBaseTypes" />
+      <End Role="WorkSpaceBaseType1" EntitySet="WorkSpaceBaseTypes" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Organizations">
@@ -2196,15 +2188,6 @@
     <Property Name="WorkSpaceID" Type="int" Nullable="true" />
     <Property Name="WorkInstanceTypeId" Type="int" Nullable="true" />
   </EntityType>
-  <EntityType Name="WorkInstanceTypes">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descript" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="WorkInstanceTypeId" Type="int" Nullable="true" />
-  </EntityType>
   <EntityType Name="workTasks">
     <Key>
       <PropertyRef Name="Id" />
@@ -2247,6 +2230,15 @@
     <Property Name="DocLocationID" Type="int" Nullable="true" />
     <Property Name="DocumentManageID" Type="int" Nullable="true" />
     <Property Name="WorkInstanceTypeId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="WorkSpaceBaseTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WorkSpaceBaseTypeId" Type="int" Nullable="true" />
   </EntityType>
   <Association Name="UserLoginLog">
     <End Role="User" Type="AthenaGIS.Database.Store.Users" Multiplicity="0..1" />
@@ -4240,30 +4232,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="WorkInstanceTypeWorkInstanceType">
-    <End Role="WorkInstanceType" Type="AthenaGIS.Database.Store.WorkInstanceTypes" Multiplicity="0..1" />
-    <End Role="WorkInstanceType1" Type="AthenaGIS.Database.Store.WorkInstanceTypes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="WorkInstanceType">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="WorkInstanceType1">
-        <PropertyRef Name="WorkInstanceTypeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="WorkInstanceTypeWorkSpaceType">
-    <End Role="WorkInstanceType" Type="AthenaGIS.Database.Store.WorkInstanceTypes" Multiplicity="0..1" />
-    <End Role="WorkSpaceType" Type="AthenaGIS.Database.Store.WorkSpaceTypes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="WorkInstanceType">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="WorkSpaceType">
-        <PropertyRef Name="WorkInstanceTypeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="DocumentManageworkTask">
     <End Role="DocumentManage" Type="AthenaGIS.Database.Store.DocumentManages" Multiplicity="0..1" />
     <End Role="workTask" Type="AthenaGIS.Database.Store.workTasks" Multiplicity="*" />
@@ -4408,15 +4376,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="WorkInstanceTypeDocLocation">
-    <End Role="WorkInstanceType" Type="AthenaGIS.Database.Store.WorkInstanceTypes" Multiplicity="0..1" />
-    <End Role="DocLocation" Type="AthenaGIS.Database.Store.DocLocations" Multiplicity="*" />
+  <Association Name="WorkSpaceBaseTypeWorkSpaceBaseType">
+    <End Role="WorkSpaceBaseType" Type="AthenaGIS.Database.Store.WorkSpaceBaseTypes" Multiplicity="0..1" />
+    <End Role="WorkSpaceBaseType1" Type="AthenaGIS.Database.Store.WorkSpaceBaseTypes" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="WorkInstanceType">
+      <Principal Role="WorkSpaceBaseType">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="DocLocation">
-        <PropertyRef Name="WorkInstanceTypeId" />
+      <Dependent Role="WorkSpaceBaseType1">
+        <PropertyRef Name="WorkSpaceBaseTypeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -4551,20 +4519,8 @@
             <End Role="DocProcessType" EntitySet="DocManageStates" />
             <End Role="Project_Document" EntitySet="DocumentManages" />
           </AssociationSet>
-          <AssociationSet Name="Project_DocumentProject_Document" Association="AthenaGIS.Database.Project_DocumentProject_Document">
-            <End Role="Project_Document" EntitySet="DocumentManages" />
-            <End Role="Project_Document1" EntitySet="DocumentManages" />
-          </AssociationSet>
           <EntitySet Name="ZipCodes" EntityType="AthenaGIS.Database.ZipCode" />
-          <AssociationSet Name="AdministrativecodeZipCode" Association="AthenaGIS.Database.AdministrativecodeZipCode">
-            <End Role="Administrativecode" EntitySet="Administrativecodes" />
-            <End Role="ZipCode" EntitySet="ZipCodes" />
-          </AssociationSet>
           <EntitySet Name="IPCodes" EntityType="AthenaGIS.Database.IPCode" />
-          <AssociationSet Name="AdministrativecodeIPCode" Association="AthenaGIS.Database.AdministrativecodeIPCode">
-            <End Role="Administrativecode" EntitySet="Administrativecodes" />
-            <End Role="IPCode" EntitySet="IPCodes" />
-          </AssociationSet>
           <AssociationSet Name="OrganizationOrganizationTransition" Association="AthenaGIS.Database.OrganizationOrganizationTransition">
             <End Role="Organization" EntitySet="Organizations" />
             <End Role="OrganizationTransition" EntitySet="OrganizationTransitions" />
@@ -5093,10 +5049,6 @@
             <End Role="WorkModul" EntitySet="WorkModuls" />
             <End Role="WorkSpaceRole" EntitySet="WorkSpaceRoles" />
           </AssociationSet>
-          <AssociationSet Name="IndustrySolutionWorkModul" Association="AthenaGIS.Database.IndustrySolutionWorkModul">
-            <End Role="IndustrySolution" EntitySet="IndustrySolutions" />
-            <End Role="WorkModul" EntitySet="WorkModuls" />
-          </AssociationSet>
           <EntitySet Name="Authorizations" EntityType="AthenaGIS.Database.Authorization" />
           <AssociationSet Name="PostAuthorization" Association="AthenaGIS.Database.PostAuthorization">
             <End Role="Post" EntitySet="Posts" />
@@ -5202,15 +5154,6 @@
             <End Role="WorkSpace" EntitySet="WorkSpaces" />
             <End Role="WorkSpaceType" EntitySet="WorkSpaceTypes" />
           </AssociationSet>
-          <EntitySet Name="WorkInstanceTypes" EntityType="AthenaGIS.Database.WorkInstanceType" />
-          <AssociationSet Name="WorkInstanceTypeWorkInstanceType" Association="AthenaGIS.Database.WorkInstanceTypeWorkInstanceType">
-            <End Role="WorkInstanceType" EntitySet="WorkInstanceTypes" />
-            <End Role="WorkInstanceType1" EntitySet="WorkInstanceTypes" />
-          </AssociationSet>
-          <AssociationSet Name="WorkInstanceTypeWorkSpaceType" Association="AthenaGIS.Database.WorkInstanceTypeWorkSpaceType">
-            <End Role="WorkInstanceType" EntitySet="WorkInstanceTypes" />
-            <End Role="WorkSpaceType" EntitySet="WorkSpaceTypes" />
-          </AssociationSet>
           <EntitySet Name="workTasks" EntityType="AthenaGIS.Database.workTask" />
           <AssociationSet Name="DocumentManageworkTask" Association="AthenaGIS.Database.DocumentManageworkTask">
             <End Role="DocumentManage" EntitySet="DocumentManages" />
@@ -5263,18 +5206,31 @@
             <End Role="DocumentManage" EntitySet="DocumentManages" />
             <End Role="DocLocation" EntitySet="DocLocations" />
           </AssociationSet>
-          <AssociationSet Name="WorkInstanceTypeDocLocation" Association="AthenaGIS.Database.WorkInstanceTypeDocLocation">
-            <End Role="WorkInstanceType" EntitySet="WorkInstanceTypes" />
-            <End Role="DocLocation" EntitySet="DocLocations" />
-          </AssociationSet>
           <EntitySet Name="WorkSpaceBaseTypes" EntityType="AthenaGIS.Database.WorkSpaceBaseType" />
           <AssociationSet Name="WorkSpaceBaseTypeWorkSpaceBaseType" Association="AthenaGIS.Database.WorkSpaceBaseTypeWorkSpaceBaseType">
             <End Role="WorkSpaceBaseType" EntitySet="WorkSpaceBaseTypes" />
             <End Role="WorkSpaceBaseType1" EntitySet="WorkSpaceBaseTypes" />
           </AssociationSet>
-          <AssociationSet Name="WorkSpaceBaseTypeWorkInstanceType" Association="AthenaGIS.Database.WorkSpaceBaseTypeWorkInstanceType">
+          <AssociationSet Name="DllFileStreamWorkModul" Association="AthenaGIS.Database.DllFileStreamWorkModul">
+            <End Role="DllFileStream" EntitySet="DllFileStreams" />
+            <End Role="WorkModul" EntitySet="WorkModuls" />
+          </AssociationSet>
+          <AssociationSet Name="WorkSpaceBaseTypeWorkSpaceType" Association="AthenaGIS.Database.WorkSpaceBaseTypeWorkSpaceType">
             <End Role="WorkSpaceBaseType" EntitySet="WorkSpaceBaseTypes" />
-            <End Role="WorkInstanceType" EntitySet="WorkInstanceTypes" />
+            <End Role="WorkSpaceType" EntitySet="WorkSpaceTypes" />
+          </AssociationSet>
+          <AssociationSet Name="WorkSpaceBaseTypeDocLocation" Association="AthenaGIS.Database.WorkSpaceBaseTypeDocLocation">
+            <End Role="WorkSpaceBaseType" EntitySet="WorkSpaceBaseTypes" />
+            <End Role="DocLocation" EntitySet="DocLocations" />
+          </AssociationSet>
+          <EntitySet Name="EventTimes" EntityType="AthenaGIS.Database.EventTime" />
+          <AssociationSet Name="LoginLogEventTime" Association="AthenaGIS.Database.LoginLogEventTime">
+            <End Role="LoginLog" EntitySet="LoginLogs" />
+            <End Role="EventTime" EntitySet="EventTimes" />
+          </AssociationSet>
+          <AssociationSet Name="PositionPost" Association="AthenaGIS.Database.PositionPost">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Post" EntitySet="Posts" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Organization">
@@ -5408,6 +5364,7 @@
             </Documentation>
           </Property>
           <NavigationProperty Name="Employees" Relationship="AthenaGIS.Database.PositionEmployee" FromRole="Position" ToRole="Employee" />
+          <NavigationProperty Name="Posts" Relationship="AthenaGIS.Database.PositionPost" FromRole="Position" ToRole="Post" />
         </EntityType>
         <EntityType Name="User">
           <Documentation>
@@ -5420,9 +5377,7 @@
           <Property Type="String" Name="UserName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="String" Name="ActualName" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Type="String" Name="PersonalID" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="String" Name="Status" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Type="String" Name="Role" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="LoginLogs" Relationship="AthenaGIS.Database.UserLoginLog" FromRole="User" ToRole="LoginLog" />
           <NavigationProperty Name="User_ContacTable" Relationship="AthenaGIS.Database.UserUser_ContacTable" FromRole="User" ToRole="User_ContacTable" />
           <NavigationProperty Name="UserRelateTables" Relationship="AthenaGIS.Database.UserUserRelateTable" FromRole="User" ToRole="UserRelateTable" />
@@ -5530,6 +5485,7 @@
           <Property Type="Int32" Name="UserID" Nullable="true" />
           <NavigationProperty Name="UserMessages" Relationship="AthenaGIS.Database.LoginLogUserMessage" FromRole="LoginLog" ToRole="UserMessage" />
           <Property Type="String" Name="CurrentSate" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="EventTimes" Relationship="AthenaGIS.Database.LoginLogEventTime" FromRole="LoginLog" ToRole="EventTime" />
         </EntityType>
         <EntityType Name="Land_Graph">
           <Documentation>
@@ -5825,7 +5781,7 @@
           </Key>
           <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Type="String" Name="Catalog" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" >
+          <Property Type="String" Name="Doctype" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" >
             <Documentation>
               <Summary>字符串、文件、多媒体信息，包括任务</Summary>
               <LongDescription>输入类别</LongDescription>
@@ -5841,15 +5797,12 @@
           </Property>
           <Property Type="Int32" Name="DocManageStateID" Nullable="false" />
           <Property Type="Int32" Name="DocumentTypeID" Nullable="true" />
-          <NavigationProperty Name="Project_Document1" Relationship="AthenaGIS.Database.Project_DocumentProject_Document" FromRole="Project_Document" ToRole="Project_Document1" />
-          <NavigationProperty Name="Project_Document2" Relationship="AthenaGIS.Database.Project_DocumentProject_Document" FromRole="Project_Document1" ToRole="Project_Document" />
           <Property Type="String" Name="HandeTime" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="Int32" Name="EventTimeEventTimeID" Nullable="true" />
           <NavigationProperty Name="DocHanderState" Relationship="AthenaGIS.Database.DocHanderStateDocumentManage" FromRole="DocumentManage" ToRole="DocHanderState" />
           <Property Type="Int32" Name="DocCheckStateID" Nullable="false" />
           <NavigationProperty Name="Securityinfo" Relationship="AthenaGIS.Database.SecurityinfoDocumentManage" FromRole="DocumentManage" ToRole="Securityinfo" />
           <Property Type="Int32" Name="SecurityinfoID" Nullable="true" />
-          <Property Type="Int32" Name="ParentVer" Nullable="true" />
           <NavigationProperty Name="DocTypes" Relationship="AthenaGIS.Database.DocumentManageDocType" FromRole="DocumentManage" ToRole="DocType" />
           <NavigationProperty Name="workTasks" Relationship="AthenaGIS.Database.DocumentManageworkTask" FromRole="DocumentManage" ToRole="workTask" />
           <NavigationProperty Name="DocumentContents" Relationship="AthenaGIS.Database.DocumentManageDocumentContent" FromRole="DocumentManage" ToRole="DocumentContent" />
@@ -6147,8 +6100,6 @@
           <Property Type="String" Name="DivisionCode" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="String" Name="RegionName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Land_managers" Relationship="AthenaGIS.Database.StandardadministrativecodeLand_manager" FromRole="Standardadministrativecode" ToRole="Land_manager" />
-          <NavigationProperty Name="ZipCodes" Relationship="AthenaGIS.Database.AdministrativecodeZipCode" FromRole="Administrativecode" ToRole="ZipCode" />
-          <NavigationProperty Name="IPCodes" Relationship="AthenaGIS.Database.AdministrativecodeIPCode" FromRole="Administrativecode" ToRole="IPCode" />
           <Property Type="String" Name="ParentCode" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Administrativecodes" Relationship="AthenaGIS.Database.AdministrativecodeAdministrativecode" FromRole="Administrativecode" ToRole="Administrativecode1" />
           <NavigationProperty Name="Administrativecode1" Relationship="AthenaGIS.Database.AdministrativecodeAdministrativecode" FromRole="Administrativecode1" ToRole="Administrativecode" />
@@ -6190,6 +6141,7 @@
           <NavigationProperty Name="DocumentType1" Relationship="AthenaGIS.Database.DocumentTypeDocumentType" FromRole="DocumentType1" ToRole="DocumentType" />
           <Property Type="Int32" Name="DocumentTypeID" Nullable="true" />
           <NavigationProperty Name="DocTypes" Relationship="AthenaGIS.Database.DocumentTypeDocType" FromRole="DocumentType" ToRole="DocType" />
+          <Property Name="OrigId" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="DocManageState">
           <Documentation>
@@ -6326,61 +6278,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Project_DocumentProject_Document">
-          <End Type="AthenaGIS.Database.DocumentManage" Role="Project_Document" Multiplicity="0..1" />
-          <End Type="AthenaGIS.Database.DocumentManage" Role="Project_Document1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Project_Document">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Project_Document1">
-              <PropertyRef Name="ParentVer" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ZipCode">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Administrativecode" Relationship="AthenaGIS.Database.AdministrativecodeZipCode" FromRole="ZipCode" ToRole="Administrativecode" />
           <Property Type="String" Name="Code" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Type="Int32" Name="AdministrativecodeSacID" Nullable="false" />
         </EntityType>
-        <Association Name="AdministrativecodeZipCode">
-          <End Type="AthenaGIS.Database.Administrativecode" Role="Administrativecode" Multiplicity="1" />
-          <End Type="AthenaGIS.Database.ZipCode" Role="ZipCode" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Administrativecode">
-              <PropertyRef Name="SacID" />
-            </Principal>
-            <Dependent Role="ZipCode">
-              <PropertyRef Name="AdministrativecodeSacID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="IPCode">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Administrativecode" Relationship="AthenaGIS.Database.AdministrativecodeIPCode" FromRole="IPCode" ToRole="Administrativecode" />
-          <Property Type="Int32" Name="AdministrativecodeSacID" Nullable="false" />
           <Property Type="String" Name="IP" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="String" Name="Company" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
-        <Association Name="AdministrativecodeIPCode">
-          <End Type="AthenaGIS.Database.Administrativecode" Role="Administrativecode" Multiplicity="1" />
-          <End Type="AthenaGIS.Database.IPCode" Role="IPCode" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Administrativecode">
-              <PropertyRef Name="SacID" />
-            </Principal>
-            <Dependent Role="IPCode">
-              <PropertyRef Name="AdministrativecodeSacID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="OrganizationOrganizationTransition">
           <End Type="AthenaGIS.Database.Organization" Role="Organization" Multiplicity="0..1" />
           <End Type="AthenaGIS.Database.OrganizationTransition" Role="OrganizationTransition" Multiplicity="*" />
@@ -6584,6 +6496,8 @@
           <NavigationProperty Name="DocReaders" Relationship="AthenaGIS.Database.PostDocReader" FromRole="Post" ToRole="DocReader" />
           <NavigationProperty Name="DocSenders" Relationship="AthenaGIS.Database.PostDocSender" FromRole="Post" ToRole="DocSender" />
           <NavigationProperty Name="JobChanges" Relationship="AthenaGIS.Database.PostJobChange" FromRole="Post" ToRole="JobChange" />
+          <NavigationProperty Name="Position" Relationship="AthenaGIS.Database.PositionPost" FromRole="Post" ToRole="Position" />
+          <Property Name="PositionID1" Type="Int32" Nullable="true" />
         </EntityType>
         <EntityType Name="WorkSpace">
           <Key>
@@ -6927,9 +6841,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Tile" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Type="String" Name="Document" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Type="String" Name="Image" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="DocumentManage" Relationship="AthenaGIS.Database.DocumentManageDocumentContent" FromRole="DocumentContent" ToRole="DocumentManage" />
           <Property Name="DocumentManageID" Type="Int32" Nullable="true" />
@@ -7383,6 +7295,7 @@
           <NavigationProperty Name="IndustrySolution" Relationship="AthenaGIS.Database.IndustrySolutionDllFileStream" FromRole="DllFileStream" ToRole="IndustrySolution" />
           <Property Name="URI" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Paragram" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WorkModuls" Relationship="AthenaGIS.Database.DllFileStreamWorkModul" FromRole="DllFileStream" ToRole="WorkModul" />
         </EntityType>
         <EntityType Name="F_Currency">
           <Documentation>
@@ -9158,7 +9071,6 @@ XX XX XX
           <NavigationProperty Name="WorkSpaces" Relationship="AthenaGIS.Database.IndustrySolutionWorkSpace" FromRole="IndustrySolution" ToRole="WorkSpace" />
           <NavigationProperty Name="DllFileStreams" Relationship="AthenaGIS.Database.IndustrySolutionDllFileStream" FromRole="IndustrySolution" ToRole="DllFileStream" />
           <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="WorkModuls" Relationship="AthenaGIS.Database.IndustrySolutionWorkModul" FromRole="IndustrySolution" ToRole="WorkModul" />
         </EntityType>
         <Association Name="IndustryCodeIndustrySolution">
           <End Type="AthenaGIS.Database.IndustryCode" Role="IndustryCode" Multiplicity="0..1" />
@@ -9189,9 +9101,9 @@ XX XX XX
           <NavigationProperty Name="WorkModul1" Relationship="AthenaGIS.Database.WorkModulWorkModul" FromRole="WorkModul1" ToRole="WorkModul" />
           <Property Name="WorkModulId" Type="Int32" Nullable="true" />
           <NavigationProperty Name="WorkSpaceRoles" Relationship="AthenaGIS.Database.WorkModulWorkSpaceRole" FromRole="WorkModul" ToRole="WorkSpaceRole" />
-          <NavigationProperty Name="IndustrySolution" Relationship="AthenaGIS.Database.IndustrySolutionWorkModul" FromRole="WorkModul" ToRole="IndustrySolution" />
-          <Property Name="IndustrySolutionId" Type="Int32" Nullable="true" />
           <NavigationProperty Name="ModulProperties" Relationship="AthenaGIS.Database.WorkModulModulProperty" FromRole="WorkModul" ToRole="ModulProperty" />
+          <NavigationProperty Name="DllFileStream" Relationship="AthenaGIS.Database.DllFileStreamWorkModul" FromRole="WorkModul" ToRole="DllFileStream" />
+          <Property Name="DllFileStreamID" Type="Int32" Nullable="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         </EntityType>
         <Association Name="PositionEmployee">
           <End Type="AthenaGIS.Database.Position" Role="Position" Multiplicity="0..1" />
@@ -9372,18 +9284,6 @@ XX XX XX
             </Principal>
             <Dependent Role="WorkSpaceRole">
               <PropertyRef Name="WorkModulId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="IndustrySolutionWorkModul">
-          <End Type="AthenaGIS.Database.IndustrySolution" Role="IndustrySolution" Multiplicity="0..1" />
-          <End Type="AthenaGIS.Database.WorkModul" Role="WorkModul" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IndustrySolution">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="WorkModul">
-              <PropertyRef Name="IndustrySolutionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -9830,8 +9730,8 @@ XX XX XX
           <Property Name="ByProperty" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="WorkSpace" Relationship="AthenaGIS.Database.WorkSpaceWorkSpaceType" FromRole="WorkSpaceType" ToRole="WorkSpace" />
           <Property Name="WorkSpaceID" Type="Int32" Nullable="true" />
-          <NavigationProperty Name="WorkInstanceType" Relationship="AthenaGIS.Database.WorkInstanceTypeWorkSpaceType" FromRole="WorkSpaceType" ToRole="WorkInstanceType" />
-          <Property Name="WorkInstanceTypeId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="WorkSpaceBaseType" Relationship="AthenaGIS.Database.WorkSpaceBaseTypeWorkSpaceType" FromRole="WorkSpaceType" ToRole="WorkSpaceBaseType" />
+          <Property Name="WorkSpaceBaseTypeId" Type="Int32" Nullable="true" />
         </EntityType>
         <Association Name="WorkSpaceWorkSpaceType">
           <End Type="AthenaGIS.Database.WorkSpace" Role="WorkSpace" Multiplicity="0..1" />
@@ -9842,49 +9742,6 @@ XX XX XX
             </Principal>
             <Dependent Role="WorkSpaceType">
               <PropertyRef Name="WorkSpaceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="WorkInstanceType">
-          <Documentation>
-            <Summary>他可以创建多种分类</Summary>
-            <LongDescription>工作空间的分类</LongDescription>
-          </Documentation>
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Descript" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="WorkInstanceTypes" Relationship="AthenaGIS.Database.WorkInstanceTypeWorkInstanceType" FromRole="WorkInstanceType" ToRole="WorkInstanceType1" />
-          <NavigationProperty Name="WorkInstanceType1" Relationship="AthenaGIS.Database.WorkInstanceTypeWorkInstanceType" FromRole="WorkInstanceType1" ToRole="WorkInstanceType" />
-          <Property Name="WorkInstanceTypeId" Type="Int32" Nullable="true" />
-          <NavigationProperty Name="WorkSpaceTypes" Relationship="AthenaGIS.Database.WorkInstanceTypeWorkSpaceType" FromRole="WorkInstanceType" ToRole="WorkSpaceType" />
-          <NavigationProperty Name="DocLocations" Relationship="AthenaGIS.Database.WorkInstanceTypeDocLocation" FromRole="WorkInstanceType" ToRole="DocLocation" />
-          <NavigationProperty Name="WorkSpaceBaseType" Relationship="AthenaGIS.Database.WorkSpaceBaseTypeWorkInstanceType" FromRole="WorkInstanceType" ToRole="WorkSpaceBaseType" />
-          <Property Name="WorkSpaceBaseTypeId" Type="Int32" Nullable="true" />
-        </EntityType>
-        <Association Name="WorkInstanceTypeWorkInstanceType">
-          <End Type="AthenaGIS.Database.WorkInstanceType" Role="WorkInstanceType" Multiplicity="0..1" />
-          <End Type="AthenaGIS.Database.WorkInstanceType" Role="WorkInstanceType1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WorkInstanceType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="WorkInstanceType1">
-              <PropertyRef Name="WorkInstanceTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="WorkInstanceTypeWorkSpaceType">
-          <End Type="AthenaGIS.Database.WorkInstanceType" Role="WorkInstanceType" Multiplicity="0..1" />
-          <End Type="AthenaGIS.Database.WorkSpaceType" Role="WorkSpaceType" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WorkInstanceType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="WorkSpaceType">
-              <PropertyRef Name="WorkInstanceTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -10035,8 +9892,8 @@ XX XX XX
           <NavigationProperty Name="DocReader" Relationship="AthenaGIS.Database.FK_DocReaderDocLocation" FromRole="DocLocation" ToRole="DocReader" />
           <NavigationProperty Name="DocSender" Relationship="AthenaGIS.Database.FK_DocSenderDocLocation" FromRole="DocLocation" ToRole="DocSender" />
           <NavigationProperty Name="DocumentManage" Relationship="AthenaGIS.Database.FK_DocumentManageDocLocation" FromRole="DocLocation" ToRole="DocumentManage" />
-          <NavigationProperty Name="WorkInstanceType" Relationship="AthenaGIS.Database.WorkInstanceTypeDocLocation" FromRole="DocLocation" ToRole="WorkInstanceType" />
-          <Property Name="WorkInstanceTypeId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="WorkSpaceBaseType" Relationship="AthenaGIS.Database.WorkSpaceBaseTypeDocLocation" FromRole="DocLocation" ToRole="WorkSpaceBaseType" />
+          <Property Name="WorkSpaceBaseTypeId" Type="Int32" Nullable="true" />
         </EntityType>
         <Association Name="FK_DocLocationDocComent">
           <End Type="AthenaGIS.Database.DocLocation" Role="DocLocation" Multiplicity="1" />
@@ -10098,18 +9955,6 @@ XX XX XX
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="WorkInstanceTypeDocLocation">
-          <End Type="AthenaGIS.Database.WorkInstanceType" Role="WorkInstanceType" Multiplicity="0..1" />
-          <End Type="AthenaGIS.Database.DocLocation" Role="DocLocation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WorkInstanceType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DocLocation">
-              <PropertyRef Name="WorkInstanceTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="WorkSpaceBaseType">
           <Documentation>
             <Summary>可以开放给第三方公司用</Summary>
@@ -10124,7 +9969,8 @@ XX XX XX
           <NavigationProperty Name="WorkSpaceBaseTypes" Relationship="AthenaGIS.Database.WorkSpaceBaseTypeWorkSpaceBaseType" FromRole="WorkSpaceBaseType" ToRole="WorkSpaceBaseType1" />
           <NavigationProperty Name="WorkSpaceBaseType1" Relationship="AthenaGIS.Database.WorkSpaceBaseTypeWorkSpaceBaseType" FromRole="WorkSpaceBaseType1" ToRole="WorkSpaceBaseType" />
           <Property Name="WorkSpaceBaseTypeId" Type="Int32" Nullable="true" />
-          <NavigationProperty Name="WorkInstanceTypes" Relationship="AthenaGIS.Database.WorkSpaceBaseTypeWorkInstanceType" FromRole="WorkSpaceBaseType" ToRole="WorkInstanceType" />
+          <NavigationProperty Name="WorkSpaceTypes" Relationship="AthenaGIS.Database.WorkSpaceBaseTypeWorkSpaceType" FromRole="WorkSpaceBaseType" ToRole="WorkSpaceType" />
+          <NavigationProperty Name="DocLocations" Relationship="AthenaGIS.Database.WorkSpaceBaseTypeDocLocation" FromRole="WorkSpaceBaseType" ToRole="DocLocation" />
         </EntityType>
         <Association Name="WorkSpaceBaseTypeWorkSpaceBaseType">
           <End Type="AthenaGIS.Database.WorkSpaceBaseType" Role="WorkSpaceBaseType" Multiplicity="0..1" />
@@ -10138,15 +9984,76 @@ XX XX XX
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="WorkSpaceBaseTypeWorkInstanceType">
+        <Association Name="DllFileStreamWorkModul">
+          <End Type="AthenaGIS.Database.DllFileStream" Role="DllFileStream" Multiplicity="0..1" />
+          <End Type="AthenaGIS.Database.WorkModul" Role="WorkModul" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DllFileStream">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WorkModul">
+              <PropertyRef Name="DllFileStreamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WorkSpaceBaseTypeWorkSpaceType">
           <End Type="AthenaGIS.Database.WorkSpaceBaseType" Role="WorkSpaceBaseType" Multiplicity="0..1" />
-          <End Type="AthenaGIS.Database.WorkInstanceType" Role="WorkInstanceType" Multiplicity="*" />
+          <End Type="AthenaGIS.Database.WorkSpaceType" Role="WorkSpaceType" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="WorkSpaceBaseType">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="WorkInstanceType">
+            <Dependent Role="WorkSpaceType">
               <PropertyRef Name="WorkSpaceBaseTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WorkSpaceBaseTypeDocLocation">
+          <End Type="AthenaGIS.Database.WorkSpaceBaseType" Role="WorkSpaceBaseType" Multiplicity="0..1" />
+          <End Type="AthenaGIS.Database.DocLocation" Role="DocLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkSpaceBaseType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocLocation">
+              <PropertyRef Name="WorkSpaceBaseTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EventTime">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimePoint" Type="String" Nullable="false" />
+          <Property Name="SpacePoint" Type="String" Nullable="false" />
+          <Property Name="EventName" Type="String" Nullable="false" />
+          <Property Name="EventType" Type="String" Nullable="false" />
+          <Property Name="District" Type="String" Nullable="false" />
+          <NavigationProperty Name="LoginLog" Relationship="AthenaGIS.Database.LoginLogEventTime" FromRole="EventTime" ToRole="LoginLog" />
+          <Property Name="LoginLogID" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="LoginLogEventTime">
+          <End Type="AthenaGIS.Database.LoginLog" Role="LoginLog" Multiplicity="0..1" />
+          <End Type="AthenaGIS.Database.EventTime" Role="EventTime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoginLog">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EventTime">
+              <PropertyRef Name="LoginLogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PositionPost">
+          <End Type="AthenaGIS.Database.Position" Role="Position" Multiplicity="0..1" />
+          <End Type="AthenaGIS.Database.Post" Role="Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="PositionID1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -10209,9 +10116,7 @@ XX XX XX
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="ActualName" ColumnName="ActualName" />
-          <ScalarProperty Name="PersonalID" ColumnName="PersonalID" />
           <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Role" ColumnName="Role" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -10440,7 +10345,7 @@ XX XX XX
         <MappingFragment StoreEntitySet="DocumentManages">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Catalog" ColumnName="Catalog" />
+          <ScalarProperty Name="Doctype" ColumnName="Catalog" />
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="URL" ColumnName="URL" />
           <ScalarProperty Name="Handler" ColumnName="Handler" />
@@ -10450,7 +10355,6 @@ XX XX XX
           <ScalarProperty Name="EventTimeEventTimeID" ColumnName="EventTimeEventTimeID" />
           <ScalarProperty Name="DocCheckStateID" ColumnName="DocCheckStateID" />
           <ScalarProperty Name="SecurityinfoID" ColumnName="SecurityinfoID" />
-          <ScalarProperty Name="ParentVer" ColumnName="ParentVer" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -10607,7 +10511,6 @@ XX XX XX
         <MappingFragment StoreEntitySet="ZipCodes">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Code" ColumnName="Code" />
-          <ScalarProperty Name="AdministrativecodeSacID" ColumnName="AdministrativecodeSacID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -10615,7 +10518,6 @@ XX XX XX
       <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.IPCode)">
         <MappingFragment StoreEntitySet="IPCodes">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="AdministrativecodeSacID" ColumnName="AdministrativecodeSacID" />
           <ScalarProperty Name="IP" ColumnName="IP" />
           <ScalarProperty Name="Company" ColumnName="Company" />
         </MappingFragment>
@@ -10767,9 +10669,7 @@ XX XX XX
       <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.DocumentContent)">
         <MappingFragment StoreEntitySet="DocumentContents">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Tile" ColumnName="Tile" />
-          <ScalarProperty Name="Document" ColumnName="Document" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Content" ColumnName="Image" />
           <ScalarProperty Name="Message" ColumnName="Message" />
           <ScalarProperty Name="DocumentManageID" ColumnName="DocumentManageID" />
           <ScalarProperty Name="DocumentContentID" ColumnName="DocumentContentID" />
@@ -11497,7 +11397,6 @@ XX XX XX
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="ActivityType" ColumnName="ActivityType" />
           <ScalarProperty Name="WorkModulId" ColumnName="WorkModulId" />
-          <ScalarProperty Name="IndustrySolutionId" ColumnName="IndustrySolutionId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -11612,17 +11511,6 @@ XX XX XX
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ByProperty" ColumnName="ByProperty" />
           <ScalarProperty Name="WorkSpaceID" ColumnName="WorkSpaceID" />
-          <ScalarProperty Name="WorkInstanceTypeId" ColumnName="WorkInstanceTypeId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="WorkInstanceTypes">
-      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.WorkInstanceType)">
-        <MappingFragment StoreEntitySet="WorkInstanceTypes">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Descript" ColumnName="Descript" />
-          <ScalarProperty Name="WorkInstanceTypeId" ColumnName="WorkInstanceTypeId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -11669,7 +11557,16 @@ XX XX XX
           <ScalarProperty Name="IsRuleTransaction" ColumnName="IsRuleTransaction" />
           <ScalarProperty Name="DocLocationID" ColumnName="DocLocationID" />
           <ScalarProperty Name="DocumentManageID" ColumnName="DocumentManageID" />
-          <ScalarProperty Name="WorkInstanceTypeId" ColumnName="WorkInstanceTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkSpaceBaseTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.WorkSpaceBaseType)">
+        <MappingFragment StoreEntitySet="WorkSpaceBaseTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="WorkSpaceBaseTypeId" ColumnName="WorkSpaceBaseTypeId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

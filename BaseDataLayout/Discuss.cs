@@ -12,24 +12,24 @@ namespace BaseDataLayout
     using System;
     using System.Collections.Generic;
     
-    public partial class DocumentContent
+    public partial class Discuss
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DocumentContent()
+        public Discuss()
         {
-            this.DocumentContents = new HashSet<DocumentContent>();
+            this.DiscussContents = new HashSet<DiscussContent>();
         }
     
-        public int ID { get; set; }
-        public string Tile { get; set; }
-        public string DocBody { get; set; }
-        public string DocAttribute { get; set; }
-        public int DocumentManageID { get; set; }
-        public int AttechParent { get; set; }
+        public int Id { get; set; }
+        public int WorkSpaceId { get; set; }
+        public string DiscussName { get; set; }
+        public string CreatTime { get; set; }
+        public int UserID { get; set; }
+        public Nullable<int> WorkSpaceID1 { get; set; }
     
-        public virtual DocumentManage DocumentManage { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocumentContent> DocumentContents { get; set; }
-        public virtual DocumentContent DocumentContent1 { get; set; }
+        public virtual ICollection<DiscussContent> DiscussContents { get; set; }
+        public virtual User User { get; set; }
+        public virtual WorkSpace WorkSpace { get; set; }
     }
 }

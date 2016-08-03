@@ -3,14 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:BaseDataLayout="clr-namespace:BaseDataLayout;assembly=BaseDataLayout" x:Class="WpfClient.Teams.CreatWorkSpace" 
-             mc:Ignorable="d" Loaded="UserControl_Loaded" Height="475" Width="660">
-    <Window.Resources>
-        <CollectionViewSource x:Key="workSpaceViewSource" d:DesignSource="{d:DesignInstance {x:Type BaseDataLayout:WorkSpace}, CreateList=True}"/>
-        <CollectionViewSource x:Key="workSpaceRoleViewSource" d:DesignSource="{d:DesignInstance {x:Type BaseDataLayout:WorkSpaceRole}, CreateList=True}"/>
-    </Window.Resources>
-
-    <Canvas DataContext="{StaticResource workSpaceViewSource}" Width="650" Margin="0,0,0,42">
+             x:Class="WpfClient.Teams.CreatWorkSpace" 
+             mc:Ignorable="d" Loaded="UserControl_Loaded" Height="475" Width="660" Background="#EBF2F9">
+ 
+    <Canvas Width="650" Margin="0,0,0,42">
         <TextBox x:Name="commentTextBox"   HorizontalAlignment="Left" Height="24" Grid.Row="8" Text="{Binding Comment, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="545" Canvas.Left="95" Canvas.Top="66"/>
         <Label Content="工作空间内容:"  HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="87" Canvas.Left="3" Canvas.Top="66"/>
         <TextBox x:Name="contentTextBox"   HorizontalAlignment="Left" Height="22" Text="{Binding Content, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="457" Canvas.Left="95" Canvas.Top="37"/>
@@ -38,7 +34,7 @@
 
             </DataGrid>
             <Border  Margin="5,5,5,0" Grid.Column="0" BorderThickness="1" BorderBrush="Black">
-                <StackPanel>
+                <StackPanel Background="White">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="167">
 
                         <Button Height="20" Width="20" Margin="5,5,0,5">
@@ -57,8 +53,8 @@
             </Border>
 
         </Grid>
-        <Button Content="确定" Canvas.Left="444" Canvas.Top="411" Width="75" Click="Button_Click"/>
-        <Button Content="取消" Canvas.Left="565" Canvas.Top="411" Width="75"/>
+        <Button Content="确定" Canvas.Left="444" Canvas.Top="411" Width="75" Height="20" Click="Button_Click" Foreground="White" Template="{DynamicResource ButtonControlTemplate1}"/>
+        <Button Content="取消" Canvas.Left="565" Canvas.Top="411" Width="75" Height="20" Foreground="White" Template="{DynamicResource ButtonControlTemplate1}"/>
 
     </Canvas>
 

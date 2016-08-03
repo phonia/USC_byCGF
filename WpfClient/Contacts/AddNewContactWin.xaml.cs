@@ -55,7 +55,7 @@ namespace WpfClient.Contacts
                     {
                         tb_userName.Text = "";
                     }
-                } 
+                }
             }
             else
             {

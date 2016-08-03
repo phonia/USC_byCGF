@@ -18,26 +18,19 @@ namespace BaseDataLayout
         public DocLocation()
         {
             this.DocComents = new HashSet<DocComent>();
-            this.DocLocations1 = new HashSet<DocLocation>();
         }
     
         public int ID { get; set; }
+        public int DocumentManageID { get; set; }
         public string VisualScope { get; set; }
         public int DocReaderId { get; set; }
         public Nullable<int> DocSenderId { get; set; }
         public bool IsRuleTransaction { get; set; }
-        public Nullable<int> DocLocationID { get; set; }
-        public Nullable<int> DocumentManageID { get; set; }
-        public Nullable<int> WorkInstanceTypeId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocComent> DocComents { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocLocation> DocLocations1 { get; set; }
-        public virtual DocLocation DocLocation1 { get; set; }
+        public virtual DocumentManage DocumentManage { get; set; }
         public virtual DocReader DocReader { get; set; }
         public virtual DocSender DocSender { get; set; }
-        public virtual DocumentManage DocumentManage { get; set; }
-        public virtual WorkInstanceType WorkInstanceType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DocComent> DocComents { get; set; }
     }
 }

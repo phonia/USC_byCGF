@@ -8,7 +8,7 @@
     <Control.ToolTip>
         <ToolTip Visibility="Hidden"></ToolTip>
     </Control.ToolTip>
-    <Grid>
+    <Grid Background="#ebf2f9">
         <Grid.RowDefinitions>
             <RowDefinition Height="28"/>
             <RowDefinition />
@@ -29,21 +29,45 @@
             </Menu>
         </Grid>
 
-        <TreeView Name="tv_Contacts" Grid.Row="1" Background="#ebf2f9"> 
+        <StackPanel  Grid.Row="1" Name="tv_Contacts">
+            <Expander Header="朋友 0/2"  Background="#ebf2f9">
+                <ListView Background="#ebf2f9" BorderThickness="0">
+                    <ListViewItem Name="李莫愁" ToolTip="天若有情天亦老"  Style="{DynamicResource ListViewItemStyle_ContractUser}" MouseDoubleClick="TreeViewItem_MouseDoubleClick">
+                        <Image Source="/WpfClient;component/Images/Img_Header/Head1.jpg"/>
+                    </ListViewItem>
+                    <ListViewItem Name="李娜" ToolTip="Hello World" Style="{DynamicResource ListViewItemStyle_ContractUser}" MouseDoubleClick="TreeViewItem_MouseDoubleClick">
+                        <Image Source="/WpfClient;component/Images/Img_Header/Head2.jpg"/>
+                    </ListViewItem>
+                </ListView>
+            </Expander>
+            <Expander Header="同事 0/3"  Background="#ebf2f9" >
+                <ListView Background="#ebf2f9" BorderThickness="0">
+                    <ListViewItem Name="赵冰茹" ToolTip="无备注"  Style="{DynamicResource ListViewItemStyle_ContractUser}" MouseDoubleClick="TreeViewItem_MouseDoubleClick">
+                        <Image Source="/WpfClient;component/Images/Img_Header/Head3.jpg"/>
+                    </ListViewItem>
+                    <ListViewItem Name="冯小新" ToolTip="。。。。。。" Style="{DynamicResource ListViewItemStyle_ContractUser}" MouseDoubleClick="TreeViewItem_MouseDoubleClick">
+                        <Image Source="/WpfClient;component/Images/Img_Header/Head5.jpg"/>
+                    </ListViewItem>
+                    <ListViewItem Name="马文儒" ToolTip="热死了~" Style="{DynamicResource ListViewItemStyle_ContractUser}" MouseDoubleClick="TreeViewItem_MouseDoubleClick">
+                        <Image Source="/WpfClient;component/Images/Img_Header/Head7.jpg"/>
+                    </ListViewItem>
+                </ListView>
+            </Expander>
+        </StackPanel>
+        <!--<TreeView Visibility="Hidden" Name="tv_Contacts" Grid.Row="1" >
+            
             <TreeViewItem Header="朋友 0/2">
-                <ListViewItem Name="李莫愁" ToolTip="备注" Style="{DynamicResource ListViewItemStyle_ContractUser}">
-                    <Image Width="20" Source="/WpfClient;component/Images/tr_logo.jpg"/>
-                </ListViewItem>
                 <TreeViewItem Header="李莫愁" MouseDoubleClick="TreeViewItem_MouseDoubleClick" />
                 <TreeViewItem Header="李娜" MouseDoubleClick="TreeViewItem_MouseDoubleClick"/>
             </TreeViewItem>
             <TreeViewItem Header="同事 0/3">
                 <TreeViewItem Header="赵冰茹" MouseDoubleClick="TreeViewItem_MouseDoubleClick" >
-                   
+
                 </TreeViewItem>
                 <TreeViewItem Header="冯小新" MouseDoubleClick="TreeViewItem_MouseDoubleClick"/>
                 <TreeViewItem Header="马文儒" MouseDoubleClick="TreeViewItem_MouseDoubleClick"/>
             </TreeViewItem>
-        </TreeView>
+        </TreeView>-->
+
     </Grid>
 </UserControl>

@@ -25,6 +25,7 @@ namespace BaseDataLayout
             this.GroupNames = new HashSet<GroupName>();
             this.CustomerGoups = new HashSet<CustomerGoup>();
             this.UserMessages = new HashSet<UserMessage>();
+            this.Discusses = new HashSet<Discuss>();
             this.Employees = new HashSet<Employee>();
             this.WorkSpaceRoles = new HashSet<WorkSpaceRole>();
             this.Authorizations = new HashSet<Authorization>();
@@ -58,6 +59,8 @@ namespace BaseDataLayout
         public virtual ICollection<CustomerGoup> CustomerGoups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserMessage> UserMessages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Discuss> Discusses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Width="450" Height="220">
+             mc:Ignorable="d" Width="450" Height="220" Background="#EBF2F9" Title="加入组织">
     <Canvas >
 
 
-        <ListBox Name="listbox_org" Canvas.Left="10" Canvas.Top="39" Width="250" Height="134" >
+        <ListBox Name="listbox_org" Canvas.Left="10" Canvas.Top="39" Width="250" Height="134" Background="#9DBEE1">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Template">
@@ -26,21 +26,21 @@
             </ListBox.ItemContainerStyle>
             <!--<ListBoxItem Content="XXX公司" />
             <ListBoxItem Content="XXX高速公司" />-->
-    
+
         </ListBox>
         <DockPanel Canvas.Top="3" Canvas.Left="3" Margin="3" HorizontalAlignment="Stretch">
             <Label Content="组织名称:" DockPanel.Dock="Left" Grid.Row="0"/>
             <TextBox HorizontalAlignment="Stretch" x:Name="organizitionName" Width="315"/>
-            <Button Name="btn_Search" Height="28" Width="40" DockPanel.Dock="Right" Margin="10,0,0,0" Content="查询" Click="btn_Search_Click"/>
+            <Button Name="btn_Search" Height="28" Width="40" DockPanel.Dock="Right" Margin="10,0,0,0" Content="查询" Click="btn_Search_Click" Template="{DynamicResource ButtonControlTemplate1}" Foreground="White"/>
         </DockPanel>
 
-        <StackPanel Canvas.Left="260" Canvas.Top="39" Width="174" Height="134"  >
+        <StackPanel Canvas.Left="260" Canvas.Top="39" Width="174" Height="134" Background="#C4D8ED" >
             <DockPanel Margin="2" />
             <DockPanel  Margin="2"/>
 
         </StackPanel>
-        <Button Content="确定" Width="50" Canvas.Left="300" Canvas.Top="151"/>
-        <Button Content="取消" Width="50" Canvas.Left="380" Canvas.Top="151"/>
+        <Button Content="确定" Width="50" Canvas.Left="300" Canvas.Top="145" Foreground="White" Template="{DynamicResource ButtonControlTemplate1}"/>
+        <Button Content="取消" Width="50" Canvas.Left="370" Canvas.Top="145" Foreground="White" Template="{DynamicResource ButtonControlTemplate1}"/>
 
 
 

@@ -12,24 +12,22 @@ namespace BaseDataLayout
     using System;
     using System.Collections.Generic;
     
-    public partial class DocSender
+    public partial class DiscussReturn
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DocSender()
+        public DiscussReturn()
         {
-            this.DocComents = new HashSet<DocComent>();
-            this.DocLocations = new HashSet<DocLocation>();
+            this.DiscussAttaches = new HashSet<DiscussAttach>();
         }
     
         public int Id { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public Nullable<int> PostID { get; set; }
+        public int DiscussContentId { get; set; }
+        public int DiscussUserId { get; set; }
+        public string ReturnContent { get; set; }
+        public string ReturnTime { get; set; }
     
-        public virtual User User { get; set; }
-        public virtual Post Post { get; set; }
+        public virtual DiscussContent DiscussContent { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocComent> DocComents { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocLocation> DocLocations { get; set; }
+        public virtual ICollection<DiscussAttach> DiscussAttaches { get; set; }
     }
 }

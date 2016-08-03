@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfClient.Teams
@@ -23,6 +22,20 @@ namespace WpfClient.Teams
         public ModuleToPost()
         {
             InitializeComponent();
+        }
+
+
+
+        private void rbtn_geren_Click(object sender, RoutedEventArgs e)
+        {
+            gb_geren.IsEnabled = true;
+            gb_gangwei.IsEnabled = false;
+        }
+
+        private void rbtn_gangwei_Click(object sender, RoutedEventArgs e)
+        {
+            gb_gangwei.IsEnabled = true;
+            gb_geren.IsEnabled = false;
         }
     }
 }

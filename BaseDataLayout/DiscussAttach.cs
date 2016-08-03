@@ -12,15 +12,16 @@ namespace BaseDataLayout
     using System;
     using System.Collections.Generic;
     
-    public partial class DocComent
+    public partial class DiscussAttach
     {
         public int Id { get; set; }
-        public int DocLocationID { get; set; }
-        public int DocSenderId { get; set; }
-        public string Remark { get; set; }
-        public System.DateTime RemarkTime { get; set; }
+        public Nullable<int> DiscussContentId { get; set; }
+        public Nullable<int> DiscussReturnId { get; set; }
+        public byte[] AttachmentFlag { get; set; }
+        public int DocumentManageID { get; set; }
     
-        public virtual DocLocation DocLocation { get; set; }
-        public virtual DocSender DocSender { get; set; }
+        public virtual DiscussContent DiscussContent { get; set; }
+        public virtual DiscussReturn DiscussReturn { get; set; }
+        public virtual DocumentManage DocumentManage { get; set; }
     }
 }

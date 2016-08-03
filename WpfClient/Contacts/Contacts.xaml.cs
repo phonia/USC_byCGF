@@ -27,14 +27,14 @@ namespace WpfClient.Contacts
 
         private void mi_AddGroup_Click(object sender, RoutedEventArgs e)
         {
-            AddNewGroupWin ang_win = new AddNewGroupWin();
-            ang_win.ShowDialog();
-            if (ang_win.NewGroupName != "")
-            {
-                TreeViewItem tvi = new TreeViewItem();
-                tvi.Header = ang_win.NewGroupName;
-                tv_Contacts.Items.Add(tvi);
-            }
+            //AddNewGroupWin ang_win = new AddNewGroupWin();
+            //ang_win.ShowDialog();
+            //if (ang_win.NewGroupName != "")
+            //{
+            //    TreeViewItem tvi = new TreeViewItem();
+            //    tvi.Header = ang_win.NewGroupName;
+            //    tv_Contacts.Items.Add(tvi);
+            //}
 
         }
 
@@ -42,23 +42,37 @@ namespace WpfClient.Contacts
         {
             //获取当前用户分组
             List<string> list_tvi = new List<string>();
-            foreach (var item in tv_Contacts.Items)
+            foreach (var item in tv_Contacts.Children)
             {
-                list_tvi.Add((item as TreeViewItem).Header.ToString());
+                list_tvi.Add((item as Expander).Header.ToString());
             }
 
-            
+
             AddNewContactWin anc_win = new AddNewContactWin();
             anc_win.userGroupList = list_tvi;
             anc_win.ShowDialog();
 
-            foreach (TreeViewItem item in tv_Contacts.Items)
+            foreach (Expander item in tv_Contacts.Children)
             {
                 if (anc_win.GroupName == item.Header.ToString())
                 {
-                    TreeViewItem tvi = new TreeViewItem();
-                    tvi.Header = anc_win.userName;
-                    item.Items.Add(tvi);
+                    var listView = item.Content as ListView;
+                    ListViewItem lvi = new ListViewItem();
+
+                    //设置模板
+                    ResourceDictionary mWindowResouce = new ResourceDictionary();
+                    mWindowResouce.Source = new Uri("WpfClient;component/Resource/ControlStyle.xaml", UriKind.Relative);
+                    this.Resources.MergedDictionaries.Add(mWindowResouce);
+                    lvi.Style = (Style)mWindowResouce["ListViewItemStyle_ContractUser"];
+
+                    lvi.Name = anc_win.userName;
+                    BitmapImage image = new BitmapImage(new Uri("/WpfClient;component/Images/tr_logo.jpg", UriKind.Relative));
+                    Image img = new Image();
+                    img.Source = image;
+                    lvi.Content = img;
+
+                    listView.Items.Add(lvi);
+
                     return;
                 }
 
@@ -70,21 +84,23 @@ namespace WpfClient.Contacts
             PrivateDialog pd1 = new PrivateDialog();
             pd1.SignalRProxy = new SignalRProxy();
             pd1.SignalRProxy.ConnectAsync();
-            pd1.To = (sender as TreeViewItem).Header.ToString();
-            pd1.Self =MainClient.currentUser.UserName;
+            pd1.To = (sender as ListViewItem).Name.ToString();
+            pd1.Self = MainClient.currentUser.UserName;
 
             PrivateDialog pd2 = new PrivateDialog();
             pd2.To = MainClient.currentUser.UserName;
-            pd2.Self = (sender as TreeViewItem).Header.ToString();
+            pd2.Self = (sender as ListViewItem).Name.ToString();
             //pd2.SignalRProxy = new SignalRProxy();
             pd2.SignalRProxy.ConnectAsync();
 
-            pd1.Closed += (sen, er) => {
+            pd1.Closed += (sen, er) =>
+            {
                 pd1.SignalRProxy.Logout(MainClient.currentUser.UserName);
                 pd1.SignalRProxy.Dispose();
             };
-            pd2.Closed += (sen, er) => {
-                pd2.SignalRProxy.Logout((sender as TreeViewItem).Header.ToString());
+            pd2.Closed += (sen, er) =>
+            {
+                pd2.SignalRProxy.Logout((sender as ListViewItem).Name.ToString());
                 pd2.SignalRProxy.Dispose();
             };
 
@@ -101,7 +117,7 @@ namespace WpfClient.Contacts
                 {
                     pwd1 = item.UserPwd;
                 }
-                if (item.UserName == (sender as TreeViewItem).Header.ToString())
+                if (item.UserName == (sender as ListViewItem).Name.ToString())
                 {
                     pwd2 = item.UserPwd;
                 }
@@ -109,12 +125,12 @@ namespace WpfClient.Contacts
 
             if (pd1.SignalRProxy.Login(MainClient.currentUser.UserName, pwd1))
             {
-                pd1.SignalRProxy.GetContactRecord(MainClient.currentUser.UserName, (sender as TreeViewItem).Header.ToString());
+                pd1.SignalRProxy.GetContactRecord(MainClient.currentUser.UserName, (sender as ListViewItem).Name.ToString());
                 pd1.Show();
             }
-            if (pd2.SignalRProxy.Login((sender as TreeViewItem).Header.ToString(), pwd2))
+            if (pd2.SignalRProxy.Login((sender as ListViewItem).Name.ToString(), pwd2))
             {
-                pd2.SignalRProxy.GetContactRecord((sender as TreeViewItem).Header.ToString(), MainClient.currentUser.UserName);
+                pd2.SignalRProxy.GetContactRecord((sender as ListViewItem).Name.ToString(), MainClient.currentUser.UserName);
                 pd2.Show();
             }
         }

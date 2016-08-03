@@ -18,11 +18,10 @@ namespace BaseDataLayout
         public DocumentManage()
         {
             this.Project_Document1 = new HashSet<DocumentManage>();
-            this.DocTypes = new HashSet<DocType>();
-            this.workTasks = new HashSet<workTask>();
             this.DocumentContents = new HashSet<DocumentContent>();
-            this.CustomTabDatas = new HashSet<CustomTabData>();
-            this.DocLocations = new HashSet<DocLocation>();
+            this.DocLocalScopes = new HashSet<DocLocation>();
+            this.DiscussAttaches = new HashSet<DiscussAttach>();
+            this.DocTypes = new HashSet<DocType>();
         }
     
         public int ID { get; set; }
@@ -44,16 +43,14 @@ namespace BaseDataLayout
         public virtual ICollection<DocumentManage> Project_Document1 { get; set; }
         public virtual DocumentManage Project_Document2 { get; set; }
         public virtual DocCheckState DocHanderState { get; set; }
-        public virtual Securityinfo Securityinfo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocType> DocTypes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<workTask> workTasks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DocumentContent> DocumentContents { get; set; }
+        public virtual Securityinfo Securityinfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CustomTabData> CustomTabDatas { get; set; }
+        public virtual ICollection<DocLocation> DocLocalScopes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocLocation> DocLocations { get; set; }
+        public virtual ICollection<DiscussAttach> DiscussAttaches { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DocType> DocTypes { get; set; }
     }
 }

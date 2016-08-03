@@ -4,35 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a65c7466a75f443fb651e6b5e6da3781" Name="MainDigram" ZoomLevel="52" >
-        <EntityTypeShape EntityType="AthenaGIS.Database.Organization" Width="4.5" PointX="32.875" PointY="21.75" FillColor="128, 64, 0" />
+      <Diagram DiagramId="a65c7466a75f443fb651e6b5e6da3781" Name="MainDigram" ZoomLevel="108" >
+        <EntityTypeShape EntityType="AthenaGIS.Database.Organization" Width="9" PointX="32.875" PointY="21.75" FillColor="128, 64, 0" />
         <EntityTypeShape EntityType="AthenaGIS.Database.Organization_ContacTable" Width="2.25" PointX="5.375" PointY="17.75" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.Position" Width="2.375" PointX="44.125" PointY="24.125" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.Position" Width="2.375" PointX="37.375" PointY="28.75" />
         <EntityTypeShape EntityType="AthenaGIS.Database.User" Width="2.25" PointX="64.625" PointY="25.75" />
         <EntityTypeShape EntityType="AthenaGIS.Database.User_ContacTable" Width="2" PointX="68.75" PointY="21.375" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.LoginLog" Width="2" PointX="57.25" PointY="29.875" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.LoginLog" Width="2" PointX="59.5" PointY="29.875" />
         <EntityTypeShape EntityType="AthenaGIS.Database.OrganizationTransition" Width="2.125" PointX="46.25" PointY="20.625" />
         <EntityTypeShape EntityType="AthenaGIS.Database.Organization_Type" Width="1.75" PointX="8.125" PointY="8.75" />
         <AssociationConnector Association="AthenaGIS.Database.UserLoginLog" />
         <EntityTypeShape EntityType="AthenaGIS.Database.DocumentManage" Width="3" PointX="5.75" PointY="48.5" FillColor="0, 192, 0" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.UserMessage" Width="2" PointX="68.625" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.UserMessage" Width="2" PointX="68.75" PointY="32" IsExpanded="true" />
         <AssociationConnector Association="AthenaGIS.Database.LoginLogUserMessage" />
         <EntityTypeShape EntityType="AthenaGIS.Database.UserGroup" Width="2.375" PointX="68.625" PointY="24.375" />
         <EntityTypeShape EntityType="AthenaGIS.Database.OrganizationOtherName" Width="2.25" PointX="42.5" PointY="19.5" />
         <AssociationConnector Association="AthenaGIS.Database.OrganizationOrganizationOtherName" />
         <EntityTypeShape EntityType="AthenaGIS.Database.Administrativecode" Width="3.5" PointX="15.625" PointY="1" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.DocumentType" Width="1.875" PointX="0.75" PointY="50" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.DocumentType" Width="1.875" PointX="0.75" PointY="50.25" FillColor="0, 192, 0" />
         <EntityTypeShape EntityType="AthenaGIS.Database.DocManageState" Width="1.75" PointX="5.125" PointY="44.75" FillColor="0, 192, 0" />
         <EntityTypeShape EntityType="AthenaGIS.Database.ProductStandard" Width="3.125" PointX="24.5" PointY="1" />
         <AssociationConnector Association="AthenaGIS.Database.ProductStandardProductStandard" />
         <EntityTypeShape EntityType="AthenaGIS.Database.IndustryCode" Width="2.75" PointX="19.625" PointY="1" />
         <AssociationConnector Association="AthenaGIS.Database.IndustryCodeIndustryCode" />
         <AssociationConnector Association="AthenaGIS.Database.DocProcessTypeProject_Document" />
-        <AssociationConnector Association="AthenaGIS.Database.Project_DocumentProject_Document" />
         <EntityTypeShape EntityType="AthenaGIS.Database.ZipCode" Width="1.5" PointX="11.75" PointY="0.5" />
-        <AssociationConnector Association="AthenaGIS.Database.AdministrativecodeZipCode" />
         <EntityTypeShape EntityType="AthenaGIS.Database.IPCode" Width="1.5" PointX="11.75" PointY="2.875" />
-        <AssociationConnector Association="AthenaGIS.Database.AdministrativecodeIPCode" />
         <AssociationConnector Association="AthenaGIS.Database.OrganizationOrganizationTransition" />
         <AssociationConnector Association="AthenaGIS.Database.OrganizationOrganizationTransition1" />
         <AssociationConnector Association="AthenaGIS.Database.UserUser_ContacTable" />
@@ -55,7 +52,7 @@
         <AssociationConnector Association="AthenaGIS.Database.UserRelateTypeUserRelateTable" />
         <AssociationConnector Association="AthenaGIS.Database.UserRelateTypeUserRelateType" />
         <EntityTypeShape EntityType="AthenaGIS.Database.DocumentContent" Width="2.125" PointX="4.375" PointY="54.75" FillColor="0, 192, 0" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.DocCheckState" Width="2.125" PointX="8.125" PointY="44.75" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.DocCheckState" Width="2.125" PointX="8.625" PointY="44.25" FillColor="0, 192, 0" />
         <AssociationConnector Association="AthenaGIS.Database.DocHanderStateDocumentManage" />
         <AssociationConnector Association="AthenaGIS.Database.DocumentManageDocumentContent" />
         <AssociationConnector Association="AthenaGIS.Database.DocumentTypeDocumentType" />
@@ -121,7 +118,7 @@
         <EntityTypeShape EntityType="AthenaGIS.Database.OrganizationAssetType" Width="2.125" PointX="37.25" PointY="12" />
         <AssociationConnector Association="AthenaGIS.Database.physicalAssetOrganizationAssetType" />
         <AssociationConnector Association="AthenaGIS.Database.AssetBaseTypeOrganizationAssetType" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.Employee" Width="2.375" PointX="45" PointY="31.625" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.Employee" Width="5.25" PointX="45" PointY="36.25" />
         <AssociationConnector Association="AthenaGIS.Database.UserEmployee" />
         <AssociationConnector Association="AthenaGIS.Database.PostRequirePosition" />
         <AssociationConnector Association="AthenaGIS.Database.PostPost" />
@@ -134,14 +131,14 @@
         <AssociationConnector Association="AthenaGIS.Database.IndustrySolutionWorkSpace" />
         <AssociationConnector Association="AthenaGIS.Database.OrganizationPost" />
         <AssociationConnector Association="AthenaGIS.Database.WorkSpaceWorkSpace" />
-        <AssociationConnector Association="AthenaGIS.Database.OrganizationEmployee" />
+        <AssociationConnector Association="AthenaGIS.Database.OrganizationEmployee" ManuallyRouted="false" >
+        </AssociationConnector>
         <AssociationConnector Association="AthenaGIS.Database.IndustrySolutionDllFileStream" />
         <AssociationConnector Association="AthenaGIS.Database.WorkModulWorkModul" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.WorkSpaceRole" Width="1.875" PointX="29" PointY="27.25" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.WorkSpaceRole" Width="1.875" PointX="26.125" PointY="24.25" />
         <AssociationConnector Association="AthenaGIS.Database.WorkSpaceWorkSpaceRole" />
         <AssociationConnector Association="AthenaGIS.Database.OrganizationWorkSpaceRole" />
         <AssociationConnector Association="AthenaGIS.Database.WorkModulWorkSpaceRole" />
-        <AssociationConnector Association="AthenaGIS.Database.IndustrySolutionWorkModul" />
         <EntityTypeShape EntityType="AthenaGIS.Database.Authorization" Width="1.875" PointX="11.375" PointY="37.875" FillColor="Green" />
         <AssociationConnector Association="AthenaGIS.Database.PostAuthorization" />
         <AssociationConnector Association="AthenaGIS.Database.OrganizationProduct" />
@@ -171,24 +168,25 @@
         <EntityTypeShape EntityType="AthenaGIS.Database.DocComent" Width="1.5" PointX="13" PointY="55" FillColor="0, 192, 0" />
         <AssociationConnector Association="AthenaGIS.Database.DocSenderDocComent" />
         <AssociationConnector Association="AthenaGIS.Database.UserCustomerGoup1" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.JobChange" Width="1.5" PointX="39.125" PointY="33.5" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.JobChange" Width="1.5" PointX="39.125" PointY="36" />
         <AssociationConnector Association="AthenaGIS.Database.EmployeeJobChange" />
         <AssociationConnector Association="AthenaGIS.Database.PostJobChange" />
         <EntityTypeShape EntityType="AthenaGIS.Database.WorkSpaceType" Width="2" PointX="22.5" PointY="35.125" FillColor="255, 128, 128" />
         <AssociationConnector Association="AthenaGIS.Database.WorkSpaceWorkSpaceType" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.WorkInstanceType" Width="1.875" PointX="19" PointY="35" FillColor="255, 128, 128" />
-        <AssociationConnector Association="AthenaGIS.Database.WorkInstanceTypeWorkInstanceType" />
-        <AssociationConnector Association="AthenaGIS.Database.WorkInstanceTypeWorkSpaceType" />
         <EntityTypeShape EntityType="AthenaGIS.Database.DocLocation" Width="1.5" PointX="12.25" PointY="49.875" FillColor="LimeGreen" />
         <AssociationConnector Association="AthenaGIS.Database.FK_DocLocationDocComent" />
         <AssociationConnector Association="AthenaGIS.Database.FK_DocLocationDocLocation" />
         <AssociationConnector Association="AthenaGIS.Database.FK_DocReaderDocLocation" />
         <AssociationConnector Association="AthenaGIS.Database.FK_DocSenderDocLocation" />
         <AssociationConnector Association="AthenaGIS.Database.FK_DocumentManageDocLocation" />
-        <AssociationConnector Association="AthenaGIS.Database.WorkInstanceTypeDocLocation" />
-        <EntityTypeShape EntityType="AthenaGIS.Database.WorkSpaceBaseType" Width="2.125" PointX="15.25" PointY="35" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.WorkSpaceBaseType" Width="2.125" PointX="18.375" PointY="35.125" FillColor="255, 128, 128" />
         <AssociationConnector Association="AthenaGIS.Database.WorkSpaceBaseTypeWorkSpaceBaseType" />
-        <AssociationConnector Association="AthenaGIS.Database.WorkSpaceBaseTypeWorkInstanceType" />
+        <AssociationConnector Association="AthenaGIS.Database.DllFileStreamWorkModul" />
+        <AssociationConnector Association="AthenaGIS.Database.WorkSpaceBaseTypeWorkSpaceType" />
+        <AssociationConnector Association="AthenaGIS.Database.WorkSpaceBaseTypeDocLocation" />
+        <EntityTypeShape EntityType="AthenaGIS.Database.EventTime" Width="1.5" PointX="55.875" PointY="29.875" />
+        <AssociationConnector Association="AthenaGIS.Database.LoginLogEventTime" />
+        <AssociationConnector Association="AthenaGIS.Database.PositionPost" />
         </Diagram>
       <Diagram DiagramId="05a91bafecce461287820b18dafc6d90" Name="FinanceManagerment" ZoomLevel="42" >
         <EntityTypeShape EntityType="AthenaGIS.Database.F_Currency" Width="1.5" PointX="1.375" PointY="0.5" />
@@ -224,7 +222,7 @@
         <EntityTypeShape EntityType="AthenaGIS.Database.ProjectChangeEvent" Width="2.25" PointX="11.5" PointY="1.125" />
         <AssociationConnector Association="AthenaGIS.Database.ProjectProjectChangeEvent" />
         </Diagram>
-      <Diagram DiagramId="6461e7cb991d4fb3b2127c33cddcafe2" Name="GeoGraphicSystem" ZoomLevel="13" >
+      <Diagram DiagramId="6461e7cb991d4fb3b2127c33cddcafe2" Name="GeoGraphicSystem" ZoomLevel="50" >
         <EntityTypeShape EntityType="AthenaGIS.Database.Land_Graph" Width="14.375" PointX="12.375" PointY="7.875" FillColor="YellowGreen" />
         <EntityTypeShape EntityType="AthenaGIS.Database.Land_Type" Width="2.75" PointX="9.25" PointY="16" FillColor="Green" />
         <AssociationConnector Association="AthenaGIS.Database.Land_TypeLand_Type" />

@@ -5,21 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClient.Contacts"
         mc:Ignorable="d"
-        Title="添加分组" Height="150" Width="350" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="添加分组" Height="150" Width="320" WindowStartupLocation="CenterScreen">
+    <Grid Background="#ebf2f9">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="60"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" FontSize="15" Text="请输入分组名:" Grid.Column="0"/>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10"  Text="分组名:" Grid.Column="0"/>
         <TextBox Name="tb_GroupName" Height="30" Margin="10" Grid.Column="1"/>
-        <Border Grid.Row="1" Grid.Column="1" CornerRadius="8" BorderThickness="2" BorderBrush="Gray" Width="80" Height="30" HorizontalAlignment="Right" Margin="10,0,10,10">
-            <Button Name="btn_Confirm"  Content="确定" FontSize="15" VerticalAlignment="Center" Click="btn_Confirm_Click"/>
-        </Border>
-        
+        <Button Width="80" Grid.Row="1" Grid.Column="1" Name="btn_Confirm" Foreground="White" Height="28" Content="确定" HorizontalAlignment="Right" Margin="0,0,10,0"  VerticalAlignment="Center" Click="btn_Confirm_Click" Template="{DynamicResource ButtonControlTemplate1}"/>
+
+
     </Grid>
 </Window>

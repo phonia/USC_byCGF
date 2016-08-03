@@ -18,6 +18,7 @@ namespace BaseDataLayout
         public WorkSpace()
         {
             this.WorkSpaces = new HashSet<WorkSpace>();
+            this.Discusses = new HashSet<Discuss>();
             this.WorkSpaceRoles = new HashSet<WorkSpaceRole>();
             this.DocReaders = new HashSet<DocReader>();
             this.WorkSpaceTypes = new HashSet<WorkSpaceType>();
@@ -38,6 +39,8 @@ namespace BaseDataLayout
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WorkSpace> WorkSpaces { get; set; }
         public virtual WorkSpace WorkSpace1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Discuss> Discusses { get; set; }
         public virtual WorkModul WorkModul { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WorkSpaceRole> WorkSpaceRoles { get; set; }

@@ -28,18 +28,26 @@
                     <MenuItem Name="mi_createWorkspace" Header="创建工作空间" Click="mi_createWorkspace_Click" Template="{DynamicResource MenuItemControlTemplate1}"/>
                     <MenuItem Name="mi_joinWorkspace" Header="申请工作空间" Click="mi_joinWorkspace_Click" Template="{DynamicResource MenuItemControlTemplate1}"/>
                     <MenuItem Name="mi_createNormalGroup" Header="创建普通群" Click="mi_createNormalGroup_Click" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                        <MenuItem Name="mi_moduleToPost" Header="分配职责" Click="mi_moduleToPost_Click" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                    <MenuItem Name="mi_moduleToPost" Header="分配职责" Click="mi_moduleToPost_Click" Template="{DynamicResource MenuItemControlTemplate1}"/>
                 </MenuItem>
             </Menu>
         </Grid>
 
 
         <TreeView  Grid.Row="1" Background="#ebf2f9">
-            <TreeViewItem Header="组织空间">
+            <TreeViewItem >
+                <TreeViewItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="/WpfClient;component/Images/orgSpace.ico" Width="20" Height="20"/>
+                            <TextBlock Margin="10,0,0,0" Text="组织空间"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </TreeViewItem.HeaderTemplate>
                 <TreeViewItem.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="创建组织结构"/>
-                       
+
                     </ContextMenu>
                 </TreeViewItem.ContextMenu>
                 <TreeViewItem Name="tv_publicDialog" Header="图之灵计算机技术有限公司" MouseDoubleClick="tv_publicDialog_MouseDoubleClick"/>
@@ -51,7 +59,15 @@
                     </TreeViewItem>
                 </TreeViewItem>
             </TreeViewItem>
-            <TreeViewItem Name="tvi_WorkSpace" Header="工作空间">
+            <TreeViewItem Name="tvi_WorkSpace">
+                <TreeViewItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/WpfClient;component/Images/workSpace.ico" Height="20" Width="20"/>
+                            <TextBlock Text="工作空间" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </TreeViewItem.HeaderTemplate>
                 <TreeViewItem.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="创建工作空间"/>
@@ -66,7 +82,15 @@
                     </TreeViewItem>
                 </TreeViewItem>
             </TreeViewItem>
-            <TreeViewItem Name="tv_NormalSpace" Header="普通空间">
+            <TreeViewItem Name="tv_NormalSpace" >
+                <TreeViewItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="20" Height="20" Source="/WpfClient;component/Images/normalSpace.ico"/>
+                            <TextBlock Text="普通空间" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </TreeViewItem.HeaderTemplate>
                 <TreeViewItem Header="同学群"/>
             </TreeViewItem>
         </TreeView>
