@@ -3617,6 +3617,7 @@
             </Documentation>
           </Property>
           <Property Name="Note" Type="String" Nullable="false" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
           </EntityType>
         <EntityType Name="User_ContacTable">
           <Documentation>
@@ -3631,6 +3632,7 @@
           <Property Type="String" Name="Value" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="User" Relationship="AthenaGIS.Database.UserUser_ContacTable" FromRole="User_ContacTable" ToRole="User" />
           <Property Type="Int32" Name="UserID" Nullable="true" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="LoginLog">
           <Documentation>
@@ -3788,6 +3790,7 @@
           <NavigationProperty Name="UserMessage1" Relationship="AthenaGIS.Database.UserMessageUserMessage" FromRole="UserMessage1" ToRole="UserMessage" />
           <NavigationProperty Name="User" Relationship="AthenaGIS.Database.UserUserMessage" FromRole="UserMessage" ToRole="User" />
           <Property Type="Int32" Name="SenderID" Nullable="false" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="LoginLogUserMessage">
           <End Type="AthenaGIS.Database.LoginLog" Role="LoginLog" Multiplicity="0..1" />
@@ -3804,6 +3807,7 @@
         <EntityType Name="UserGroup">
           <Documentation>
             <Summary>信息群</Summary>
+            <LongDescription>成员表</LongDescription>
           </Documentation>
           <Key>
             <PropertyRef Name="ID" />
@@ -3819,6 +3823,7 @@
           <NavigationProperty Name="GroupName" Relationship="AthenaGIS.Database.GroupNameUserGroup" FromRole="UserGroup" ToRole="GroupName" />
           <Property Type="Int32" Name="GroupNameID" Nullable="false" />
           <Property Name="Rule" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="OrganizationOtherName">
           <Documentation>
@@ -4346,6 +4351,7 @@
             </Documentation>
           </Property>
           <Property Type="String" Name="Notes" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="UserUserRelateTable">
           <End Type="AthenaGIS.Database.User" Role="User" Multiplicity="1" />
@@ -4386,6 +4392,7 @@
           <NavigationProperty Name="UserRelateTypes" Relationship="AthenaGIS.Database.UserRelateTypeUserRelateType" FromRole="UserRelateType" ToRole="UserRelateType1" />
           <NavigationProperty Name="UserRelateType1" Relationship="AthenaGIS.Database.UserRelateTypeUserRelateType" FromRole="UserRelateType1" ToRole="UserRelateType" />
           <Property Type="Int32" Name="Parent" Nullable="true" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="UserRelateTypeUserRelateTable">
           <End Type="AthenaGIS.Database.UserRelateType" Role="UserRelateType" Multiplicity="1" />
@@ -4759,6 +4766,9 @@
           </ReferentialConstraint>
         </Association>
         <EntityType Name="MessageGroupMessager">
+          <Documentation>
+            <LongDescription>群信息</LongDescription>
+          </Documentation>
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -4768,6 +4778,7 @@
           <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Type="Int32" Name="MessageGroupID" Nullable="false" />
           <Property Type="String" Name="SendTime" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="MessageGroupMessageGroupMessager">
           <End Type="AthenaGIS.Database.UserGroup" Role="MessageGroup" Multiplicity="1" />
@@ -4804,6 +4815,7 @@
           <Property Type="Int32" Name="UserID" Nullable="false" />
           <Property Type="String" Name="GroupNumber" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="UserGroups" Relationship="AthenaGIS.Database.GroupNameUserGroup" FromRole="GroupName" ToRole="UserGroup" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="UserGroupName">
           <End Type="AthenaGIS.Database.User" Role="User" Multiplicity="1" />
@@ -4839,6 +4851,7 @@
           <Property Type="Int32" Name="CreatID" Nullable="false" />
           <NavigationProperty Name="User1" Relationship="AthenaGIS.Database.UserCustomerGoup1" FromRole="CustomerGoup" ToRole="User" />
           <Property Name="UserID" Type="Int32" Nullable="true" />
+          <Property Name="EventTime" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="UserCustomerGoup">
           <End Type="AthenaGIS.Database.User" Role="User" Multiplicity="1" />
