@@ -19,6 +19,7 @@ namespace BaseDataLayout
         public int Maintenancer { get; set; }
         public string Description { get; set; }
         public string Experience { get; set; }
+        public long EventTime { get; set; }
     
         public virtual physicalAsset physicalAsset { get; set; }
     }

@@ -18,6 +18,7 @@ namespace BaseDataLayout
         public DllFileStream()
         {
             this.DllFileStreams = new HashSet<DllFileStream>();
+            this.WorkModuls = new HashSet<WorkModul>();
         }
     
         public int ID { get; set; }
@@ -30,10 +31,13 @@ namespace BaseDataLayout
         public string Txt2 { get; set; }
         public string URI { get; set; }
         public string Paragram { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DllFileStream> DllFileStreams { get; set; }
         public virtual DllFileStream DllFileStream1 { get; set; }
         public virtual IndustrySolution IndustrySolution { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WorkModul> WorkModuls { get; set; }
     }
 }

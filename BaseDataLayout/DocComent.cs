@@ -19,8 +19,9 @@ namespace BaseDataLayout
         public int DocSenderId { get; set; }
         public string Remark { get; set; }
         public System.DateTime RemarkTime { get; set; }
+        public long EventTime { get; set; }
     
-        public virtual DocLocation DocLocation { get; set; }
         public virtual DocSender DocSender { get; set; }
+        public virtual DocLocation DocLocation { get; set; }
     }
 }

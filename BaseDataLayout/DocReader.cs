@@ -25,12 +25,13 @@ namespace BaseDataLayout
         public Nullable<int> OrganizationID { get; set; }
         public Nullable<int> PostID { get; set; }
         public Nullable<int> UserID { get; set; }
+        public long EventTime { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocLocation> DocLocations { get; set; }
         public virtual Organization Organization { get; set; }
         public virtual WorkSpace WorkSpace { get; set; }
         public virtual Post Post { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DocLocation> DocLocations { get; set; }
     }
 }

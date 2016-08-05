@@ -45,6 +45,7 @@ namespace BaseDataLayout
         public int IndustryCodeID { get; set; }
         public int AdministrativecodeSacID { get; set; }
         public bool IsValid { get; set; }
+        public long EventTime { get; set; }
     
         public virtual Subordinate Subordinate { get; set; }
         public virtual Organization_Type Organization_Type { get; set; }

@@ -26,6 +26,7 @@ namespace BaseDataLayout
         public string UserName { get; set; }
         public bool CheckState { get; set; }
         public Nullable<System.DateTime> CheckTime { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DocumentManage> DocumentManages { get; set; }

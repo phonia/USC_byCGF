@@ -17,40 +17,38 @@ namespace BaseDataLayout
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DocumentManage()
         {
-            this.Project_Document1 = new HashSet<DocumentManage>();
-            this.DocumentContents = new HashSet<DocumentContent>();
-            this.DocLocalScopes = new HashSet<DocLocation>();
-            this.DiscussAttaches = new HashSet<DiscussAttach>();
             this.DocTypes = new HashSet<DocType>();
+            this.workTasks = new HashSet<workTask>();
+            this.DocumentContents = new HashSet<DocumentContent>();
+            this.CustomTabDatas = new HashSet<CustomTabData>();
+            this.DocLocations = new HashSet<DocLocation>();
         }
     
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Catalog { get; set; }
+        public string Doctype { get; set; }
         public string Content { get; set; }
         public string URL { get; set; }
-        public string Handler { get; set; }
-        public int DocManageStateID { get; set; }
-        public Nullable<int> DocumentTypeID { get; set; }
-        public string HandeTime { get; set; }
-        public Nullable<int> EventTimeEventTimeID { get; set; }
-        public int DocCheckStateID { get; set; }
+        public string FileNumber { get; set; }
+        public Nullable<int> DocCheckStateID { get; set; }
         public Nullable<int> SecurityinfoID { get; set; }
-        public Nullable<int> ParentVer { get; set; }
+        public Nullable<int> WorkSpaceBaseTypeId { get; set; }
+        public long EventTime { get; set; }
+        public Nullable<int> DocManageStateID { get; set; }
     
-        public virtual DocManageState DocProcessType { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocumentManage> Project_Document1 { get; set; }
-        public virtual DocumentManage Project_Document2 { get; set; }
         public virtual DocCheckState DocHanderState { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocumentContent> DocumentContents { get; set; }
         public virtual Securityinfo Securityinfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocLocation> DocLocalScopes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DiscussAttach> DiscussAttaches { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DocType> DocTypes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<workTask> workTasks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DocumentContent> DocumentContents { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CustomTabData> CustomTabDatas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DocLocation> DocLocations { get; set; }
+        public virtual WorkSpaceBaseType WorkSpaceBaseType { get; set; }
+        public virtual DocManageState DocManageState { get; set; }
     }
 }

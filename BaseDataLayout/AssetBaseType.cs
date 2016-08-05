@@ -26,6 +26,7 @@ namespace BaseDataLayout
         public string Note { get; set; }
         public int OrganizationID { get; set; }
         public Nullable<int> AssetTypeId { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssetBaseType> AssetTypes { get; set; }

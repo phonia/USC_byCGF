@@ -25,6 +25,7 @@ namespace BaseDataLayout
         public string Name { get; set; }
         public string Type { get; set; }
         public string Descript { get; set; }
+        public long EventTime { get; set; }
     
         public virtual WorkModul WorkModul { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

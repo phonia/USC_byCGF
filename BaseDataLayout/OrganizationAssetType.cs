@@ -19,6 +19,7 @@ namespace BaseDataLayout
         public string Note { get; set; }
         public Nullable<int> physicalAssetId { get; set; }
         public int AssetBaseTypeId { get; set; }
+        public long EventTime { get; set; }
     
         public virtual physicalAsset physicalAsset { get; set; }
         public virtual AssetBaseType AssetBaseType { get; set; }

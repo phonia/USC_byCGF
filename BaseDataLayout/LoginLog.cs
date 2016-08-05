@@ -18,6 +18,7 @@ namespace BaseDataLayout
         public LoginLog()
         {
             this.UserMessages = new HashSet<UserMessage>();
+            this.EventTimes = new HashSet<EventTime>();
         }
     
         public int ID { get; set; }
@@ -30,5 +31,7 @@ namespace BaseDataLayout
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserMessage> UserMessages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EventTime> EventTimes { get; set; }
     }
 }

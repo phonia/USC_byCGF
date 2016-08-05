@@ -15,10 +15,8 @@ namespace BaseDataLayout
     public partial class IPCode
     {
         public int ID { get; set; }
-        public int AdministrativecodeSacID { get; set; }
         public string IP { get; set; }
         public string Company { get; set; }
-    
-        public virtual Administrativecode Administrativecode { get; set; }
+        public long EventTime { get; set; }
     }
 }

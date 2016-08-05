@@ -19,6 +19,7 @@ namespace BaseDataLayout
         public string Content { get; set; }
         public int MessageGroupID { get; set; }
         public string SendTime { get; set; }
+        public long EventTime { get; set; }
     
         public virtual UserGroup MessageGroup { get; set; }
     }

@@ -35,6 +35,8 @@ namespace BaseDataLayout
         public int PositionID { get; set; }
         public Nullable<int> PostID { get; set; }
         public int OrganizationID { get; set; }
+        public Nullable<int> PositionID1 { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Post> Posts { get; set; }
@@ -50,5 +52,6 @@ namespace BaseDataLayout
         public virtual ICollection<DocSender> DocSenders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JobChange> JobChanges { get; set; }
+        public virtual Position Position { get; set; }
     }
 }

@@ -26,6 +26,7 @@ namespace BaseDataLayout
         public int Level { get; set; }
         public string Descript { get; set; }
         public Nullable<int> SecurityinfoID { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DocumentManage> DocumentManages { get; set; }

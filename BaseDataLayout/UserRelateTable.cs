@@ -20,6 +20,7 @@ namespace BaseDataLayout
         public int UserRelateTypeID { get; set; }
         public string RelateObject { get; set; }
         public string Notes { get; set; }
+        public long EventTime { get; set; }
     
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }

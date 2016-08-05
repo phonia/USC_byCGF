@@ -27,6 +27,7 @@ namespace BaseDataLayout
         public string State { get; set; }
         public Nullable<int> LoginLogID { get; set; }
         public int SenderID { get; set; }
+        public long EventTime { get; set; }
     
         public virtual LoginLog LoginLog { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

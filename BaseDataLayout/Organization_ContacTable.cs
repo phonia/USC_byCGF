@@ -20,6 +20,7 @@ namespace BaseDataLayout
         public string Tools { get; set; }
         public string Value { get; set; }
         public bool IsValid { get; set; }
+        public long EventTime { get; set; }
     
         public virtual OrganizBasic OrganizBasic { get; set; }
     }

@@ -18,18 +18,22 @@ namespace BaseDataLayout
         public WorkSpaceBaseType()
         {
             this.WorkSpaceBaseTypes = new HashSet<WorkSpaceBaseType>();
-            this.WorkInstanceTypes = new HashSet<WorkInstanceType>();
+            this.WorkSpaceTypes = new HashSet<WorkSpaceType>();
+            this.DocumentManages = new HashSet<DocumentManage>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
         public string Note { get; set; }
         public Nullable<int> WorkSpaceBaseTypeId { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WorkSpaceBaseType> WorkSpaceBaseTypes { get; set; }
         public virtual WorkSpaceBaseType WorkSpaceBaseType1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WorkInstanceType> WorkInstanceTypes { get; set; }
+        public virtual ICollection<WorkSpaceType> WorkSpaceTypes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DocumentManage> DocumentManages { get; set; }
     }
 }

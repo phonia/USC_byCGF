@@ -21,6 +21,7 @@ namespace BaseDataLayout
         public System.DateTime StartTime { get; set; }
         public System.DateTime EndTime { get; set; }
         public string Creater { get; set; }
+        public long EventTime { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Post Post { get; set; }

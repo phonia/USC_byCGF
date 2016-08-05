@@ -620,6 +620,7 @@
     <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
     <Property Name="LimiteTime" Type="datetime" Nullable="false" />
     <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="User_ContactTable">
     <Key>
@@ -630,6 +631,7 @@
     <Property Name="Tools" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="true" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="LoginLogs">
     <Key>
@@ -696,6 +698,7 @@
     <Property Name="State" Type="nvarchar(max)" Nullable="false" />
     <Property Name="LoginLogID" Type="int" Nullable="true" />
     <Property Name="SenderID" Type="int" Nullable="false" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="UserGroups">
     <Key>
@@ -709,6 +712,7 @@
     <Property Name="State" Type="nvarchar(max)" Nullable="false" />
     <Property Name="GroupNameID" Type="int" Nullable="false" />
     <Property Name="Rule" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="OrganizationOtherNames">
     <Key>
@@ -721,9 +725,9 @@
   </EntityType>
   <EntityType Name="Administrativecodes">
     <Key>
-      <PropertyRef Name="SacID" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="SacID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DivisionCode" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RegionName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ParentCode" Type="nvarchar(max)" Nullable="false" />
@@ -912,6 +916,7 @@
     <Property Name="UserRelateTypeID" Type="int" Nullable="false" />
     <Property Name="RelateObject" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="UserRelateTypes">
     <Key>
@@ -921,6 +926,7 @@
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descript" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Parent" Type="int" Nullable="true" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="DocumentContents">
     <Key>
@@ -1019,6 +1025,7 @@
     <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MessageGroupID" Type="int" Nullable="false" />
     <Property Name="SendTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="GroupNames">
     <Key>
@@ -1029,6 +1036,7 @@
     <Property Name="CreatTime" Type="nvarchar(max)" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="GroupNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="CustomerGoups">
     <Key>
@@ -1038,6 +1046,7 @@
     <Property Name="GroupName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CreatID" Type="int" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="true" />
+    <Property Name="EventTime" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="DllFileStreams">
     <Key>
@@ -1547,7 +1556,7 @@
     <End Role="Administrativecode1" Type="AthenaGIS.Database.Store.Administrativecodes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Administrativecode">
-        <PropertyRef Name="SacID" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Administrativecode1">
         <PropertyRef Name="Parent" />
@@ -1799,7 +1808,7 @@
     <End Role="OrganizBasic" Type="AthenaGIS.Database.Store.OrganizBasics" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Administrativecode">
-        <PropertyRef Name="SacID" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="OrganizBasic">
         <PropertyRef Name="AdministrativecodeSacID" />
@@ -2890,7 +2899,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AthenaGIS.Database" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="DatabaseContext" annotation:LazyLoadingEnabled="true" cg:TypeAccess="Public">
+        <EntityContainer Name="DataContext" annotation:LazyLoadingEnabled="true" cg:TypeAccess="Public">
           <EntitySet Name="Organizations" EntityType="AthenaGIS.Database.Organization" />
           <EntitySet Name="Organization_ContactTables" EntityType="AthenaGIS.Database.Organization_ContacTable" />
           <EntitySet Name="Positions" EntityType="AthenaGIS.Database.Position" />
@@ -6591,7 +6600,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AthenaGISDatabaseStoreContainer" CdmEntityContainer="DatabaseContext">
+  <EntityContainerMapping StorageEntityContainer="AthenaGISDatabaseStoreContainer" CdmEntityContainer="DataContext">
     <EntitySetMapping Name="Organizations">
       <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Organization)">
         <MappingFragment StoreEntitySet="Organizations">
@@ -6651,6 +6660,7 @@
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="LimiteTime" ColumnName="LimiteTime" />
           <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -6662,6 +6672,7 @@
           <ScalarProperty Name="Tools" ColumnName="Tools" />
           <ScalarProperty Name="Value" ColumnName="Value" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -6733,6 +6744,7 @@
           <ScalarProperty Name="State" ColumnName="State" />
           <ScalarProperty Name="LoginLogID" ColumnName="LoginLogID" />
           <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -6747,6 +6759,7 @@
           <ScalarProperty Name="State" ColumnName="State" />
           <ScalarProperty Name="GroupNameID" ColumnName="GroupNameID" />
           <ScalarProperty Name="Rule" ColumnName="Rule" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -6763,7 +6776,7 @@
     <EntitySetMapping Name="Administrativecodes">
       <EntityTypeMapping TypeName="IsTypeOf(AthenaGIS.Database.Administrativecode)">
         <MappingFragment StoreEntitySet="Administrativecodes">
-          <ScalarProperty Name="ID" ColumnName="SacID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
           <ScalarProperty Name="RegionName" ColumnName="RegionName" />
           <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
@@ -6966,6 +6979,7 @@
           <ScalarProperty Name="UserRelateTypeID" ColumnName="UserRelateTypeID" />
           <ScalarProperty Name="RelateObject" ColumnName="RelateObject" />
           <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -6976,6 +6990,7 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Descript" ColumnName="Descript" />
           <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -7082,6 +7097,7 @@
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="MessageGroupID" ColumnName="MessageGroupID" />
           <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -7093,6 +7109,7 @@
           <ScalarProperty Name="CreatTime" ColumnName="CreatTime" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -7103,6 +7120,7 @@
           <ScalarProperty Name="GroupName" ColumnName="GroupName" />
           <ScalarProperty Name="CreatID" ColumnName="CreatID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -7551,7 +7569,7 @@
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

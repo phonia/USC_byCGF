@@ -26,6 +26,7 @@ namespace BaseDataLayout
         public string descript { get; set; }
         public string Value { get; set; }
         public int ProductCompositionId { get; set; }
+        public long EventTime { get; set; }
     
         public virtual Product Product1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

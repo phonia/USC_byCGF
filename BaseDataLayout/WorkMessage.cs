@@ -21,6 +21,7 @@ namespace BaseDataLayout
         public string State { get; set; }
         public string Request { get; set; }
         public string Repose { get; set; }
+        public long EventTime { get; set; }
     
         public virtual Authorization Authorization { get; set; }
     }

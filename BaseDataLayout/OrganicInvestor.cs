@@ -23,6 +23,7 @@ namespace BaseDataLayout
         public decimal Amount { get; set; }
         public string Unit { get; set; }
         public string Currency { get; set; }
+        public long EventTime { get; set; }
     
         public virtual OrganizBasic OrganizBasic { get; set; }
         public virtual OrganizBasic OrganizBasic1 { get; set; }

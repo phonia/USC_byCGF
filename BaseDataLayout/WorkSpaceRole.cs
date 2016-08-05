@@ -20,8 +20,8 @@ namespace BaseDataLayout
         public int OrganizationID { get; set; }
         public string Descript { get; set; }
         public Nullable<int> WorkModulId { get; set; }
-        public string Creater { get; set; }
         public Nullable<int> UserID { get; set; }
+        public long EventTime { get; set; }
     
         public virtual WorkSpace WorkSpace { get; set; }
         public virtual Organization Organization { get; set; }

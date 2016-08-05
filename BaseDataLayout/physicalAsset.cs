@@ -32,6 +32,7 @@ namespace BaseDataLayout
         public string State { get; set; }
         public decimal Value { get; set; }
         public Nullable<System.DateTimeOffset> MaintenancePeriod { get; set; }
+        public long EventTime { get; set; }
     
         public virtual Organization Organization { get; set; }
         public virtual Product Product { get; set; }

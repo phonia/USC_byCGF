@@ -28,15 +28,16 @@ namespace BaseDataLayout
         public string Content { get; set; }
         public string ActivityType { get; set; }
         public Nullable<int> WorkModulId { get; set; }
-        public Nullable<int> IndustrySolutionId { get; set; }
+        public Nullable<int> DllFileStreamID { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WorkModul> WorkModuls { get; set; }
         public virtual WorkModul WorkModul1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WorkSpaceRole> WorkSpaceRoles { get; set; }
-        public virtual IndustrySolution IndustrySolution { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ModulProperty> ModulProperties { get; set; }
+        public virtual DllFileStream DllFileStream { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace BaseDataLayout
         public int ProductId { get; set; }
         public int ProductCustomCategoryId { get; set; }
         public string Descript { get; set; }
+        public long EventTime { get; set; }
     
         public virtual Product Product { get; set; }
         public virtual ProductCustomCategory ProductCustomCategory { get; set; }

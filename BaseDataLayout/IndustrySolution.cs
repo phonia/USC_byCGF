@@ -19,7 +19,6 @@ namespace BaseDataLayout
         {
             this.WorkSpaces = new HashSet<WorkSpace>();
             this.DllFileStreams = new HashSet<DllFileStream>();
-            this.WorkModuls = new HashSet<WorkModul>();
         }
     
         public int Id { get; set; }
@@ -27,13 +26,12 @@ namespace BaseDataLayout
         public string Name { get; set; }
         public string Content { get; set; }
         public string Note { get; set; }
+        public long EventTime { get; set; }
     
         public virtual IndustryCode IndustryCode { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WorkSpace> WorkSpaces { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DllFileStream> DllFileStreams { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WorkModul> WorkModuls { get; set; }
     }
 }

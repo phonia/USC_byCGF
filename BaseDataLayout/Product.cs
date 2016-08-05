@@ -33,6 +33,7 @@ namespace BaseDataLayout
         public string PCode { get; set; }
         public Nullable<int> OrganizBasicID { get; set; }
         public Nullable<int> OrganizationID { get; set; }
+        public long EventTime { get; set; }
     
         public virtual ProductStandard ProductStandard { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

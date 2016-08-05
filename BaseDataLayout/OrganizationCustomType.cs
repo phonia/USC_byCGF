@@ -18,6 +18,7 @@ namespace BaseDataLayout
         public int OrganizationID { get; set; }
         public int CustomCategoryID { get; set; }
         public string note { get; set; }
+        public long EventTime { get; set; }
     
         public virtual Organization Organization { get; set; }
         public virtual CustomCategory CustomCategory { get; set; }

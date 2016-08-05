@@ -28,6 +28,7 @@ namespace BaseDataLayout
         public Nullable<int> ModulPropertyId { get; set; }
         public Nullable<int> UserID { get; set; }
         public Nullable<int> UserID1 { get; set; }
+        public long EventTime { get; set; }
     
         public virtual Post Post { get; set; }
         public virtual Post Post1 { get; set; }

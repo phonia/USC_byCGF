@@ -54,36 +54,263 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabasePlace.Designer.cs">
+    <Compile Include="Administrativecode.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetBaseType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetMaintenance.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetUse.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BussnessVer.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCategory.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerGoup.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomGeographicType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTabData.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTable.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBPlaceFinal.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabasePlace.edmx</DependentUpon>
+      <DependentUpon>DBPlaceFinal.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBPlaceFinal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
     </Compile>
     <Compile Include="DBPlaceFinal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopGeoManage.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DllFileStream.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocCheckState.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocComent.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocLocation.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocManageState.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocReader.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocSender.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentContent.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManage.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventTime.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupName.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IndustryCode.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IndustrySolution.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPCode.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobChange.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LandState.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginLog.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessageGroupMessager.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModulProperty.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganicInvestor.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Organization.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationAssetType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationCustomType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationEvent.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationOtherName.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationTransition.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Organization_ContacTable.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Organization_Type.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizBasic.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrgaRegisterDocment.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="physicalAsset.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Position.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostRequire.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductComposition.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCustomCategory.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCustomType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductEvent.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStandard.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterDocumentType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Securityinfo.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specialized.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subordinate.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserGroup.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserMessage.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRelateTable.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRelateType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_ContacTable.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkMessage.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkModul.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkSpace.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkSpaceBaseType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkSpaceRole.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkSpaceType.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="workTask.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZipCode.cs">
+      <DependentUpon>DBPlaceFinal.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DatabasePlace.edmx.sql" />
+    <Content Include="DBPlaceFinal.edmx.sql" />
     <Content Include="InitData.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DatabasePlace.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabasePlace.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DatabasePlace.edmx.diagram">
-      <DependentUpon>DatabasePlace.edmx</DependentUpon>
-    </None>
     <EntityDeploy Include="DBPlaceFinal.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBPlaceFinal.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DBPlaceFinal.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBPlaceFinal.Context.cs</LastGenOutput>
+      <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
+    </None>
     <None Include="DBPlaceFinal.edmx.diagram">
+      <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
+    </None>
+    <None Include="DBPlaceFinal.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBPlaceFinal.cs</LastGenOutput>
       <DependentUpon>DBPlaceFinal.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />

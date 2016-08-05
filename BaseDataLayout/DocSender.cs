@@ -17,19 +17,20 @@ namespace BaseDataLayout
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DocSender()
         {
-            this.DocLocations = new HashSet<DocLocation>();
             this.DocComents = new HashSet<DocComent>();
+            this.DocLocations = new HashSet<DocLocation>();
         }
     
         public int Id { get; set; }
         public Nullable<int> UserID { get; set; }
         public Nullable<int> PostID { get; set; }
+        public long EventTime { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocLocation> DocLocations { get; set; }
         public virtual User User { get; set; }
         public virtual Post Post { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DocComent> DocComents { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DocLocation> DocLocations { get; set; }
     }
 }

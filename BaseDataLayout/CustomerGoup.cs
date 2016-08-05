@@ -18,6 +18,7 @@ namespace BaseDataLayout
         public string GroupName { get; set; }
         public int CreatID { get; set; }
         public Nullable<int> UserID { get; set; }
+        public long EventTime { get; set; }
     
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }

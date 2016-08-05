@@ -17,7 +17,7 @@ namespace BCP.Common
         /// 
         /// </summary>
         /// <returns>返回对应Id的实体,或者空值</returns>
-        TEntity GetByKey();
+        TEntity GetByKey(TId key);
         /// <summary>
         /// 
         /// </summary>

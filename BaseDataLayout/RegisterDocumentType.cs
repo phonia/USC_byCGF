@@ -22,6 +22,9 @@ namespace BaseDataLayout
     
         public int ID { get; set; }
         public string TypeName { get; set; }
+        public long EventTime { get; set; }
+        public long EventTime1 { get; set; }
+        public long EventTime2 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrgaRegisterDocment> OrgaRegisterDocments { get; set; }

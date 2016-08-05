@@ -16,8 +16,6 @@ namespace BaseDataLayout
     {
         public int ID { get; set; }
         public string Code { get; set; }
-        public int AdministrativecodeSacID { get; set; }
-    
-        public virtual Administrativecode Administrativecode { get; set; }
+        public long EventTime { get; set; }
     }
 }

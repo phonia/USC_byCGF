@@ -19,6 +19,7 @@ namespace BaseDataLayout
         public string Tools { get; set; }
         public string Value { get; set; }
         public Nullable<int> UserID { get; set; }
+        public long EventTime { get; set; }
     
         public virtual User User { get; set; }
     }

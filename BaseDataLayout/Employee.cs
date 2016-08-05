@@ -28,6 +28,7 @@ namespace BaseDataLayout
         public string Isvalid { get; set; }
         public Nullable<int> PositionID { get; set; }
         public Nullable<int> OrganizationID { get; set; }
+        public long EventTime { get; set; }
     
         public virtual User User { get; set; }
         public virtual Position Position { get; set; }

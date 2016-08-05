@@ -23,7 +23,6 @@ namespace BaseDataLayout
         public int Geo_GraphID { get; set; }
         public int CustomGeographicTypeID { get; set; }
     
-        public virtual Land_Graph Geo_Graph { get; set; }
         public virtual CustomGeographicType CustomGeographicType { get; set; }
     }
 }

@@ -17,9 +17,10 @@ namespace BaseDataLayout
         public int Id { get; set; }
         public string ByProperty { get; set; }
         public Nullable<int> WorkSpaceID { get; set; }
-        public Nullable<int> WorkInstanceTypeId { get; set; }
+        public Nullable<int> WorkSpaceBaseTypeId { get; set; }
+        public long EventTime { get; set; }
     
         public virtual WorkSpace WorkSpace { get; set; }
-        public virtual WorkInstanceType WorkInstanceType { get; set; }
+        public virtual WorkSpaceBaseType WorkSpaceBaseType { get; set; }
     }
 }

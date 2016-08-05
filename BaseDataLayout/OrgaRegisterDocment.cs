@@ -21,6 +21,8 @@ namespace BaseDataLayout
         public byte[] DocmentContent { get; set; }
         public string DocumentFormat { get; set; }
         public System.DateTime RecordeTime { get; set; }
+        public long EventTime { get; set; }
+        public long EventTime1 { get; set; }
     
         public virtual OrganizBasic OrganizBasic { get; set; }
         public virtual RegisterDocumentType RegisterDocumentType { get; set; }

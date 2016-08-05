@@ -17,19 +17,20 @@ namespace BaseDataLayout
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DocManageState()
         {
-            this.Project_Document = new HashSet<DocumentManage>();
             this.DocManageStates = new HashSet<DocManageState>();
+            this.DocumentManages = new HashSet<DocumentManage>();
         }
     
         public int ID { get; set; }
         public string DState { get; set; }
         public string DStateName { get; set; }
         public Nullable<int> DocManageStateID { get; set; }
+        public long EventTime { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocumentManage> Project_Document { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DocManageState> DocManageStates { get; set; }
         public virtual DocManageState DocManageState1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DocumentManage> DocumentManages { get; set; }
     }
 }

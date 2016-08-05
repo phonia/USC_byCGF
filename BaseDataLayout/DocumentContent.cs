@@ -21,15 +21,17 @@ namespace BaseDataLayout
         }
     
         public int ID { get; set; }
-        public string Tile { get; set; }
-        public string DocBody { get; set; }
-        public string DocAttribute { get; set; }
-        public int DocumentManageID { get; set; }
-        public int AttechParent { get; set; }
+        public string Content { get; set; }
+        public string Message { get; set; }
+        public Nullable<int> DocumentManageID { get; set; }
+        public Nullable<int> DocumentContentID { get; set; }
+        public Nullable<int> workTaskId { get; set; }
+        public long EventTime { get; set; }
     
         public virtual DocumentManage DocumentManage { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DocumentContent> DocumentContents { get; set; }
         public virtual DocumentContent DocumentContent1 { get; set; }
+        public virtual workTask workTask { get; set; }
     }
 }

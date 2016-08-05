@@ -54,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseDataLayout\BaseDataLayout.csproj">
+      <Project>{350347c0-7f84-4a3f-b2d2-d775ac54451b}</Project>
+      <Name>BaseDataLayout</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BCP.Common\BCP.Common.csproj">
       <Project>{1bf111f0-1a5f-47fe-bd3c-dc272cd3982b}</Project>
       <Name>BCP.Common</Name>
@@ -66,6 +70,9 @@
       <Project>{71a0a4fb-2a11-4cff-95e6-37d0c07cb40d}</Project>
       <Name>BCP.ViewModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

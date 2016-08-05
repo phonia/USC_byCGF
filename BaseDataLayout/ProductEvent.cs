@@ -20,6 +20,7 @@ namespace BaseDataLayout
         public System.DateTime EventTime { get; set; }
         public int ProductId { get; set; }
         public int Creater { get; set; }
+        public long EventTime1 { get; set; }
     
         public virtual Product Product { get; set; }
     }

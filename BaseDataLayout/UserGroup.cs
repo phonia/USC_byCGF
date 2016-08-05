@@ -28,6 +28,7 @@ namespace BaseDataLayout
         public string State { get; set; }
         public int GroupNameID { get; set; }
         public string Rule { get; set; }
+        public long EventTime { get; set; }
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

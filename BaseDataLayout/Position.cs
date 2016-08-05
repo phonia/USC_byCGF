@@ -20,6 +20,7 @@ namespace BaseDataLayout
             this.IsAdministrator = false;
             this.Positions = new HashSet<Position>();
             this.Employees = new HashSet<Employee>();
+            this.Posts = new HashSet<Post>();
         }
     
         public int ID { get; set; }
@@ -35,6 +36,7 @@ namespace BaseDataLayout
         public bool IsAdministrator { get; set; }
         public Nullable<int> PostRequireID { get; set; }
         public string PositionLevel { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Position> Positions { get; set; }
@@ -43,5 +45,7 @@ namespace BaseDataLayout
         public virtual PostRequire PostRequire { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Post> Posts { get; set; }
     }
 }

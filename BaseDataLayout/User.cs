@@ -25,7 +25,6 @@ namespace BaseDataLayout
             this.GroupNames = new HashSet<GroupName>();
             this.CustomerGoups = new HashSet<CustomerGoup>();
             this.UserMessages = new HashSet<UserMessage>();
-            this.Discusses = new HashSet<Discuss>();
             this.Employees = new HashSet<Employee>();
             this.WorkSpaceRoles = new HashSet<WorkSpaceRole>();
             this.Authorizations = new HashSet<Authorization>();
@@ -39,9 +38,10 @@ namespace BaseDataLayout
         public string UserName { get; set; }
         public string Password { get; set; }
         public string ActualName { get; set; }
-        public string PersonalID { get; set; }
         public string Status { get; set; }
-        public string Role { get; set; }
+        public System.DateTime LimiteTime { get; set; }
+        public string Note { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LoginLog> LoginLogs { get; set; }
@@ -59,8 +59,6 @@ namespace BaseDataLayout
         public virtual ICollection<CustomerGoup> CustomerGoups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserMessage> UserMessages { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Discuss> Discusses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

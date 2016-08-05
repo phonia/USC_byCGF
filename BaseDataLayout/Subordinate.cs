@@ -18,20 +18,15 @@ namespace BaseDataLayout
         public Subordinate()
         {
             this.OrganizBasics = new HashSet<OrganizBasic>();
-            this.Tudi_shenpiqx = new HashSet<Tudi_shenpiqx>();
-            this.Tudi_gtgl_TaskCode = new HashSet<Tudi_gtgl_TaskCode>();
         }
     
         public int ID { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
         public string Descript { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrganizBasic> OrganizBasics { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tudi_shenpiqx> Tudi_shenpiqx { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tudi_gtgl_TaskCode> Tudi_gtgl_TaskCode { get; set; }
     }
 }

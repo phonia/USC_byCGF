@@ -27,6 +27,7 @@ namespace BaseDataLayout
         public string Descript { get; set; }
         public string ParentCode { get; set; }
         public Nullable<int> Parent { get; set; }
+        public long EventTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Specialized> Specializeds { get; set; }

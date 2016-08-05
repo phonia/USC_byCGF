@@ -20,6 +20,7 @@ namespace BaseDataLayout
         public string User { get; set; }
         public string UseTime { get; set; }
         public string PlaceOfUse { get; set; }
+        public long EventTime { get; set; }
     
         public virtual physicalAsset physicalAsset { get; set; }
     }
